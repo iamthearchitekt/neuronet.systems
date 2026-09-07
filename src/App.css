@@ -1,0 +1,311 @@
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+::selection {
+  background-color: rgba(48, 206, 206, 0.3);
+  color: #ffffff;
+}
+
+/* Base Animations */
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.33;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+    transform: translate(-20px, -10px);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+    transform: translate(20px, 10px);
+  }
+  40% {
+    clip-path: inset(43% 0 1% 0);
+    transform: translate(-20px, -10px);
+  }
+  60% {
+    clip-path: inset(25% 0 58% 0);
+    transform: translate(20px, 10px);
+  }
+  80% {
+    clip-path: inset(54% 0 7% 0);
+    transform: translate(-20px, -10px);
+  }
+  100% {
+    clip-path: inset(58% 0 43% 0);
+    transform: translate(20px, 10px);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Terminal text effect */
+.terminal-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #30cece;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #30cece }
+}
+
+/* Scanline effect */
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(48, 206, 206, 0.3);
+  opacity: 0.75;
+  animation: scanline 4s linear infinite;
+}
+
+/* CRT flicker */
+.crt-flicker {
+  animation: flicker 0.15s infinite;
+}
+
+/* Matrix rain letters */
+.matrix-letter {
+  color: #30cece;
+  font-family: 'Courier New', monospace;
+  animation: fade 2s infinite;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* New glitch effects */
+@keyframes glitch-appear {
+  0%, 100% { opacity: 0; }
+  5%, 10% { opacity: 0.5; }
+  15% { opacity: 0; }
+}
+
+@keyframes screen-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-1px); }
+}
+
+@keyframes digital-noise {
+  0%, 100% { background-position: 0 0; }
+  10% { background-position: -5% -5%; }
+  20% { background-position: -10% 5%; }
+  30% { background-position: 5% -10%; }
+  40% { background-position: -5% 15%; }
+  50% { background-position: -10% -5%; }
+  60% { background-position: 15% 10%; }
+  70% { background-position: -15% 5%; }
+  80% { background-position: 10% 5%; }
+  90% { background-position: 5% 15%; }
+}
+
+.matrix-character {
+  transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.matrix-character:hover {
+  transform: scale(1.5);
+  color: white;
+  text-shadow: 0 0 10px rgba(48, 206, 206, 0.8), 0 0 20px rgba(48, 206, 206, 0.6);
+}
+
+.glitch-block {
+  position: absolute;
+  background-color: #30cece;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+  animation: glitch-appear 0.3s infinite steps(1);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/png;base64,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");
+  opacity: 0.08;
+  z-index: 3;
+  pointer-events: none;
+  animation: digital-noise 0.2s steps(2) infinite;
+}
+
+/* Interactive Matrix Background */
+.interactive-matrix {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.matrix-char {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  color: #30cece;
+  font-size: 14px;
+  text-shadow: 0 0 5px #30cece;
+  animation: matrix-float 8s linear infinite, matrix-flicker 0.2s infinite;
+  z-index: 1;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+@keyframes matrix-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes matrix-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Glitch blocks that appear randomly */
+.glitch-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Interactive glitch effects based on mouse position */
+.matrix-char:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #30cece, 0 0 30px #30cece;
+  transform: scale(2.5);
+}
+
+.matrix-char:nth-child(odd):hover {
+  color: #ff0055;
+  text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055;
+}
+
+.matrix-char:nth-child(3n):hover {
+  color: #30cece;
+  animation: glitch 0.1s infinite;
+}
+
+/* TV Static Effect */
+.tv-static {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAABgFBMVEUAAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///+PXPJoAAAAf3RSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaW1xdXl9gYWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXp7fH1+fzdcPAAAAuZJREFUSMedlmdb4kAQhi8hgdBB8BAEpAiIhYPYxYaoqGDvvSuiZ++9/e9mEw5yiZdl8/zI7szzzrRkEzV9MbNWrI9Mxcyt76P17bE16m1nUkZ3dmbfNOHGOhqNmNEM2bUDCrHCQlOeEF3TQFlax8v5qcRH2rMdEFQ16/g8cAF/uOdSHUsJa3T0y4NNQJ6vOX9J8kbPOk+YhAL1F+S7Bf+8P1wkNzbKj9VJXgHkfnZlIfcR8C/Yf0G+KeRj1NpvkfuQwqRID4XXfAqTlBbfJrMFyTOGR2aHEFQTJVifZN6C1tDKJP0GwT4mtKgBGpL0S1CbZFLgpqQXIMosE2lRr5RSEm8hecyEJKqDdaokcRx1NSFEDEEX0yXRBM/FSIyoD8QL8Ror7VETFhqZ+kCMJRm9R/wN11/anYjSS5EeoGdczRGhx0gxJEYirdoRpD5cBoofwUMiHEpYbHVCQEQ5pDl1IPotpFkK73BwTwOBJbqUoxPG6AVTNMeYOlBPIKgP2pW52EAzzdEbSNzSkFaAp2mOXINogdzcR/oNkkYaFOJQ1a0LsQOFRbpPpgHwshQDZ5A00KnYnNSML4AVyZ5NorK+j9lxqKHPJiHSQcVvDaNDDx4m7a7O98fzgF7L8ZkHHpd2qIQsP5mMWLTqbZtNA6jyC4/KwlNm/U9KlmqK9eK25M6T1vvRxuEDXrVFd8OTbHlrdyDu29f45+Mv8ALE+nrh4azQgPewi2CvGDgplq0tVkQnNoL3uTIoTIN5xgTgB9eCU1YMmcZoXKaoUuSeHnVnxSQnccdxzDgMKKR59e0tA6XTvFBW6rXZe3OjDyk6vwPQGD90RShIw9B6rzfpg9kAU2nTx0oTQL5PnnsKP9ew32V6riF3mV4fonNQG0HLz/E7DE8IaK6sI2tm7NIdAUTPCDOn0aS8QMwqp+hnYFpU34THecXwdNkBH+8KJdyC1XyD3KxvFe+wm7t/ALwzjPkKJywrAAAAAElFTkSuQmCC");
+  opacity: 0.1;
+  background-size: 100px 100px;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 2;
+  animation: tv-static-animation 0.2s steps(4) infinite;
+}
+
+@keyframes tv-static-animation {
+  0% { background-position: 0 0; }
+  25% { background-position: 10px 10px; }
+  50% { background-position: -10px -10px; }
+  75% { background-position: -5px 5px; }
+  100% { background-position: 5px -5px; }
+}
+
+/* Horizontal scan lines */
+.scan-line-horizontal {
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: rgba(48, 206, 206, 0.5);
+  z-index: 4;
+  pointer-events: none;
+  animation: scan-horizontal 3s linear infinite;
+  box-shadow: 0 0 10px rgba(48, 206, 206, 0.7);
+}
+
+@keyframes scan-horizontal {
+  0% { transform: translateY(0); }
+  70% { transform: translateY(100vh); }
+  70.1% { transform: translateY(-10px); }
+  100% { transform: translateY(30vh); }
+}
+
+/* Vertical distortion lines */
+.distortion-line-vertical {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 4;
+  pointer-events: none;
+  animation: distortion-vertical 2s linear infinite;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes distortion-vertical {
+  0% { transform: translateX(0); opacity: 0.7; }
+  20% { transform: translateX(20px); opacity: 0.2; }
+  40% { transform: translateX(-30px); opacity: 0.6; }
+  60% { transform: translateX(10px); opacity: 0.9; }
+  80% { transform: translateX(-15px); opacity: 0.4; }
+  100% { transform: translateX(0); opacity: 0.7; }
+}
+
+/* Screen shake animation */
+.screen-shake {
+  animation: screen-shake 0.1s infinite;
+}
+
+/* Occasional screen flicker */
+@keyframes screen-flicker {
+  0%, 100% { opacity: 1; }
+  8%, 10% { opacity: 0.4; }
+  9%, 11% { opacity: 0.8; }
+  50%, 52% { opacity: 0.4; }
+  51%, 53% { opacity: 0.9; }
+}
+
+html:has(.tv-static) {
+  animation: screen-flicker 10s steps(1) infinite;
+}
