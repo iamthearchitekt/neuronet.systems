@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Sparkles, Bot, Send, ChevronDown, ChevronUp, Terminal, Shield, Activity, RefreshCw } from "lucide-react";
 
 interface Message {
@@ -10,6 +10,7 @@ interface Message {
 
 export const AIAgentConsole: React.FC = () => {
   const [isThinkingOpen, setIsThinkingOpen] = useState(false);
+  const chatScrollRef = useRef<HTMLDivElement>(null);
   const [thinkingSteps, setThinkingSteps] = useState<string[]>([
     "› Query semantics tokenized into clinical parameter vector.",
     "› Consulting Project Necrogenesis Phase 3 necrotic re-polarization archives.",
@@ -298,10 +299,16 @@ Necrotic tissue perfusion parameters and kinematic servo decoders remain within 
     }, 400);
   };
 
+  useEffect(() => {
+    if (chatScrollRef.current) {
+      chatScrollRef.current.scrollTop = chatScrollRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   return (
-    <div className="w-full max-w-5xl mx-auto my-4 sm:my-6 px-1 sm:px-2 text-left">
+    <div className="w-full max-w-5xl mx-auto my-3 sm:my-5 px-1 sm:px-2 text-left flex-1">
       {/* Agent Card Container (Claude / Gemini Style) */}
-      <div className="bg-[#080d14]/95 backdrop-blur-xl border border-accent/30 rounded-xl p-4 sm:p-6 shadow-[0_0_40px_rgba(143,217,232,0.12)] relative overflow-hidden">
+      <div className="bg-[#080d14]/95 backdrop-blur-xl border border-accent/30 rounded-xl p-4 sm:p-6 shadow-[0_0_40px_rgba(143,217,232,0.12)] relative overflow-hidden flex flex-col">
         
         {/* Corner bracket accents */}
         <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
@@ -362,8 +369,11 @@ Necrotic tissue perfusion parameters and kinematic servo decoders remain within 
           )}
         </div>
 
-        {/* Conversation Stream */}
-        <div className="space-y-4 max-h-96 overflow-y-auto pr-1 mb-4 scrollbar-thin scrollbar-thumb-accent/20 select-text">
+        {/* Conversation Stream - Expanded Height with Auto-Scroll */}
+        <div 
+          ref={chatScrollRef}
+          className="space-y-4 h-[440px] sm:h-[500px] lg:h-[560px] overflow-y-auto pr-1.5 mb-4 scrollbar-thin scrollbar-thumb-accent/30 select-text"
+        >
           {messages.map((msg, idx) => (
             <div
               key={idx}

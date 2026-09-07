@@ -108,25 +108,9 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
   }, [onAccessGranted, onCriticalityChange]);
 
   return (
-    <div className="w-full max-w-6xl mx-auto my-4 sm:my-8 px-1 sm:px-4">
-      {/* Prominent ZERO HOUR & PROJECT NECROGENESIS Heading */}
-      <div className="text-center mb-4 sm:mb-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/30 text-[10px] sm:text-xs font-mono text-accent uppercase tracking-widest mb-2 shadow-[0_0_15px_rgba(143,217,232,0.2)]">
-          <span className="w-2 h-2 rounded-full bg-accent animate-ping"></span>
-          <span>PROJECT NECROGENESIS // PHASE 3</span>
-        </div>
-        
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-mono tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-cyan-400 glow-text uppercase drop-shadow-[0_0_35px_rgba(143,217,232,0.6)]">
-          ZERO HOUR
-        </h1>
-        
-        <p className="text-xs sm:text-sm font-mono text-accent/80 tracking-[0.2em] uppercase mt-1">
-          CONVERGENCE TARGET: OCTOBER 04, 2026 // 00:00:00
-        </p>
-      </div>
-
+    <div className="w-full max-w-6xl mx-auto my-1 sm:my-2 px-1 sm:px-2">
       {/* Expanded Cyberpunk LCD Bezel Board - Zero cut-off guarantee */}
-      <div className="relative bg-black/90 backdrop-blur-xl border border-accent/40 rounded-lg p-3 sm:p-8 md:p-10 shadow-[0_0_60px_rgba(143,217,232,0.18)] overflow-hidden w-full">
+      <div className="relative bg-black/90 backdrop-blur-xl border border-accent/40 rounded-lg p-3 sm:p-5 md:p-6 shadow-[0_0_50px_rgba(143,217,232,0.15)] overflow-hidden w-full">
         
         {/* Decorative corner brackets */}
         <div className="absolute top-0 left-0 w-3.5 h-3.5 sm:w-5 sm:h-5 border-t-2 border-l-2 border-accent"></div>
@@ -138,18 +122,18 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_20%,_rgba(0,0,0,0.8)_100%)] pointer-events-none"></div>
 
         {/* Top Header Telemetry */}
-        <div className="relative z-10 flex items-center justify-between mb-3 sm:mb-6 border-b border-accent/20 pb-2 text-[9px] sm:text-xs font-mono text-accent/80 tracking-widest uppercase">
+        <div className="relative z-10 flex items-center justify-between mb-2 sm:mb-3 border-b border-accent/20 pb-1.5 text-[9px] sm:text-xs font-mono text-accent/80 tracking-widest uppercase">
           <div className="flex items-center gap-2">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-            <span>T-MINUS // SYSTEM LAUNCH</span>
+            <span className="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <span className="font-bold text-accent">ZERO HOUR COUNTDOWN</span>
           </div>
           <div className="text-accent/60 truncate ml-2">
-            NEURAL GRID: PHASE 3 ACTIVE
+            PROJECT NECROGENESIS // 2026.10.04
           </div>
         </div>
 
         {/* Main LCD Digits Display - Sized to never cut off */}
-        <div className="relative z-10 flex items-center justify-center gap-0.5 sm:gap-2 md:gap-4 text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl py-2 sm:py-6 overflow-x-auto select-none">
+        <div className="relative z-10 flex items-center justify-center gap-0.5 sm:gap-2 md:gap-4 text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl py-1 sm:py-3 overflow-x-auto select-none">
           <LCDBlock value={timeLeft.days} label="Days" />
           <LCDDigit char=":" />
           <LCDBlock value={timeLeft.hours} label="Hours" />
