@@ -110,31 +110,36 @@ const Sparkline: React.FC<{ series: Series }> = ({ series }) => {
   );
 };
 
-const PerformanceGraphs: React.FC = () => {
+interface PerformanceGraphsProps {
+  className?: string;
+}
+
+const PerformanceGraphs: React.FC<PerformanceGraphsProps> = ({ className = "" }) => {
   return (
-    <div className="fixed z-40 pointer-events-none top-11 left-2 right-2 sm:top-12 sm:left-auto sm:right-4 sm:w-auto">
-      <div className="bg-black/60 backdrop-blur-md border border-accent/25 rounded-sm px-3 py-2 shadow-[0_0_20px_-8px_hsl(190_70%_75%/0.5)] mx-auto sm:mx-0 max-w-[420px] sm:max-w-none">
-        <div className="grid grid-cols-3 gap-3 sm:hidden">
-          {SERIES.map((s) => (
-            <Sparkline key={s.label} series={s} />
-          ))}
-        </div>
-        <div className="hidden sm:block">
-        <div className="flex items-center justify-between mb-1.5">
-          <span className="text-[9px] font-mono text-accent/60 uppercase tracking-widest">
-            live telemetry
-          </span>
-          <span className="flex items-center gap-1 text-[9px] font-mono text-accent/60 uppercase tracking-widest">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            rec
-          </span>
-        </div>
-        <div className="flex flex-col gap-1.5">
-          {SERIES.map((s) => (
-            <Sparkline key={s.label} series={s} />
-          ))}
-        </div>
-        </div>
+    <div className={`w-full bg-[#080d14]/90 backdrop-blur-xl border border-accent/30 rounded-xl p-3 sm:p-4 shadow-[0_0_30px_rgba(143,217,232,0.1)] relative overflow-hidden ${className}`}>
+      {/* Corner bracket accents */}
+      <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-accent"></div>
+      <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-accent"></div>
+      <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-accent"></div>
+      <div className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b border-r border-accent"></div>
+
+      <div className="flex items-center justify-between mb-2.5 border-b border-accent/15 pb-1.5">
+        <span className="text-[10px] sm:text-xs font-mono text-accent/80 uppercase tracking-widest flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
+          <span>NEURAL PERFORMANCE METRICS</span>
+        </span>
+        <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 uppercase tracking-widest bg-emerald-950/50 border border-emerald-500/30 px-2.5 py-0.5 rounded-full">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          LIVE STREAM
+        </span>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {SERIES.map((s) => (
+          <div key={s.label} className="bg-black/40 border border-accent/15 rounded-lg p-2 flex flex-col items-center">
+            <Sparkline series={s} />
+          </div>
+        ))}
       </div>
     </div>
   );

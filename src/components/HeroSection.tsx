@@ -4,7 +4,7 @@ import CodeIDEWindow from "./CodeIDEWindow";
 import AIAgentConsole from "./AIAgentConsole";
 import HUDTelemetry from "./HUDTelemetry";
 import PerformanceGraphs from "./PerformanceGraphs";
-import { Bot, Sparkles, Terminal, Activity, ShieldCheck } from "lucide-react";
+import { Bot, Sparkles, Terminal, Activity, ShieldCheck, Cpu } from "lucide-react";
 
 interface HeroSectionProps {
   pythonLines?: Array<{ id: number; text: string }>;
@@ -20,38 +20,46 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen pt-4 sm:pt-6 pb-12 px-2 sm:px-6 lg:px-8 flex flex-col justify-start">
-      {/* Top AI Agent Platform Bar (Claude / Gemini style) */}
+    <section className="relative min-h-screen pt-3 sm:pt-5 pb-12 px-2 sm:px-4 lg:px-8 flex flex-col justify-start">
+      {/* Top AI Agent Platform Header (Claude / Gemini style) */}
       <div className="w-full max-w-7xl mx-auto mb-4 sm:mb-6">
-        <div className="bg-[#080d14]/80 backdrop-blur-xl border border-accent/25 rounded-xl px-4 py-3 flex flex-wrap items-center justify-between gap-3 shadow-[0_0_30px_rgba(143,217,232,0.08)]">
-          {/* Left: Model Identity & Project */}
+        <div className="bg-[#080d14]/90 backdrop-blur-xl border border-accent/30 rounded-xl px-4 py-3 flex flex-wrap items-center justify-between gap-3 shadow-[0_0_30px_rgba(143,217,232,0.1)]">
+          
+          {/* Left: Model Identity & Project Specs */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-600 to-accent flex items-center justify-center shadow-[0_0_12px_rgba(143,217,232,0.4)]">
-              <Bot className="w-4 h-4 text-black" />
+            <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-600 via-cyan-400 to-accent flex items-center justify-center shadow-[0_0_15px_rgba(143,217,232,0.4)]">
+              <Bot className="w-5 h-5 text-black" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-mono font-bold text-xs sm:text-sm text-white tracking-wide">
+                <span className="font-mono font-bold text-sm sm:text-base text-white tracking-wide">
                   LAZURUS-3.5
                 </span>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold uppercase">
-                  AGI AGENT
-                </span>
-                <span className="hidden md:inline-block text-[10px] font-mono text-accent/60">
-                  // PROJECT NECROGENESIS - PHASE 3
+                  NEURAL AGENT
                 </span>
               </div>
+              <span className="text-[11px] font-mono text-accent/70">
+                PROJECT NECROGENESIS // PHASE 3 INITIATIVE
+              </span>
             </div>
           </div>
 
-          {/* Center / Right: Live Performance Sparklines (Loss, Reasoning, Sync) */}
-          <div className="flex items-center gap-4">
-            <div className="hidden sm:block">
-              <PerformanceGraphs />
+          {/* Right: Telemetry Quick Status Indicators */}
+          <div className="flex items-center flex-wrap gap-2.5 sm:gap-3 text-[10px] sm:text-xs font-mono">
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 border border-accent/20 text-accent/80">
+              <Cpu className="w-3 h-3 text-cyan-400" />
+              <span>CONTEXT: 1M TOKENS</span>
             </div>
-            <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono text-accent bg-accent/10 border border-accent/25 px-3 py-1 rounded-full">
+
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 border border-accent/20 text-accent/80">
+              <Activity className="w-3 h-3 text-cyan-400" />
+              <span>LATENCY: 38ms</span>
+            </div>
+
+            <div className="flex items-center gap-2 text-accent bg-accent/10 border border-accent/30 px-3 py-1 rounded-full shadow-[0_0_12px_rgba(143,217,232,0.15)]">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-              <span className="font-semibold">SYNCHRONIZED</span>
+              <span className="font-semibold text-emerald-400">ZERO HOUR LOCKED</span>
             </div>
           </div>
         </div>
@@ -61,12 +69,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
       <div className="w-full max-w-7xl mx-auto flex-1 flex flex-col lg:flex-row gap-6 items-start">
         
         {/* LEFT COLUMN: Left-Justified IDE Window (Streaming Python Training Code) */}
-        <div className="w-full lg:w-5/12 xl:w-[460px] flex-shrink-0 order-2 lg:order-1 h-[480px] sm:h-[560px] lg:h-[760px] sticky top-4">
+        <div className="w-full lg:w-5/12 xl:w-[460px] flex-shrink-0 order-2 lg:order-1 h-[480px] sm:h-[560px] lg:h-[780px] sticky top-4">
           <CodeIDEWindow lines={pythonLines} />
         </div>
 
         {/* RIGHT COLUMN: AI Agent Command Center featuring ZERO HOUR Countdown & Telemetry */}
-        <div className="w-full lg:flex-1 order-1 lg:order-2 flex flex-col items-center">
+        <div className="w-full lg:flex-1 order-1 lg:order-2 flex flex-col items-center gap-4 sm:gap-6">
           
           {/* Main Hero Feature: ZERO HOUR Large LCD Countdown Clock */}
           <div className="w-full">
@@ -76,14 +84,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
             />
           </div>
 
+          {/* Unified Telemetry Deck: Real-Time Performance Sparklines & System HUD */}
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+            <PerformanceGraphs />
+            <HUDTelemetry criticality={criticality} />
+          </div>
+
           {/* AI Agent Interactive Console (Claude / Gemini Style) */}
           <div className="w-full">
             <AIAgentConsole />
-          </div>
-
-          {/* System HUD Telemetry (CPU, Memory, Network, Neural, Grid Integrity) */}
-          <div className="w-full mt-2">
-            <HUDTelemetry criticality={criticality} />
           </div>
         </div>
       </div>
