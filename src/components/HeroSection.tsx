@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Calendar, MapPin } from "lucide-react";
-import AccessForm from "./AccessForm";
+import CountdownClock from "./CountdownClock";
 import HUDTelemetry from "./HUDTelemetry";
 import PerformanceGraphs from "./PerformanceGraphs";
 
@@ -35,8 +35,8 @@ const HeroSection: React.FC = () => {
           </div>
           
           
-          {/* Access Form Component */}
-            <AccessForm 
+          {/* Large LCD Countdown Clock */}
+            <CountdownClock 
               onAccessGranted={setAccessGranted} 
               onCriticalityChange={setCriticality}
             />
