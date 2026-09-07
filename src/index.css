@@ -23,6 +23,19 @@ html, body {
   scrollbar-width: none;  /* Firefox */
 }
 
+/* Suppress Netlify Injected Drawer & Badges */
+#netlify-drawer,
+iframe[src*="netlify"],
+iframe[id*="netlify"],
+[data-netlify-deploy-id],
+div[class*="netlify-drawer"],
+.netlify-badge {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 @layer base {
   :root {
     --background: 0 0% 0%;

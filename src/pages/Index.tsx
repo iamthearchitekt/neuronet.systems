@@ -699,25 +699,8 @@ const Index: React.FC = () => {
   }
 
   return (
-    <div className="relative z-10 min-h-screen pb-0 sm:pb-0">
-      {/* Terminal-style Python Code Background */}
-      <div className="absolute top-12 sm:top-0 inset-x-0 bottom-[280px] sm:bottom-0 z-[2] overflow-hidden pointer-events-none bg-transparent opacity-90">
-        {pythonLines.map((line) => (
-          <div 
-            key={line.id}
-            className="absolute left-2 sm:left-4 right-2 sm:right-auto text-left text-accent font-mono text-[9px] sm:text-sm whitespace-pre-wrap sm:whitespace-pre break-all sm:break-normal leading-relaxed glow-text"
-            style={{
-              top: `${line.y}px`,
-              fontFamily: 'Consolas, Monaco, "Courier New", monospace'
-            }}
-          >
-            {line.text}
-          </div>
-        ))}
-      </div>
-      
-      <Navbar />
-      <HeroSection />
+    <div className="relative z-10 min-h-screen bg-black">
+      <HeroSection pythonLines={pythonLines} />
     </div>
   );
 };

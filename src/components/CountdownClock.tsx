@@ -18,7 +18,7 @@ const LCDDigit: React.FC<{ char: string }> = ({ char }) => {
 
   if (isSeparator) {
     return (
-      <span className="relative inline-flex items-center justify-center select-none px-1 sm:px-2 md:px-3">
+      <span className="relative inline-flex items-center justify-center select-none px-0.5 sm:px-1.5 md:px-2 flex-shrink-0">
         {/* Ghost unlit separator */}
         <span className="text-accent/15 select-none pointer-events-none font-led">
           :
@@ -32,13 +32,13 @@ const LCDDigit: React.FC<{ char: string }> = ({ char }) => {
   }
 
   return (
-    <span className="relative inline-flex items-center justify-center select-none w-[0.62em] text-center">
-      {/* Ghost unlit 8 segments for true LCD display look */}
+    <span className="relative inline-flex items-center justify-center select-none w-[0.62em] text-center flex-shrink-0">
+      {/* Ghost unlit 8 segment for physical LCD display effect */}
       <span className="text-accent/15 select-none pointer-events-none font-led">
         8
       </span>
-      {/* Active illuminated digit */}
-      <span className="absolute inset-0 flex items-center justify-center text-accent font-led glow-text drop-shadow-[0_0_15px_hsl(var(--accent)/0.8)]">
+      {/* Active illuminated cyan digit */}
+      <span className="absolute inset-0 flex items-center justify-center text-accent font-led glow-text drop-shadow-[0_0_20px_hsl(var(--accent)/0.85)]">
         {char}
       </span>
     </span>
@@ -47,13 +47,13 @@ const LCDDigit: React.FC<{ char: string }> = ({ char }) => {
 
 const LCDBlock: React.FC<{ value: string; label: string }> = ({ value, label }) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center flex-shrink-0">
       <div className="flex items-center tracking-tight">
         {value.split("").map((digit, i) => (
           <LCDDigit key={i} char={digit} />
         ))}
       </div>
-      <span className="text-[10px] sm:text-xs md:text-sm font-mono tracking-[0.25em] text-accent/70 uppercase mt-2 sm:mt-3 font-semibold">
+      <span className="text-[9px] sm:text-xs md:text-sm font-mono tracking-[0.2em] sm:tracking-[0.25em] text-accent/70 uppercase mt-2 sm:mt-3 font-semibold">
         {label}
       </span>
     </div>
@@ -108,32 +108,48 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
   }, [onAccessGranted, onCriticalityChange]);
 
   return (
-    <div className="w-full max-w-5xl mx-auto my-6 sm:my-10 px-2 sm:px-4">
-      {/* Cyberpunk LCD Bezel Panel */}
-      <div className="relative bg-black/85 backdrop-blur-md border border-accent/40 rounded-sm p-4 sm:p-8 md:p-10 shadow-[0_0_50px_rgba(143,217,232,0.15)] overflow-hidden">
+    <div className="w-full max-w-6xl mx-auto my-4 sm:my-8 px-1 sm:px-4">
+      {/* Prominent ZERO HOUR & PROJECT NECROGENESIS Heading */}
+      <div className="text-center mb-4 sm:mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/30 text-[10px] sm:text-xs font-mono text-accent uppercase tracking-widest mb-2 shadow-[0_0_15px_rgba(143,217,232,0.2)]">
+          <span className="w-2 h-2 rounded-full bg-accent animate-ping"></span>
+          <span>PROJECT NECROGENESIS // PHASE 3</span>
+        </div>
+        
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-mono tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-cyan-400 glow-text uppercase drop-shadow-[0_0_35px_rgba(143,217,232,0.6)]">
+          ZERO HOUR
+        </h1>
+        
+        <p className="text-xs sm:text-sm font-mono text-accent/80 tracking-[0.2em] uppercase mt-1">
+          CONVERGENCE TARGET: OCTOBER 04, 2026 // 00:00:00
+        </p>
+      </div>
+
+      {/* Expanded Cyberpunk LCD Bezel Board - Zero cut-off guarantee */}
+      <div className="relative bg-black/90 backdrop-blur-xl border border-accent/40 rounded-lg p-3 sm:p-8 md:p-10 shadow-[0_0_60px_rgba(143,217,232,0.18)] overflow-hidden w-full">
         
         {/* Decorative corner brackets */}
-        <div className="absolute top-0 left-0 w-3 h-3 sm:w-4 sm:h-4 border-t-2 border-l-2 border-accent"></div>
-        <div className="absolute top-0 right-0 w-3 h-3 sm:w-4 sm:h-4 border-t-2 border-r-2 border-accent"></div>
-        <div className="absolute bottom-0 left-0 w-3 h-3 sm:w-4 sm:h-4 border-b-2 border-l-2 border-accent"></div>
-        <div className="absolute bottom-0 right-0 w-3 h-3 sm:w-4 sm:h-4 border-b-2 border-r-2 border-accent"></div>
+        <div className="absolute top-0 left-0 w-3.5 h-3.5 sm:w-5 sm:h-5 border-t-2 border-l-2 border-accent"></div>
+        <div className="absolute top-0 right-0 w-3.5 h-3.5 sm:w-5 sm:h-5 border-t-2 border-r-2 border-accent"></div>
+        <div className="absolute bottom-0 left-0 w-3.5 h-3.5 sm:w-5 sm:h-5 border-b-2 border-l-2 border-accent"></div>
+        <div className="absolute bottom-0 right-0 w-3.5 h-3.5 sm:w-5 sm:h-5 border-b-2 border-r-2 border-accent"></div>
 
-        {/* Subtle radial vignette overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(0,0,0,0.6)_100%)] pointer-events-none"></div>
+        {/* Subtle grid and vignette background */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_20%,_rgba(0,0,0,0.8)_100%)] pointer-events-none"></div>
 
-        {/* Top Header Label */}
-        <div className="relative z-10 flex items-center justify-between mb-4 sm:mb-6 border-b border-accent/20 pb-2 text-[10px] sm:text-xs font-mono text-accent/80 tracking-widest uppercase">
+        {/* Top Header Telemetry */}
+        <div className="relative z-10 flex items-center justify-between mb-3 sm:mb-6 border-b border-accent/20 pb-2 text-[9px] sm:text-xs font-mono text-accent/80 tracking-widest uppercase">
           <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-accent animate-ping"></span>
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
             <span>T-MINUS // SYSTEM LAUNCH</span>
           </div>
-          <div className="text-accent/60">
-            TARGET: 2026.10.04 // 00:00:00
+          <div className="text-accent/60 truncate ml-2">
+            NEURAL GRID: PHASE 3 ACTIVE
           </div>
         </div>
 
-        {/* Main LCD Digits Display */}
-        <div className="relative z-10 flex items-center justify-center gap-1 sm:gap-2 md:gap-3 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl py-2 sm:py-4">
+        {/* Main LCD Digits Display - Sized to never cut off */}
+        <div className="relative z-10 flex items-center justify-center gap-0.5 sm:gap-2 md:gap-4 text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl py-2 sm:py-6 overflow-x-auto select-none">
           <LCDBlock value={timeLeft.days} label="Days" />
           <LCDDigit char=":" />
           <LCDBlock value={timeLeft.hours} label="Hours" />
@@ -144,9 +160,9 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
         </div>
 
         {/* Bottom Status Subtext */}
-        <div className="relative z-10 mt-4 sm:mt-6 pt-2 border-t border-accent/20 flex flex-wrap items-center justify-between text-[10px] sm:text-xs font-mono text-accent/60 tracking-wider">
-          <div>LOC:// NEURONET.SYSTEMS</div>
-          <div className="animate-pulse text-accent">GRID INTEGRITY: SYNCHRONIZED</div>
+        <div className="relative z-10 mt-3 sm:mt-6 pt-2 border-t border-accent/20 flex flex-wrap items-center justify-between text-[9px] sm:text-xs font-mono text-accent/60 tracking-wider gap-2">
+          <div>DIRECTIVE:// PROJECT NECROGENESIS - PHASE 3</div>
+          <div className="animate-pulse text-accent font-medium">ZERO HOUR LOCKED // STATUS: SYNCHRONIZED</div>
         </div>
       </div>
     </div>
