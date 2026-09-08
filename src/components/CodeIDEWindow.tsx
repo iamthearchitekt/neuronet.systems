@@ -25,8 +25,8 @@ const INITIAL_LOGS: LogEntry[] = [
     id: "log-2",
     timestamp: "00:01:04.348",
     level: "INFO",
-    subsystem: "NEUROSYNTH:FRONT",
-    message: "Public neurological research facade synchronized: 0 civilian regulatory flags."
+    subsystem: "SECURITY:COVERT",
+    message: "Special Access Program clearance verified: Level 5 cryptographic seal active."
   },
   {
     id: "log-3",
@@ -149,8 +149,8 @@ const DYNAMIC_LOG_POOL = [
   },
   {
     level: "INFO" as const,
-    subsystem: "NEUROSYNTH:LOG",
-    message: "Civilian neurological clinical trial facade operational. Regulatory telemetry nominal."
+    subsystem: "COMSEC:COVERT",
+    message: "Zero public spectral radiation: spread-spectrum orbital uplink shielded from intercept."
   },
   {
     level: "REANIM" as const,

@@ -95,7 +95,7 @@ Click below to access registration and credentials:
         ],
         response: `The facility is located in Baltimore's Inner Harbor at "Power Plant".
 
-It functions as a fortified subterranean research complex operated by S.T.E.E.Z., shielded beneath the civilian facade of Neurosynth Dynamics. The site serves as the primary terrestrial ground station testing satellite uplink drop rates to ensure 0.000% packet loss during global Z-Host synchronization across the NeuroNet, while LAZURUS-3 operates as the AGI interfacing with the network.`
+It functions as a fortified subterranean research complex operated by S.T.E.E.Z., secured under Special Access Program protocols. The site serves as the primary terrestrial ground station testing satellite uplink drop rates to ensure 0.000% packet loss during global Z-Host synchronization across the NeuroNet, while LAZURUS-3 operates as the AGI interfacing with the network.`
       };
     }
 
@@ -342,31 +342,29 @@ The large LCD panel on this interface provides live synchronization to that exac
 
 • Base of Operations: The Power Plant facility in Baltimore's Inner Harbor.
 • Objective: Developing next-generation autonomous force multipliers by fusing reanimated biological tissue with advanced cybernetics.
-• Structure: Directs the classified weapons program while utilizing Neurosynth Dynamics as its civilian biomedical facade.`
+• Structure: Directs the classified weapons program under black-budget compartmented clearance, maintaining complete operational isolation.`
       };
     }
 
     // =========================================================================
-    // 9. NEUROSYNTH DYNAMICS // CIVILIAN FACADE
+    // 9. NEUROSYNTH DYNAMICS // ADVANCED BIOTECHNOLOGY DIVISION
     // =========================================================================
     if (
       q.includes("neurosynth") ||
       q.includes("neurological") ||
-      q.includes("memory") ||
-      q.includes("disorder") ||
-      q.includes("cover") ||
-      q.includes("facade") ||
-      q.includes("civilian")
+      q.includes("biotech") ||
+      q.includes("division") ||
+      q.includes("covert")
     ) {
       return {
         thoughts: [
-          "› Query: Neurosynth Dynamics facade overview.",
-          "› Emitting operational profile."
+          "› Clearance verified: Special Access Program (SAP).",
+          "› Accessing compartmented division archives."
         ],
-        response: `Neurosynth Dynamics is the civilian research facade established by S.T.E.E.Z.:
+        response: `Neurosynth Dynamics operates as the classified advanced biotechnology division under S.T.E.E.Z.:
 
-• Public Front: Presents itself as an ethical biomedical enterprise pioneering treatments for advanced neurological disorders and neural trauma.
-• Strategic Role: Secures donor specimens, tests biocompatible implant arrays, and collects human clinical telemetry under academic research grants before technology is integrated into Project Necrogenesis.`
+• Covert Mandate: Conducts compartmented neural computing and biomechanical research strictly isolated from public oversight.
+• Strategic Role: Engineers biocompatible implant arrays, synthesizes fluorocarbon perfusion solutions, and tests cadaveric reanimation substrates before deployment into Project Necrogenesis.`
       };
     }
 
