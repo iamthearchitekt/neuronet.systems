@@ -69,7 +69,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
         </div>
 
         {/* RIGHT COLUMN: AI Agent Command Center featuring ZERO HOUR Countdown & Telemetry */}
-        <div className="w-full lg:flex-1 order-1 lg:order-2 flex flex-col items-center gap-4 sm:gap-6">
+        <div className="w-full lg:flex-1 order-1 lg:order-2 flex flex-col items-stretch gap-4 sm:gap-6">
           
           {/* Main Hero Feature: ZERO HOUR Large LCD Countdown Clock */}
           <div className="w-full">

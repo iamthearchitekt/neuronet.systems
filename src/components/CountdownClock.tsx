@@ -108,9 +108,9 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
   }, [onAccessGranted, onCriticalityChange]);
 
   return (
-    <div className="w-full max-w-6xl mx-auto my-1 sm:my-2 px-1 sm:px-2">
+    <div className="w-full my-1 sm:my-2">
       {/* Expanded Cyberpunk LCD Bezel Board - Zero cut-off guarantee */}
-      <div className="relative bg-black/90 backdrop-blur-xl border border-accent/40 rounded-lg p-3 sm:p-5 md:p-6 shadow-[0_0_50px_rgba(143,217,232,0.15)] overflow-hidden w-full">
+      <div className="relative bg-black/90 backdrop-blur-xl border border-accent/40 rounded-xl p-3 sm:p-5 md:p-6 shadow-[0_0_50px_rgba(143,217,232,0.15)] overflow-hidden w-full">
         
         {/* Decorative corner brackets */}
         <div className="absolute top-0 left-0 w-3.5 h-3.5 sm:w-5 sm:h-5 border-t-2 border-l-2 border-accent"></div>

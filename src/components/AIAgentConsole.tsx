@@ -306,7 +306,7 @@ Necrotic tissue perfusion parameters and kinematic servo decoders remain within 
   }, [messages]);
 
   return (
-    <div className="w-full max-w-5xl mx-auto my-3 sm:my-5 px-1 sm:px-2 text-left flex-1">
+    <div className="w-full my-1 sm:my-2 text-left flex-1">
       {/* Agent Card Container (Claude / Gemini Style) */}
       <div className="bg-[#080d14]/95 backdrop-blur-xl border border-accent/30 rounded-xl p-4 sm:p-6 shadow-[0_0_40px_rgba(143,217,232,0.12)] relative overflow-hidden flex flex-col">
         
