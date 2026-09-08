@@ -4,7 +4,7 @@ import CodeIDEWindow from "./CodeIDEWindow";
 import AIAgentConsole from "./AIAgentConsole";
 import HUDTelemetry from "./HUDTelemetry";
 import PerformanceGraphs from "./PerformanceGraphs";
-import { Bot, Sparkles, Terminal, Activity, ShieldCheck, Cpu } from "lucide-react";
+import { Sparkles, Terminal, Activity, ShieldCheck, Cpu } from "lucide-react";
 
 interface HeroSectionProps {
   pythonLines?: Array<{ id: number; text: string }>;
@@ -25,10 +25,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
       <header className="w-full border-b border-accent/25 bg-[#080d14]/95 backdrop-blur-xl px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-3 sticky top-0 z-40 mb-4 sm:mb-6 shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
         <div className="w-full flex flex-wrap items-center justify-between gap-3">
           
-          {/* Left: Model Identity & Project Specs */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-600 via-cyan-400 to-accent flex items-center justify-center shadow-[0_0_15px_rgba(143,217,232,0.4)]">
-              <Bot className="w-5 h-5 text-black" />
+            <div className="relative w-10 h-10 rounded-lg bg-black/60 border border-cyan-400/40 flex items-center justify-center p-1 shadow-[0_0_15px_rgba(34,211,238,0.35)] group overflow-hidden">
+              <img 
+                src="/branding-icon.png" 
+                alt="S.T.E.E.Z. / NeuroNet Branding Icon" 
+                className="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(34,211,238,0.8)] transition-transform group-hover:scale-110 duration-200" 
+              />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">

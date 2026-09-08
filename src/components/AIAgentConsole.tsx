@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Sparkles, Bot, Send, ChevronDown, ChevronUp, Terminal, Shield, Activity, RefreshCw } from "lucide-react";
+import { Sparkles, Send, ChevronDown, ChevronUp, Terminal, Shield, Activity, RefreshCw } from "lucide-react";
 
 interface Message {
   role: "user" | "assistant";
@@ -671,8 +671,12 @@ If you wish to explore any specific facet—such as the exact chemical compositi
         {/* Agent Header */}
         <div className="flex items-center justify-between border-b border-accent/20 pb-3 mb-4">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-600 via-cyan-400 to-accent flex items-center justify-center shadow-[0_0_15px_rgba(143,217,232,0.4)]">
-              <Bot className="w-5 h-5 text-black" />
+            <div className="relative w-10 h-10 rounded-lg bg-black/60 border border-cyan-400/40 flex items-center justify-center p-1 shadow-[0_0_15px_rgba(34,211,238,0.35)] group overflow-hidden">
+              <img 
+                src="/branding-icon.png" 
+                alt="LAZARUS-3.5 Branding" 
+                className="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(34,211,238,0.8)] transition-transform group-hover:scale-110 duration-200" 
+              />
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -735,8 +739,8 @@ If you wish to explore any specific facet—such as the exact chemical compositi
               }`}
             >
               {msg.role === "assistant" && (
-                <div className="w-7 h-7 rounded-md bg-accent/20 border border-accent/40 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Bot className="w-4 h-4 text-accent" />
+                <div className="w-7 h-7 rounded-md bg-black/60 border border-cyan-500/40 flex items-center justify-center flex-shrink-0 mt-0.5 p-0.5 shadow-[0_0_8px_rgba(34,211,238,0.25)]">
+                  <img src="/branding-icon.png" alt="LAZARUS" className="w-full h-full object-contain filter drop-shadow-[0_0_4px_rgba(34,211,238,0.6)]" />
                 </div>
               )}
               <div

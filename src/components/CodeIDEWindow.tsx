@@ -342,13 +342,18 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
       {/* IDE Window Titlebar */}
       <div className="flex items-center justify-between px-3 py-2 bg-[#05090f] border-b border-accent/20 select-none text-left">
         {/* macOS / Unix Window Buttons */}
-        <div className="flex items-center gap-1.5">
-          <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56] opacity-80"></div>
-          <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e] opacity-80"></div>
-          <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f] opacity-80"></div>
-          <span className="ml-2 text-[10px] font-mono text-accent/50 hidden sm:inline">
-            NEURONET_IDE // v3.8.4
-          </span>
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56] opacity-80"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e] opacity-80"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f] opacity-80"></div>
+          </div>
+          <div className="flex items-center gap-1.5 ml-1">
+            <img src="/branding-icon.png" alt="NeuroNet" className="w-3.5 h-3.5 object-contain filter drop-shadow-[0_0_4px_rgba(34,211,238,0.7)]" />
+            <span className="text-[10px] font-mono text-accent/60 hidden sm:inline">
+              NEURONET_IDE // v3.8.4
+            </span>
+          </div>
         </div>
 
         {/* Tab Selector */}
