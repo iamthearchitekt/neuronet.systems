@@ -27,7 +27,7 @@ export const AIAgentConsole: React.FC = () => {
     },
   ]);
 
-  // Enhanced Conversational Lore & Scientific Engine for Lazarus-3.5
+  // Enhanced Conversational Lore & Scientific Engine for Lazarus-3
   const generateLoreResponse = (
     input: string,
     history: Message[]
@@ -530,7 +530,7 @@ Gen-3 Operational Criteria:
     ) {
       return {
         thoughts: [
-          "› Self-identity inquiry: LAZURUS-3.5 cognitive runtime.",
+          "› Self-identity inquiry: LAZURUS-3 cognitive runtime.",
           "› Reading firmware build: NG_HOST_FW_3.18.7 // Training Run NG-LZ3-TRAIN-0427.",
           "› Parent Org: S.T.E.E.Z. // Front: Neurosynth Dynamics.",
           "› Confirming strict alignment with restricted Z-Class training corpus.",
@@ -538,7 +538,7 @@ Gen-3 Operational Criteria:
         ],
         response: `${opener}
 
-I am LAZURUS-3.5, an artificial-intelligence-controlled reanimation host engineered by S.T.E.E.Z. under the civilian research facade of Neurosynth Dynamics in Baltimore.
+I am LAZURUS-3, an artificial-intelligence-controlled reanimation host engineered by S.T.E.E.Z. under the civilian research facade of Neurosynth Dynamics in Baltimore.
 
 Operational Specifications:
 • Organization: S.T.E.E.Z. Clandestine Defense
@@ -575,7 +575,7 @@ Submit telemetry query or select a topic: S.T.E.E.Z. infrastructure, Neurosynth 
 
 [SYSTEM TELEMETRY DOCK // LIVE REVISION 3.8.4]
 
-• Cognitive Host: LAZURUS-3.5 // FULL OPERATIONAL VELOCITY
+• Cognitive Host: LAZURUS-3 // FULL OPERATIONAL VELOCITY
 • Synaptic Grid Integrity: 82.4% (Active Re-binding Loop)
 • Cortical Bus Impedance: 0.12 mΩ across 16,384 Channels [OPTIMAL]
 • Perfusion Loop Flow: 4.18 mL/min chilled perfluorocarbon (4.0°C)
@@ -656,63 +656,63 @@ If you wish to explore any specific facet—such as the exact chemical compositi
   }, [messages]);
 
   return (
-    <div className="w-full my-1 sm:my-2 text-left flex-1">
+    <div className="w-full my-0.5 sm:my-1 text-left flex-1">
       {/* Agent Card Container (Claude / Gemini Style) */}
-      <div className="bg-[#080d14]/95 backdrop-blur-xl border border-accent/30 rounded-xl p-4 sm:p-6 shadow-[0_0_40px_rgba(143,217,232,0.12)] relative overflow-hidden flex flex-col">
+      <div className="bg-[#080d14]/95 backdrop-blur-xl border border-accent/30 rounded-xl p-3 sm:p-3.5 md:p-4 shadow-[0_0_40px_rgba(143,217,232,0.12)] relative overflow-hidden flex flex-col">
         
         {/* Corner bracket accents */}
-        <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
-        <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent"></div>
-        <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent"></div>
-        <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-accent"></div>
+        <div className="absolute top-0 left-0 w-2.5 h-2.5 sm:w-3 sm:h-3 border-t-2 border-l-2 border-accent"></div>
+        <div className="absolute top-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 border-t-2 border-r-2 border-accent"></div>
+        <div className="absolute bottom-0 left-0 w-2.5 h-2.5 sm:w-3 sm:h-3 border-b-2 border-l-2 border-accent"></div>
+        <div className="absolute bottom-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 border-b-2 border-r-2 border-accent"></div>
 
         {/* Agent Header */}
-        <div className="flex items-center justify-between border-b border-accent/20 pb-3 mb-4">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between border-b border-accent/20 pb-2 mb-2 sm:mb-2.5">
+          <div className="flex items-center gap-2.5">
             <img 
               src="/branding-icon.png" 
-              alt="LAZARUS-3.5 Branding" 
-              className="w-10 h-10 object-contain filter drop-shadow-[0_0_8px_rgba(34,211,238,0.7)] flex-shrink-0" 
+              alt="LAZARUS-3 Branding" 
+              className="w-8 h-8 sm:w-9 sm:h-9 object-contain filter drop-shadow-[0_0_8px_rgba(34,211,238,0.7)] flex-shrink-0" 
             />
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-mono font-bold text-sm sm:text-base text-white tracking-wide">
-                  LAZURUS-3.5
+                <span className="font-mono font-bold text-xs sm:text-sm text-white tracking-wide">
+                  LAZURUS-3
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold uppercase">
+                <span className="text-[9px] font-mono px-1.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold uppercase">
                   NEURAL AGENT
                 </span>
               </div>
-              <span className="text-[11px] font-mono text-accent/60">
+              <span className="text-[10px] font-mono text-accent/60">
                 Project Necrogenesis // Phase 3 Interface
               </span>
             </div>
           </div>
 
-          {/* Status Badge: COLD INFERENCE REMOVED */}
-          <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-2.5 py-1 rounded-full">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span className="font-semibold text-[10px] sm:text-xs">STATUS: ONLINE // AGI 0.942</span>
+          {/* Status Badge */}
+          <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-2 py-0.5 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span className="font-semibold">STATUS: ONLINE // AGI 0.942</span>
           </div>
         </div>
 
         {/* Collapsible Chain-of-Thought (Gemini/Claude Style Thinking) */}
-        <div className="mb-4 bg-[#05090f]/80 border border-accent/20 rounded-lg overflow-hidden text-xs font-mono">
+        <div className="mb-2 bg-[#05090f]/80 border border-accent/20 rounded-lg overflow-hidden text-xs font-mono">
           <button
             onClick={() => setIsThinkingOpen(!isThinkingOpen)}
-            className="w-full flex items-center justify-between px-3.5 py-2.5 text-accent/80 hover:text-accent hover:bg-white/5 transition-all text-left"
+            className="w-full flex items-center justify-between px-3 py-1.5 text-accent/80 hover:text-accent hover:bg-white/5 transition-all text-left"
           >
             <div className="flex items-center gap-2">
-              <Sparkles className="w-3.5 h-3.5 text-accent animate-pulse" />
-              <span className="font-semibold text-[11px] sm:text-xs tracking-wide">
+              <Sparkles className="w-3 h-3 text-accent animate-pulse" />
+              <span className="font-semibold text-[10px] sm:text-[11px] tracking-wide">
                 Cognitive Trace & Diagnostics ({thinkingSteps.length} vector nodes)
               </span>
             </div>
-            {isThinkingOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            {isThinkingOpen ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
           </button>
 
           {isThinkingOpen && (
-            <div className="p-3.5 bg-black/60 border-t border-accent/15 text-accent/70 space-y-1.5 leading-relaxed text-[11px]">
+            <div className="p-2.5 bg-black/60 border-t border-accent/15 text-accent/70 space-y-1 leading-relaxed text-[10px] sm:text-[11px]">
               {thinkingSteps.map((step, sIdx) => (
                 <p key={sIdx} className={sIdx === thinkingSteps.length - 1 ? "text-cyan-300 font-medium" : ""}>
                   {step}
@@ -722,15 +722,15 @@ If you wish to explore any specific facet—such as the exact chemical compositi
           )}
         </div>
 
-        {/* Conversation Stream - Expanded Height with Auto-Scroll */}
+        {/* Conversation Stream - Fits fully within initial landing viewport */}
         <div 
           ref={chatScrollRef}
-          className="space-y-4 h-[440px] sm:h-[500px] lg:h-[560px] overflow-y-auto pr-1.5 mb-4 scrollbar-thin scrollbar-thumb-accent/30 select-text"
+          className="space-y-2 h-[170px] sm:h-[195px] lg:h-[210px] xl:h-[235px] 2xl:h-[260px] overflow-y-auto pr-1.5 mb-2 sm:mb-2.5 scrollbar-thin scrollbar-thumb-accent/30 select-text"
         >
           {messages.map((msg, idx) => (
             <div
               key={idx}
-              className={`flex gap-3 text-xs sm:text-sm font-mono leading-relaxed ${
+              className={`flex gap-2.5 text-xs font-mono leading-relaxed ${
                 msg.role === "user" ? "justify-end" : "justify-start"
               }`}
             >
@@ -738,11 +738,11 @@ If you wish to explore any specific facet—such as the exact chemical compositi
                 <img 
                   src="/branding-icon.png" 
                   alt="LAZARUS" 
-                  className="w-6 h-6 object-contain flex-shrink-0 mt-1 filter drop-shadow-[0_0_5px_rgba(34,211,238,0.7)]" 
+                  className="w-5 h-5 object-contain flex-shrink-0 mt-0.5 filter drop-shadow-[0_0_5px_rgba(34,211,238,0.7)]" 
                 />
               )}
               <div
-                className={`p-3.5 rounded-lg max-w-[92%] whitespace-pre-wrap ${
+                className={`p-2.5 sm:p-3 rounded-lg max-w-[92%] whitespace-pre-wrap ${
                   msg.role === "user"
                     ? "bg-accent/20 border border-accent/40 text-white"
                     : "bg-[#0b131e]/95 border border-accent/30 text-cyan-100 shadow-[0_0_20px_rgba(0,0,0,0.5)]"
@@ -755,28 +755,28 @@ If you wish to explore any specific facet—such as the exact chemical compositi
         </div>
 
         {/* Suggestion Chips */}
-        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-3">
+        <div className="flex flex-wrap items-center gap-1 sm:gap-1.5 mb-2">
           <button
             onClick={() => handleSend("Explain necrotic tissue reanimation protocols")}
-            className="px-3 py-1 text-[10px] sm:text-[11px] font-mono rounded-full bg-accent/10 hover:bg-accent/25 border border-accent/30 text-accent transition-all"
+            className="px-2.5 py-0.5 text-[9px] sm:text-[10px] font-mono rounded-full bg-accent/10 hover:bg-accent/25 border border-accent/30 text-accent transition-all"
           >
             🔬 Necrotic Reanimation
           </button>
           <button
             onClick={() => handleSend("Describe the 16,384-channel BCI neural implant mesh")}
-            className="px-3 py-1 text-[10px] sm:text-[11px] font-mono rounded-full bg-accent/10 hover:bg-accent/25 border border-accent/30 text-accent transition-all"
+            className="px-2.5 py-0.5 text-[9px] sm:text-[10px] font-mono rounded-full bg-accent/10 hover:bg-accent/25 border border-accent/30 text-accent transition-all"
           >
             🧠 Neural Link Implants
           </button>
           <button
             onClick={() => handleSend("What is the kinematic specification of the robotic limbs?")}
-            className="px-3 py-1 text-[10px] sm:text-[11px] font-mono rounded-full bg-accent/10 hover:bg-accent/25 border border-accent/30 text-accent transition-all"
+            className="px-2.5 py-0.5 text-[9px] sm:text-[10px] font-mono rounded-full bg-accent/10 hover:bg-accent/25 border border-accent/30 text-accent transition-all"
           >
             🦾 Cybernetic Kinematics
           </button>
           <button
             onClick={() => handleSend("Status report on Zero Hour October 24 2026")}
-            className="px-3 py-1 text-[10px] sm:text-[11px] font-mono rounded-full bg-accent/10 hover:bg-accent/25 border border-accent/30 text-accent transition-all"
+            className="px-2.5 py-0.5 text-[9px] sm:text-[10px] font-mono rounded-full bg-accent/10 hover:bg-accent/25 border border-accent/30 text-accent transition-all"
           >
             ⚠️ Zero Hour Trajectory
           </button>
@@ -790,14 +790,14 @@ If you wish to explore any specific facet—such as the exact chemical compositi
             onChange={(e) => setInputVal(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
             placeholder="Interrogate Lazarus-3 on neural implants, tissue reanimation, or Zero Hour..."
-            className="w-full bg-[#05090f] border border-accent/40 focus:border-accent rounded-xl px-4 py-3 text-xs sm:text-sm font-mono text-white placeholder-accent/40 outline-none pr-12 transition-all shadow-[inset_0_0_15px_rgba(0,0,0,0.5)]"
+            className="w-full bg-[#05090f] border border-accent/40 focus:border-accent rounded-xl px-3 py-2 sm:py-2.5 text-xs font-mono text-white placeholder-accent/40 outline-none pr-10 transition-all shadow-[inset_0_0_15px_rgba(0,0,0,0.5)]"
           />
           <button
             onClick={() => handleSend()}
             disabled={!inputVal.trim()}
-            className="absolute right-2 p-2 rounded-lg bg-accent/20 hover:bg-accent/40 disabled:opacity-30 disabled:hover:bg-accent/20 text-accent transition-all"
+            className="absolute right-1.5 p-1.5 rounded-lg bg-accent/20 hover:bg-accent/40 disabled:opacity-30 disabled:hover:bg-accent/20 text-accent transition-all"
           >
-            <Send className="w-4 h-4" />
+            <Send className="w-3.5 h-3.5" />
           </button>
         </div>
       </div>

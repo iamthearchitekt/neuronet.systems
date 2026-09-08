@@ -39,21 +39,21 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
   }, []);
 
   return (
-    <div className="relative min-h-screen pb-12 flex flex-col justify-start bg-black">
+    <div className="relative min-h-screen pb-4 flex flex-col justify-start bg-black">
       {/* Top AI Agent Platform Header Bar - Running Full Length of the UI Design */}
-      <header className="w-full border-b border-accent/25 bg-[#080d14]/95 backdrop-blur-xl px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-3 sticky top-0 z-40 mb-4 sm:mb-6 shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
+      <header className="w-full border-b border-accent/25 bg-[#080d14]/95 backdrop-blur-xl px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-2 sm:py-2.5 sticky top-0 z-40 mb-2.5 sm:mb-3 shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
         <div className="w-full flex flex-wrap items-center justify-between gap-3">
           
           <div className="flex items-center gap-3">
             <img 
               src="/branding-icon.png" 
               alt="S.T.E.E.Z. / NeuroNet Branding Icon" 
-              className="w-10 h-10 object-contain filter drop-shadow-[0_0_8px_rgba(34,211,238,0.7)] flex-shrink-0" 
+              className="w-9 h-9 sm:w-10 sm:h-10 object-contain filter drop-shadow-[0_0_8px_rgba(34,211,238,0.7)] flex-shrink-0" 
             />
             <div>
               <div className="flex items-center gap-2 flex-wrap">
                 <span className="font-mono font-bold text-sm sm:text-base text-white tracking-wide">
-                  LAZURUS-3.5
+                  LAZURUS-3
                 </span>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold uppercase">
                   S.T.E.E.Z.
@@ -90,24 +90,24 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
       </header>
 
       {/* Main Split-Workspace: Left IDE Code Window + Right AI Agent & Zero Hour Countdown */}
-      <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 flex-1 flex flex-col lg:flex-row gap-5 lg:gap-7 items-start">
+      <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 flex-1 flex flex-col lg:flex-row gap-4 lg:gap-5 items-start">
         
         {/* LEFT COLUMN: Left-Justified IDE Window + Telemetry Boxes Underneath */}
-        <div className="w-full lg:w-[52%] xl:w-[50%] 2xl:w-[48%] max-w-[960px] flex-shrink-0 order-1 flex flex-col gap-4">
+        <div className="w-full lg:w-[52%] xl:w-[50%] 2xl:w-[48%] max-w-[960px] flex-shrink-0 order-1 flex flex-col gap-3">
           {/* Python IDE Window (Streaming Code & Logs) */}
-          <div className="w-full h-[480px] sm:h-[540px] lg:h-[620px]">
+          <div className="w-full h-[440px] sm:h-[480px] lg:h-[520px]">
             <CodeIDEWindow lines={pythonLines} />
           </div>
 
           {/* Telemetry Boxes Directly Underneath the Python Window */}
-          <div className="w-full flex flex-col gap-4">
+          <div className="w-full flex flex-col gap-3">
             <PerformanceGraphs />
             <HUDTelemetry criticality={criticality} />
           </div>
         </div>
 
         {/* RIGHT COLUMN: AI Agent Command Center featuring ZERO HOUR Countdown & Chat Console */}
-        <div className="w-full lg:flex-1 order-2 flex flex-col items-stretch gap-4 sm:gap-6 min-w-0">
+        <div className="w-full lg:flex-1 order-2 flex flex-col items-stretch gap-2.5 sm:gap-3 min-w-0">
           {/* Main Hero Feature: ZERO HOUR Large LCD Countdown Clock */}
           <div className="w-full">
             <CountdownClock 

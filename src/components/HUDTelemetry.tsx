@@ -106,7 +106,7 @@ const HUDTelemetry: React.FC<HUDTelemetryProps> = ({ criticality = 0, className 
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
           <span className="text-accent/90 uppercase tracking-widest font-semibold text-[11px] sm:text-xs">
-            HUD SYSTEM TELEMETRY
+            SYSTEM TELEMETRY
           </span>
         </div>
         <div className="flex items-center gap-3 text-[11px]">
@@ -159,10 +159,7 @@ const HUDTelemetry: React.FC<HUDTelemetryProps> = ({ criticality = 0, className 
         </div>
       </div>
 
-      {/* Subtle scanline animation */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-accent/30 shadow-scan animate-scan-sweep" />
-      </div>
+
     </div>
   );
 };

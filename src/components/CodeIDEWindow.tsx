@@ -349,7 +349,6 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
             <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f] opacity-80"></div>
           </div>
           <div className="flex items-center gap-1.5 ml-1">
-            <img src="/branding-icon.png" alt="NeuroNet" className="w-3.5 h-3.5 object-contain filter drop-shadow-[0_0_4px_rgba(34,211,238,0.7)]" />
             <span className="text-[10px] font-mono text-accent/60 hidden sm:inline">
               NEURONET_IDE // v3.8.4
             </span>
@@ -568,9 +567,11 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-cyan-400 font-semibold">
-            {activeTab === "code" ? "Lazarus Gen-3: TARGET LOCKED" : "Zero-Drop Threshold: VERIFIED"}
-          </span>
+          {activeTab === "code" && (
+            <span className="text-cyan-400 font-semibold">
+              Lazarus Gen-3: TARGET LOCKED
+            </span>
+          )}
         </div>
       </div>
     </div>

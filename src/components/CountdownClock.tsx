@@ -108,21 +108,21 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
   }, [onAccessGranted, onCriticalityChange]);
 
   return (
-    <div className="w-full my-1 sm:my-2">
+    <div className="w-full my-0.5 sm:my-1">
       {/* Expanded Cyberpunk LCD Bezel Board - Zero cut-off guarantee */}
-      <div className="relative bg-black/90 backdrop-blur-xl border border-accent/40 rounded-xl p-3 sm:p-4 md:p-5 shadow-[0_0_50px_rgba(143,217,232,0.15)] overflow-hidden w-full">
+      <div className="relative bg-black/90 backdrop-blur-xl border border-accent/40 rounded-xl p-2 sm:p-2.5 md:p-3 shadow-[0_0_35px_rgba(143,217,232,0.12)] overflow-hidden w-full">
         
         {/* Decorative corner brackets */}
-        <div className="absolute top-0 left-0 w-3.5 h-3.5 sm:w-5 sm:h-5 border-t-2 border-l-2 border-accent"></div>
-        <div className="absolute top-0 right-0 w-3.5 h-3.5 sm:w-5 sm:h-5 border-t-2 border-r-2 border-accent"></div>
-        <div className="absolute bottom-0 left-0 w-3.5 h-3.5 sm:w-5 sm:h-5 border-b-2 border-l-2 border-accent"></div>
-        <div className="absolute bottom-0 right-0 w-3.5 h-3.5 sm:w-5 sm:h-5 border-b-2 border-r-2 border-accent"></div>
+        <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
+        <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent"></div>
+        <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent"></div>
+        <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-accent"></div>
 
         {/* Subtle grid and vignette background */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_20%,_rgba(0,0,0,0.8)_100%)] pointer-events-none"></div>
 
         {/* Top Header Telemetry */}
-        <div className="relative z-10 flex items-center justify-between mb-2 sm:mb-3 border-b border-accent/20 pb-1.5 text-[9px] sm:text-xs font-mono text-accent/80 tracking-widest uppercase">
+        <div className="relative z-10 flex items-center justify-between mb-1 sm:mb-1.5 border-b border-accent/20 pb-1 text-[9px] sm:text-[10px] font-mono text-accent/80 tracking-widest uppercase">
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
             <span className="font-bold text-accent">ZERO HOUR COUNTDOWN</span>
@@ -130,7 +130,7 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
         </div>
 
         {/* Main LCD Digits Display - Tightened spacing & comfortable breathing room */}
-        <div className="relative z-10 flex items-start justify-center gap-1 sm:gap-2 md:gap-2.5 text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl py-2 sm:py-3.5 w-full select-none">
+        <div className="relative z-10 flex items-start justify-center gap-1 sm:gap-1.5 md:gap-2 text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl py-1 sm:py-1.5 w-full select-none">
           <LCDBlock value={timeLeft.days} label="Days" />
           <LCDDigit char=":" />
           <LCDBlock value={timeLeft.hours} label="Hours" />
