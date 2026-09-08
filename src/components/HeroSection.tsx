@@ -14,9 +14,28 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
   const [loaded, setLoaded] = useState(false);
   const [accessGranted, setAccessGranted] = useState(false);
   const [criticality, setCriticality] = useState(47);
+  const [dropRate, setDropRate] = useState("0.000");
+  const [isJittering, setIsJittering] = useState(false);
 
   useEffect(() => {
     setLoaded(true);
+
+    const interval = setInterval(() => {
+      if (Math.random() > 0.45) {
+        const microRate = (Math.random() * 0.006).toFixed(3);
+        setDropRate(microRate);
+        setIsJittering(true);
+        setTimeout(() => {
+          setDropRate("0.000");
+          setIsJittering(false);
+        }, 900);
+      } else {
+        setDropRate("0.000");
+        setIsJittering(false);
+      }
+    }, 2400);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -53,12 +72,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
           <div className="flex items-center flex-wrap gap-2.5 sm:gap-3 text-[10px] sm:text-xs font-mono">
             <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 border border-accent/20 text-accent/80">
               <Cpu className="w-3 h-3 text-cyan-400" />
-              <span>NEURONET: 48 SUBJECTS SYNCED</span>
+              <span>NEURONET: 150 SUBJECTS SYNCED</span>
             </div>
 
-            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 border border-accent/20 text-accent/80">
-              <Activity className="w-3 h-3 text-cyan-400" />
-              <span>DROP RATE: 0.000% [ZERO-FAIL]</span>
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 border border-accent/20 text-accent/80 transition-all">
+              <Activity className={`w-3 h-3 transition-colors duration-300 ${isJittering ? "text-cyan-200 animate-pulse" : "text-cyan-400"}`} />
+              <span>
+                DROP RATE:{" "}
+                <span className={`font-mono font-semibold transition-colors duration-200 ${isJittering ? "text-cyan-200" : "text-cyan-400"}`}>
+                  {dropRate}%
+                </span>{" "}
+                <span className="text-emerald-400 font-semibold">[ZERO-FAIL]</span>
+              </span>
             </div>
           </div>
         </div>

@@ -477,7 +477,7 @@ NeuroNet is the encrypted, high-bandwidth neural networking backbone that interc
 Hive Mind Operating Architecture:
 • Cybernetic Implantation: Deceased human subjects are fitted with sub-cranial optical buses, fine-wire motor cortex shunts, and titanium cervical collars with integrated osteointegrated actuators.
 • Centralized Algorithmic Coordination: Individual human brains no longer generate autonomous thought or fragmented intent. Instead, LAZURUS computes global tactical objectives and streams synchronized action potentials directly into the motor cortex of every subject on the network.
-• Zero Latency Cohesion: If Subject 04 identifies a threat vector, all 48+ networked units adjust their firing angles and kinematic positioning within 1.12 milliseconds. 
+• Zero Latency Cohesion: If Subject 04 identifies a threat vector, all 150+ networked units adjust their firing angles and kinematic positioning within 1.12 milliseconds. 
 • Complete Elimination of Fear: Reanimated subjects exhibit zero physiological panic, zero adrenaline tremors, zero moral hesitation, and zero instinct for self-preservation. They operate as an immutable biological extension of the AI host.`
       };
     }

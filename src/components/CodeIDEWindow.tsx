@@ -40,7 +40,7 @@ const INITIAL_LOGS: LogEntry[] = [
     timestamp: "00:01:05.105",
     level: "SYNAPSE",
     subsystem: "NEURONET:MESH",
-    message: "NeuroNet hive bus linked: 48 implanted human subjects mapped."
+    message: "NeuroNet hive bus linked: 150 implanted human subjects mapped."
   },
   {
     id: "log-5",
@@ -89,7 +89,7 @@ const INITIAL_LOGS: LogEntry[] = [
     timestamp: "00:01:09.120",
     level: "KINEMATIC",
     subsystem: "HIVEMIND:SYNC",
-    message: "Synchronized efferent motor burst across all 48 subjects: 1.12 ms latency."
+    message: "Synchronized efferent motor burst across all 150 subjects: 1.12 ms latency."
   },
   {
     id: "log-12",
@@ -125,7 +125,7 @@ const DYNAMIC_LOG_POOL = [
   {
     level: "SYNAPSE" as const,
     subsystem: "NEURONET:HIVE",
-    message: "48 human subjects executing synchronized kinematic sweep. Drop rate: 0.000%."
+    message: "150 human subjects executing synchronized kinematic sweep. Drop rate: 0.000%."
   },
   {
     level: "INFO" as const,
@@ -564,7 +564,7 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
           </span>
           <span className="hidden sm:inline text-accent/40">|</span>
           <span className="hidden sm:inline text-accent/70">
-            {activeTab === "code" ? "NeuroNet Hive: 48 SYNCED" : "Drop Rate: 0.000%"}
+            {activeTab === "code" ? "NeuroNet Hive: 150 SYNCED" : "Drop Rate: 0.000%"}
           </span>
         </div>
         <div className="flex items-center gap-2">
