@@ -26,13 +26,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
         <div className="w-full flex flex-wrap items-center justify-between gap-3">
           
           <div className="flex items-center gap-3">
-            <div className="relative w-10 h-10 rounded-lg bg-black/60 border border-cyan-400/40 flex items-center justify-center p-1 shadow-[0_0_15px_rgba(34,211,238,0.35)] group overflow-hidden">
-              <img 
-                src="/branding-icon.png" 
-                alt="S.T.E.E.Z. / NeuroNet Branding Icon" 
-                className="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(34,211,238,0.8)] transition-transform group-hover:scale-110 duration-200" 
-              />
-            </div>
+            <img 
+              src="/branding-icon.png" 
+              alt="S.T.E.E.Z. / NeuroNet Branding Icon" 
+              className="w-10 h-10 object-contain filter drop-shadow-[0_0_8px_rgba(34,211,238,0.7)] flex-shrink-0" 
+            />
             <div>
               <div className="flex items-center gap-2 flex-wrap">
                 <span className="font-mono font-bold text-sm sm:text-base text-white tracking-wide">

@@ -671,13 +671,11 @@ If you wish to explore any specific facet—such as the exact chemical compositi
         {/* Agent Header */}
         <div className="flex items-center justify-between border-b border-accent/20 pb-3 mb-4">
           <div className="flex items-center gap-3">
-            <div className="relative w-10 h-10 rounded-lg bg-black/60 border border-cyan-400/40 flex items-center justify-center p-1 shadow-[0_0_15px_rgba(34,211,238,0.35)] group overflow-hidden">
-              <img 
-                src="/branding-icon.png" 
-                alt="LAZARUS-3.5 Branding" 
-                className="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(34,211,238,0.8)] transition-transform group-hover:scale-110 duration-200" 
-              />
-            </div>
+            <img 
+              src="/branding-icon.png" 
+              alt="LAZARUS-3.5 Branding" 
+              className="w-10 h-10 object-contain filter drop-shadow-[0_0_8px_rgba(34,211,238,0.7)] flex-shrink-0" 
+            />
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-mono font-bold text-sm sm:text-base text-white tracking-wide">
@@ -739,9 +737,11 @@ If you wish to explore any specific facet—such as the exact chemical compositi
               }`}
             >
               {msg.role === "assistant" && (
-                <div className="w-7 h-7 rounded-md bg-black/60 border border-cyan-500/40 flex items-center justify-center flex-shrink-0 mt-0.5 p-0.5 shadow-[0_0_8px_rgba(34,211,238,0.25)]">
-                  <img src="/branding-icon.png" alt="LAZARUS" className="w-full h-full object-contain filter drop-shadow-[0_0_4px_rgba(34,211,238,0.6)]" />
-                </div>
+                <img 
+                  src="/branding-icon.png" 
+                  alt="LAZARUS" 
+                  className="w-6 h-6 object-contain flex-shrink-0 mt-1 filter drop-shadow-[0_0_5px_rgba(34,211,238,0.7)]" 
+                />
               )}
               <div
                 className={`p-3.5 rounded-lg max-w-[92%] whitespace-pre-wrap ${
