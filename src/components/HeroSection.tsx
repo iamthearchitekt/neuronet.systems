@@ -20,10 +20,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen pt-3 sm:pt-5 pb-12 px-2 sm:px-4 lg:px-8 flex flex-col justify-start">
-      {/* Top AI Agent Platform Header (Claude / Gemini style) */}
-      <div className="w-full max-w-7xl mx-auto mb-4 sm:mb-6">
-        <div className="bg-[#080d14]/90 backdrop-blur-xl border border-accent/30 rounded-xl px-4 py-3 flex flex-wrap items-center justify-between gap-3 shadow-[0_0_30px_rgba(143,217,232,0.1)]">
+    <div className="relative min-h-screen pb-12 flex flex-col justify-start bg-black">
+      {/* Top AI Agent Platform Header Bar - Running Full Length of the UI Design */}
+      <header className="w-full border-b border-accent/25 bg-[#080d14]/95 backdrop-blur-xl px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-3 sticky top-0 z-40 mb-4 sm:mb-6 shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
+        <div className="w-full flex flex-wrap items-center justify-between gap-3">
           
           {/* Left: Model Identity & Project Specs */}
           <div className="flex items-center gap-3">
@@ -58,18 +58,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Main Split-Workspace: Left IDE Code Window + Right AI Agent & Zero Hour Countdown */}
-      <div className="w-full max-w-7xl mx-auto flex-1 flex flex-col lg:flex-row gap-6 items-start">
+      <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 flex-1 flex flex-col lg:flex-row gap-5 lg:gap-7 items-start">
         
         {/* LEFT COLUMN: Left-Justified IDE Window (Streaming Python Training Code) */}
-        <div className="w-full lg:w-5/12 xl:w-[460px] flex-shrink-0 order-2 lg:order-1 h-[480px] sm:h-[560px] lg:h-[780px] sticky top-4">
+        <div className="w-full lg:w-[42%] xl:w-[38%] 2xl:w-[35%] max-w-[680px] flex-shrink-0 order-1 h-[540px] sm:h-[620px] lg:h-[860px] sticky top-20">
           <CodeIDEWindow lines={pythonLines} />
         </div>
 
         {/* RIGHT COLUMN: AI Agent Command Center featuring ZERO HOUR Countdown & Telemetry */}
-        <div className="w-full lg:flex-1 order-1 lg:order-2 flex flex-col items-stretch gap-4 sm:gap-6">
+        <div className="w-full lg:flex-1 order-2 flex flex-col items-stretch gap-4 sm:gap-6 min-w-0">
           
           {/* Main Hero Feature: ZERO HOUR Large LCD Countdown Clock */}
           <div className="w-full">
@@ -91,7 +91,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
