@@ -582,11 +582,6 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
           </span>
         </div>
         <div className="flex items-center gap-2">
-          {activeTab === "code" && (
-            <span className="text-cyan-400 font-semibold">
-              Lazarus Gen-3: TARGET LOCKED
-            </span>
-          )}
         </div>
       </div>
     </div>

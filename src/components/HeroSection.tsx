@@ -58,9 +58,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold uppercase">
                   AGI INTERFACE
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-semibold uppercase hidden sm:inline">
-                  NEURONET RUNTIME
-                </span>
               </div>
               <span className="text-[11px] font-mono text-accent/70">
                 NEUROSYNTH DYNAMICS // PROJECT NECROGENESIS // POWER PLANT FACILITY

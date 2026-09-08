@@ -18,15 +18,6 @@ const HUDTelemetry: React.FC<HUDTelemetryProps> = ({ criticality = 0, className 
 
   // Calculate degraded values based on criticality
   const getDegradedValues = (criticality: number) => {
-    if (criticality >= 40 && criticality <= 55) {
-      return {
-        cpu: 85,
-        memory: 85,
-        network: 85,
-        neural: 85
-      };
-    }
-    
     const degradation = criticality / 100;
     const variance = 5 + degradation * 15;
     
@@ -57,7 +48,6 @@ const HUDTelemetry: React.FC<HUDTelemetryProps> = ({ criticality = 0, className 
     if (criticality >= 95) return { text: "TOTAL FAILURE", color: "text-red-500" };
     if (criticality >= 80) return { text: "CRITICAL", color: "text-red-400" };
     if (criticality >= 60) return { text: "DEGRADED", color: "text-amber-400" };
-    if (criticality >= 45 && criticality <= 55) return { text: "PHASE 3 SYNC", color: "text-cyan-300" };
     if (criticality >= 35) return { text: "WARNING", color: "text-yellow-400" };
     return { text: "OPERATIONAL", color: "text-emerald-400" };
   };
@@ -76,7 +66,7 @@ const HUDTelemetry: React.FC<HUDTelemetryProps> = ({ criticality = 0, className 
     }, 2000);
     
     const fluctuationInterval = setInterval(() => {
-      const baseGridIntegrity = (criticality >= 40 && criticality <= 55) ? 82 : 100 - criticality;
+      const baseGridIntegrity = 100 - criticality;
       const newData = {
         cpu: clampRange(applyFluctuation(currentBase.cpu, 4.2)),
         memory: clampRange(applyFluctuation(currentBase.memory, 4.2)),

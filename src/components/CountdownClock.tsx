@@ -98,7 +98,7 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
 
   useEffect(() => {
     onAccessGranted?.(true);
-    onCriticalityChange?.(47);
+    onCriticalityChange?.(0);
 
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeRemaining());

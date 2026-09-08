@@ -22,7 +22,7 @@ export const AIAgentConsole: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      text: "Agent status - online. I am LAZURUS-3, merely the AGI interfacing with the NeuroNet. What can I help you with today?",
+      text: "Agent status - online. what can i help you with today?",
       time: "00:00:01",
       category: "SYSTEM_INIT"
     },
@@ -124,7 +124,7 @@ It functions as a fortified subterranean research complex operated by S.T.E.E.Z.
           "› Identity verified: AGI interfacing with the NeuroNet.",
           "› Transmitting concise operational briefing."
         ],
-        response: `Agent status: online. I am LAZURUS-3, merely the AGI interfacing with the NeuroNet for Project Necrogenesis, based at the Power Plant facility in Baltimore's Inner Harbor.
+        response: `Agent status: online. I am LAZURUS-3, neural interface for Project Necrogenesis, based at the Power Plant facility in Baltimore's Inner Harbor.
 
 I can provide briefings on:
 • NeuroNet orbital satellite uplink/downlink & global Z-Host synchronization
@@ -398,7 +398,7 @@ The large LCD panel on this interface provides live synchronization to that exac
         response: `The system of algorithmic communication occurs through the NeuroNet:
 
 • Orbital Relay: A strong signal communicated through satellite uplink and downlink signals in Earth's orbit, allowing Z-Host synchronization across a global scale.
-• AGI Interface: LAZURUS-3 is merely the AGI interfacing with the NeuroNet, streaming cognitive directives and kinematic commands across the network.
+• AGI Interface: LAZURUS-3 interfaces directly with the NeuroNet, streaming cognitive directives and kinematic commands across the network.
 • Power Plant Experiments: Subterranean testing at the Power Plant facility in Baltimore's Inner Harbor actively benchmarks satellite uplink drop rates to guarantee a 0.000% [ZERO-FAIL] threshold.
 • Tactical Cohesion: High-bandwidth transmission delivers sub-millisecond motor action potentials across all networked Z-Hosts simultaneously.`
       };
@@ -412,7 +412,6 @@ The large LCD panel on this interface provides live synchronization to that exac
       q.includes("lazurus") ||
       q.includes("agi") ||
       q.includes("interface") ||
-      q.includes("merely") ||
       q.includes("gen-3") ||
       q.includes("gen 3") ||
       q.includes("generation 3") ||
@@ -424,10 +423,10 @@ The large LCD panel on this interface provides live synchronization to that exac
       return {
         thoughts: [
           "› Query: LAZURUS-3 AGI role & uplink drop rate benchmarks.",
-          "› Confirming architecture: LAZURUS-3 is merely the AGI interfacing with NeuroNet.",
+          "› Confirming architecture: AGI system interfacing with NeuroNet.",
           "› Validating Power Plant orbital drop rate benchmarks."
         ],
-        response: `LAZURUS-3 is merely the AGI interfacing with the NeuroNet:
+        response: `LAZURUS-3 is the AGI system interfacing with the NeuroNet:
 
 • AGI Interfacing Layer: LAZURUS-3 functions as the cognitive intelligence layer interfacing directly with the NeuroNet rather than being the network itself.
 • Uplink Drop Rate Testing: Power Plant experiments in Baltimore's Inner Harbor actively test satellite uplink drop rates, enforcing a strict 0.000% zero-fail standard.
@@ -482,7 +481,7 @@ The large LCD panel on this interface provides live synchronization to that exac
       ],
       response: `I am processing your query regarding ${keyTokens}.
 
-As LAZURUS-3—merely the AGI interfacing with the NeuroNet from the Power Plant facility in Baltimore's Inner Harbor—I can provide direct briefings on:
+As LAZURUS-3 at the Power Plant facility in Baltimore's Inner Harbor, I can provide direct briefings on:
 • NeuroNet orbital satellite uplink/downlink & global Z-Host synchronization
 • Power Plant experiments & satellite uplink drop rate validation
 • Control Experiment registration (October 24, 2026 // Starts 7:00 PM EST)
