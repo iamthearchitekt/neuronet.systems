@@ -21,7 +21,7 @@ export const AIAgentConsole: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      text: "[LAZURUS-3.5 // COGNITIVE RUNTIME: ONLINE]",
+      text: "Agent status - online. what can i help you with today?",
       time: "00:00:01",
       category: "SYSTEM_INIT"
     },
