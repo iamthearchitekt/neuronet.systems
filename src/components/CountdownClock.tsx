@@ -127,9 +127,6 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
             <span className="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
             <span className="font-bold text-accent">ZERO HOUR COUNTDOWN</span>
           </div>
-          <div className="text-accent/60 truncate ml-2">
-            S.T.E.E.Z. // LAZURUS GEN-3 // 2026.10.24
-          </div>
         </div>
 
         {/* Main LCD Digits Display - Tightened spacing & comfortable breathing room */}
@@ -141,12 +138,6 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
           <LCDBlock value={timeLeft.minutes} label="Minutes" />
           <LCDDigit char=":" />
           <LCDBlock value={timeLeft.seconds} label="Seconds" />
-        </div>
-
-        {/* Bottom Status Subtext */}
-        <div className="relative z-10 mt-2 sm:mt-4 pt-2 border-t border-accent/20 flex flex-wrap items-center justify-between text-[9px] sm:text-xs font-mono text-accent/60 tracking-wider gap-2">
-          <div>DIRECTIVE:// S.T.E.E.Z. — PROJECT NECROGENESIS</div>
-          <div className="animate-pulse text-accent font-medium">LAZURUS GEN-3 CONVERGENCE // ZERO DROP RATE</div>
         </div>
       </div>
     </div>
