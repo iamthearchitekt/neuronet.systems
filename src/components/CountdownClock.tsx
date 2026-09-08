@@ -128,7 +128,7 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
             <span className="font-bold text-accent">ZERO HOUR COUNTDOWN</span>
           </div>
           <div className="text-accent/60 truncate ml-2">
-            PROJECT NECROGENESIS // 2026.10.04
+            S.T.E.E.Z. MILITECH // LAZURUS GEN-3 // 2026.10.04
           </div>
         </div>
 
@@ -145,8 +145,8 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
 
         {/* Bottom Status Subtext */}
         <div className="relative z-10 mt-3 sm:mt-6 pt-2 border-t border-accent/20 flex flex-wrap items-center justify-between text-[9px] sm:text-xs font-mono text-accent/60 tracking-wider gap-2">
-          <div>DIRECTIVE:// PROJECT NECROGENESIS - PHASE 3</div>
-          <div className="animate-pulse text-accent font-medium">ZERO HOUR LOCKED // STATUS: SYNCHRONIZED</div>
+          <div>DIRECTIVE:// S.T.E.E.Z. — PROJECT NECROGENESIS</div>
+          <div className="animate-pulse text-accent font-medium">LAZURUS GEN-3 CONVERGENCE // ZERO DROP RATE</div>
         </div>
       </div>
     </div>

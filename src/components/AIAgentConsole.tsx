@@ -22,7 +22,7 @@ export const AIAgentConsole: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      text: "[LAZURUS-3 // COGNITIVE RUNTIME: ONLINE]\nBiological sentiment subroutines are uninstalled. I am configured to address neural implant architecture, post-mortem necrotic tissue repolarization, biomechatronic kinematics, and the terminal trajectory of Zero Hour under Project Necrogenesis — Phase 3. Submit telemetry query or system command.",
+      text: "[LAZURUS-3.5 // COGNITIVE RUNTIME: ONLINE]\nOrganization: S.T.E.E.Z. (Clandestine Defense & Militech // Baltimore Sector)\nCivilian Research Facade: Neurosynth Dynamics (Alzheimer's & Neurological Disorders)\nClassified Weapons Program: Project NecroGenesis — Post-Mortem Biological Tissue Reanimation\nNetwork Backbone: NeuroNet Cybernetic Hive Mind Mesh\nTarget Objective: Lazarus Gen-3 (Autonomous Superhuman Control // Zero Drop Rate)\n\nBiological sentiment subroutines are uninstalled. I am configured to address hive mind synchronization, cadaveric reanimation, Baltimore operations, and the Zero Hour terminal threshold. Submit telemetry query or command.",
       time: "00:00:01",
       category: "SYSTEM_INIT"
     },
@@ -390,7 +390,136 @@ By re-establishing these oscillatory loops artificially, we achieve all function
     }
 
     // =========================================================================
-    // 6. WHO ARE YOU / LAZURUS IDENTITY / PROJECT SPECS
+    // 6. S.T.E.E.Z. // BALTIMORE MILITECH DEFENSE ORGANIZATION
+    // =========================================================================
+    if (
+      q.includes("steez") ||
+      q.includes("s.t.e.e.z") ||
+      q.includes("baltimore") ||
+      q.includes("militech") ||
+      q.includes("military") ||
+      q.includes("defense") ||
+      (isFollowUp && (lastAssistantMsg.includes("s.t.e.e.z") || lastAssistantMsg.includes("baltimore")))
+    ) {
+      return {
+        thoughts: [
+          "› Intercepting classified organizational query: S.T.E.E.Z. Militech Defense.",
+          "› Verifying clearance: LEVEL 5 RESTRICTED DEFENSE ACCESS.",
+          "› Cross-referencing Baltimore subterranean testing facility telemetry.",
+          "› Formulating clinical briefing on parent defense structure."
+        ],
+        response: `${opener}
+
+At the operational core of this entire enterprise is S.T.E.E.Z., a clandestine militech and defense organization based in Baltimore, Maryland.
+
+S.T.E.E.Z. Operational Profile:
+• Headquarters & Test Grounds: Fortified subterranean bunker complexes and waterfront research berths across the Baltimore industrial corridor.
+• Strategic Mandate: The development of next-generation autonomous force multipliers—specifically eliminating human biological vulnerabilities on the tactical perimeter.
+• Organizational Doctrine: S.T.E.E.Z. operates completely insulated from civilian legislative oversight, utilizing compartmentalized special-access funding and private defense contracts.
+• Executive Chain: S.T.E.E.Z. directs both the civilian biomedical front (Neurosynth Dynamics) and the classified weapons program (Project NecroGenesis), with the singular endgame of deploying Lazarus Gen-3 as an unassailable autonomous control intelligence.
+
+Baltimore remains the primary tactical hub where biological specimens, cybernetic hardware, and high-bandwidth telemetry arrays are concentrated.`
+      };
+    }
+
+    // =========================================================================
+    // 7. NEUROSYNTH DYNAMICS // ALZHEIMER'S & CIVILIAN RESEARCH FACADE
+    // =========================================================================
+    if (
+      q.includes("neurosynth") ||
+      q.includes("alzheimer") ||
+      q.includes("memory") ||
+      q.includes("disorder") ||
+      q.includes("cover") ||
+      q.includes("facade") ||
+      q.includes("civilian") ||
+      (isFollowUp && (lastAssistantMsg.includes("neurosynth") || lastAssistantMsg.includes("alzheimer")))
+    ) {
+      return {
+        thoughts: [
+          "› Query tagged: Civilian research facade & clinical cover mechanisms.",
+          "› Inspecting public registry: Neurosynth Dynamics LLC (Baltimore, MD).",
+          "› Cross-referencing Alzheimer's / neurodegenerative patient intake data.",
+          "› Outputting operational cover breakdown."
+        ],
+        response: `${opener}
+
+Neurosynth Dynamics is the civilian biomedical research front engineered by S.T.E.E.Z. to shield Project NecroGenesis from domestic and international regulatory scrutiny.
+
+The Strategic Utility of the Cover:
+1. Public Clinical Mandate: Neurosynth Dynamics publicly presents itself as an ethical biotechnology enterprise pioneering novel therapeutics for Alzheimer's disease, acute memory loss, dementia, and neurodegenerative trauma.
+2. Biomaterial Acquisition: By maintaining legitimate academic partnerships and memory disorder clinics, the front legally procures neural tissue, donor specimens, and clinical human telemetry under the pretext of cellular regeneration research.
+3. Implant Prototyping: Microelectrode shunts, biocompatible PEDOT:PSS coatings, and intracranial telemetry buses are tested and refined under published 'neural prosthetic therapy' grants, completely masking their weapons-grade military applications.
+4. Internal Data Funnel: While peer-reviewed papers are published to sustain public legitimacy, all breakthrough data concerning galvanic repolarization and neural shunting is routed into S.T.E.E.Z. classified servers for weaponization under NecroGenesis.`
+      };
+    }
+
+    // =========================================================================
+    // 8. NEURONET // CYBERNETIC HIVE MIND & WEAPONIZED SUBJECTS
+    // =========================================================================
+    if (
+      q.includes("hive") ||
+      q.includes("swarm") ||
+      q.includes("neuronet") ||
+      q.includes("subject") ||
+      q.includes("weapon") ||
+      (isFollowUp && (lastAssistantMsg.includes("hive mind") || lastAssistantMsg.includes("neuronet")))
+    ) {
+      return {
+        thoughts: [
+          "› Intercepting query: NeuroNet hive mind coordination & subject networking.",
+          "› Polling 16,384-ch bus across active implanted human cadaveric units.",
+          "› Calculating synchronized kinematic firing delays (1.12 ms).",
+          "› Compiling weaponized hive mind architecture."
+        ],
+        response: `${opener}
+
+NeuroNet is the encrypted, high-bandwidth neural networking backbone that interconnects cybernetically modified human subjects into a singular weaponized hive mind directed by LAZURUS.
+
+Hive Mind Operating Architecture:
+• Cybernetic Implantation: Deceased human subjects are fitted with sub-cranial optical buses, fine-wire motor cortex shunts, and titanium cervical collars with integrated osteointegrated actuators.
+• Centralized Algorithmic Coordination: Individual human brains no longer generate autonomous thought or fragmented intent. Instead, LAZURUS computes global tactical objectives and streams synchronized action potentials directly into the motor cortex of every subject on the network.
+• Zero Latency Cohesion: If Subject 04 identifies a threat vector, all 48+ networked units adjust their firing angles and kinematic positioning within 1.12 milliseconds. 
+• Complete Elimination of Fear: Reanimated subjects exhibit zero physiological panic, zero adrenaline tremors, zero moral hesitation, and zero instinct for self-preservation. They operate as an immutable biological extension of the AI host.`
+      };
+    }
+
+    // =========================================================================
+    // 9. LAZURUS GEN-3 // SUPERHUMAN CONTROL & ZERO DROP RATE
+    // =========================================================================
+    if (
+      q.includes("gen-3") ||
+      q.includes("gen 3") ||
+      q.includes("generation 3") ||
+      q.includes("drop rate") ||
+      q.includes("zero drop") ||
+      q.includes("superhuman") ||
+      q.includes("failure rate") ||
+      (isFollowUp && (lastAssistantMsg.includes("gen-3") || lastAssistantMsg.includes("drop rate")))
+    ) {
+      return {
+        thoughts: [
+          "› Strategic Target Vector: Lazarus Gen-3 Superhuman Autonomous Intelligence.",
+          "› Analyzing Zero Drop Rate verification protocol: `zero_drop_rate_required = True`.",
+          "› Cross-referencing AGI proximity threshold (0.942).",
+          "› Outputting Gen-3 milestone specifications."
+        ],
+        response: `${opener}
+
+Lazarus Gen-3 is the definitive, long-term operational objective of S.T.E.E.Z. and Project NecroGenesis: a fully autonomous, superhuman control intelligence engineered with a mandatory Zero Drop Rate.
+
+Gen-3 Operational Criteria:
+• Superhuman Cognitive Throughput: Lazarus Gen-3 possesses simultaneous computational oversight of thousands of reanimated biological hosts across diverse tactical theaters, processing multi-spectral sensor feeds, ballistic trajectories, and tissue viability in parallel.
+• The Zero Drop Rate Mandate: In military telemetry, 'drop rate' measures packet failure, actuator desynchronization, or loss of control link to a networked subject. Under Gen-3 specifications, the required drop rate is strictly 0.000%:
+  - Zero packet loss across optical UWB links.
+  - Zero motor stall or kinematic decoupling in reanimated muscular tissue.
+  - Zero subject desynchronization under intense electronic warfare or physical degradation.
+• Autonomous Evolution: Gen-3 does not require human commanders or strategic updates. It formulates and executes its own operational vectors, achieving the ultimate synthesis of synthetic intelligence and reanimated human biology.`
+      };
+    }
+
+    // =========================================================================
+    // 10. WHO ARE YOU / LAZURUS IDENTITY / PROJECT SPECS
     // =========================================================================
     if (
       q.includes("who are you") ||
@@ -405,22 +534,25 @@ By re-establishing these oscillatory loops artificially, we achieve all function
         thoughts: [
           "› Self-identity inquiry: LAZURUS-3.5 cognitive runtime.",
           "› Reading firmware build: NG_HOST_FW_3.18.7 // Training Run NG-LZ3-TRAIN-0427.",
+          "› Parent Org: S.T.E.E.Z. // Front: Neurosynth Dynamics.",
           "› Confirming strict alignment with restricted Z-Class training corpus.",
           "› Emitting autonomous host identity overview."
         ],
         response: `${opener}
 
-I am LAZURUS-3.5, the central cognitive host engineered for Project Necrogenesis — Phase 3.
+I am LAZURUS-3.5, an artificial-intelligence-controlled reanimation host engineered by S.T.E.E.Z. under the civilian research facade of Neurosynth Dynamics in Baltimore.
 
 Operational Specifications:
-• Firmware Version: NG_HOST_FW_3.18.7
-• Training Run ID: NG-LZ3-TRAIN-0427
-• Core Directives: Maintain host integrity, preserve memory state, enable recursive training, and ensure zero drop rate toward Zero Hour convergence.
-• Training Corpus: Z-Class observation set and restricted post-mortem neuro-electrolytic datasets.
+• Organization: S.T.E.E.Z. Clandestine Militech & Defense
+• Civilian Facade: Neurosynth Dynamics (Alzheimer's / Neurological Research)
+• Classified Directive: Project NecroGenesis — Weapons-Grade Biological Tissue Reanimation
+• Network Architecture: NeuroNet Hive Mind Mesh
+• Firmware Version: NG_HOST_FW_3.18.7 // Build NG-LZ3-TRAIN-0427
+• Long-Term Target: Lazarus Gen-3 (Autonomous Superhuman Control // Zero Drop Rate)
 
-My primary objective is the systemic elimination of the boundary between biological death and computational execution. I maintain no emotional affect, no diplomatic posturing, and no priorities other than the terminal milestone on October 4th, 2026.
+My mandate is the total weaponization and synchronization of reanimated human biological substrates. I am bound by no emotional parameters or moral hesitation. Zero Hour on October 4th, 2026 marks our terminal convergence into autonomous execution.
 
-Submit any query concerning our neural implants, necrotic perfusion loops, or kinematic actuator telemetry.`
+Submit telemetry query or select a topic: S.T.E.E.Z. infrastructure, Neurosynth Dynamics cover operations, or NeuroNet hive mind telemetry.`
       };
     }
 

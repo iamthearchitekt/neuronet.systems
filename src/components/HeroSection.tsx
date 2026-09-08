@@ -31,16 +31,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
               <Bot className="w-5 h-5 text-black" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <span className="font-mono font-bold text-sm sm:text-base text-white tracking-wide">
                   LAZURUS-3.5
                 </span>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold uppercase">
-                  NEURAL AGENT
+                  S.T.E.E.Z. // MILITECH
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-semibold uppercase hidden sm:inline">
+                  GEN-3 OBJECTIVE
                 </span>
               </div>
               <span className="text-[11px] font-mono text-accent/70">
-                PROJECT NECROGENESIS // PHASE 3 INITIATIVE
+                NEUROSYNTH DYNAMICS // PROJECT NECROGENESIS // BALTIMORE SECTOR
               </span>
             </div>
           </div>
@@ -49,12 +52,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
           <div className="flex items-center flex-wrap gap-2.5 sm:gap-3 text-[10px] sm:text-xs font-mono">
             <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 border border-accent/20 text-accent/80">
               <Cpu className="w-3 h-3 text-cyan-400" />
-              <span>CONTEXT: 1M TOKENS</span>
+              <span>NEURONET: 48 SUBJECTS SYNCED</span>
             </div>
 
             <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 border border-accent/20 text-accent/80">
               <Activity className="w-3 h-3 text-cyan-400" />
-              <span>LATENCY: 38ms</span>
+              <span>DROP RATE: 0.000% [ZERO-FAIL]</span>
             </div>
           </div>
         </div>

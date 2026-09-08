@@ -18,29 +18,29 @@ const INITIAL_LOGS: LogEntry[] = [
     id: "log-1",
     timestamp: "00:01:04.112",
     level: "INFO",
-    subsystem: "BOOT:KERNEL",
-    message: "Mounting micro-electrode kernel v4.19-necro... [SUBSYSTEM_OK]"
+    subsystem: "STEEZ:BALTIMORE",
+    message: "Mounting S.T.E.E.Z. subterranean militech telemetry node STZ-01... [ONLINE]"
   },
   {
     id: "log-2",
     timestamp: "00:01:04.348",
-    level: "REANIM",
-    subsystem: "PERFUSION:0",
-    message: "Sub-zero fluorocarbon emulsifier loop primed at 4.20 mL/min (4.0°C)."
+    level: "INFO",
+    subsystem: "NEUROSYNTH:FRONT",
+    message: "Public Alzheimer's research facade synchronized: 0 civilian regulatory flags."
   },
   {
     id: "log-3",
     timestamp: "00:01:04.819",
-    level: "INFO",
-    subsystem: "MEM:ALLOC",
-    message: "Binding synaptic DMA buffer 0x7FFF9E37 (16,384 channels mapped)."
+    level: "REANIM",
+    subsystem: "PERFUSION:0",
+    message: "Retrograde fluorocarbon emulsifier loop primed at 4.20 mL/min (4.0°C)."
   },
   {
     id: "log-4",
     timestamp: "00:01:05.105",
     level: "SYNAPSE",
-    subsystem: "DBS:GRID",
-    message: "Platinum-iridium shunt array impedance test: mean 41.8 kΩ [NOMINAL]."
+    subsystem: "NEURONET:MESH",
+    message: "NeuroNet hive bus linked: 48 implanted human subjects mapped."
   },
   {
     id: "log-5",
@@ -88,15 +88,15 @@ const INITIAL_LOGS: LogEntry[] = [
     id: "log-11",
     timestamp: "00:01:09.120",
     level: "KINEMATIC",
-    subsystem: "SERVO:BYPASS",
-    message: "Cortical-spinal motor vector bridged to titanium cervical collar servo."
+    subsystem: "HIVEMIND:SYNC",
+    message: "Synchronized efferent motor burst across all 48 subjects: 1.12 ms latency."
   },
   {
     id: "log-12",
     timestamp: "00:01:09.845",
     level: "INFO",
-    subsystem: "NEURONET:CORE",
-    message: "Model weight sync with central cluster: epoch NG-LZ3-TRAIN-0427."
+    subsystem: "GEN-3:METRICS",
+    message: "Lazarus Gen-3 autonomous threshold convergence: zero failure rate verified."
   },
   {
     id: "log-13",
@@ -110,42 +110,47 @@ const INITIAL_LOGS: LogEntry[] = [
     timestamp: "00:01:11.002",
     level: "WARN",
     subsystem: "SUPERVISOR",
-    message: "Operator override bypassed. Lazarus-3 executing autonomous telemetry."
+    message: "External review disengaged. S.T.E.E.Z. autonomous combat telemetry active."
   },
   {
     id: "log-15",
     timestamp: "00:01:11.890",
     level: "SUCCESS",
     subsystem: "ZERO_HOUR",
-    message: "Target convergence locked: 2026-10-04T00:00:00Z. Countdown synchronized."
+    message: "Target convergence locked: 2026-10-04T00:00:00Z. Drop rate: 0.000%."
   },
 ];
 
 const DYNAMIC_LOG_POOL = [
+  {
+    level: "SYNAPSE" as const,
+    subsystem: "NEURONET:HIVE",
+    message: "48 human subjects executing synchronized kinematic sweep. Drop rate: 0.000%."
+  },
+  {
+    level: "INFO" as const,
+    subsystem: "STEEZ:NODE",
+    message: "Baltimore subterranean server STZ-01 routing encrypted 1.8 Tbps optical bus."
+  },
+  {
+    level: "INFO" as const,
+    subsystem: "NEUROSYNTH:LOG",
+    message: "Civilian Alzheimer's clinical trial facade operational. Regulatory telemetry nominal."
+  },
   {
     level: "REANIM" as const,
     subsystem: "PERFUSION:0",
     message: "Micro-vascular pressure: 18.2 mmHg. Flow rate: 4.15 mL/min. Oxygenation: 98.4%."
   },
   {
-    level: "SYNAPSE" as const,
-    subsystem: "NEURAL_LINK",
-    message: "Cortical layer V firing rate: 128 Hz across 2,048 micro-electrodes. Zero signal drop."
-  },
-  {
-    level: "REANIM" as const,
-    subsystem: "MITOCHONDRIA",
-    message: "Synthetic ATP phosphorylation rate: 91.2%. Aerobic glycolysis maintained in non-viable cell beds."
-  },
-  {
     level: "KINEMATIC" as const,
     subsystem: "ACTUATOR:FINE",
-    message: "Peripheral nerve cuff translation latency: 1.12 ms. Harmonic gear torque: 184 Nm."
+    message: "Titanium cervical collar servo torque: 210 Nm. Zero muscular hesitation."
   },
   {
-    level: "INFO" as const,
-    subsystem: "NEURONET:SYNC",
-    message: "Loss decay delta: -0.0142. Generalization factor: 0.8924. Zero drop rate verified."
+    level: "SUCCESS" as const,
+    subsystem: "GEN-3:TARGET",
+    message: "Lazarus Gen-3 superhuman autonomous threshold: 0.942. Zero drop required."
   },
   {
     level: "SYNAPSE" as const,
@@ -161,11 +166,6 @@ const DYNAMIC_LOG_POOL = [
     level: "WARN" as const,
     subsystem: "THERMAL:GRID",
     message: "Core probe bank 0x3F registered +0.3°C excursion. Chilled fluorocarbon loop compensated."
-  },
-  {
-    level: "CRIT" as const,
-    subsystem: "Z-CLASS:CORPUS",
-    message: "Cognitive feedback loop entered recursive depth 8. AGI proximity threshold: 0.942."
   },
   {
     level: "INFO" as const,
@@ -392,26 +392,26 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
       {/* Editor Breadcrumbs */}
       <div className="px-3 sm:px-4 py-1.5 bg-[#070c14] border-b border-accent/10 text-[11px] font-mono text-accent/60 flex items-center justify-between text-left">
         <div className="flex items-center gap-1.5 truncate text-left">
-          <span>project-necrogenesis</span>
+          <span>steez</span>
           <span>&gt;</span>
           {activeTab === "code" ? (
             <>
-              <span>phase_3</span>
+              <span>neurosynth-dynamics</span>
               <span>&gt;</span>
-              <span className="text-accent font-medium">train_lazarus3.py</span>
+              <span className="text-accent font-medium">lazarus_gen3.py</span>
             </>
           ) : (
             <>
-              <span>var</span>
+              <span>baltimore-sector</span>
               <span>&gt;</span>
-              <span>log</span>
+              <span>var/log</span>
               <span>&gt;</span>
               <span className="text-emerald-400 font-medium">necrogenesis.log</span>
             </>
           )}
         </div>
         <div className="text-[10px] text-accent/60 flex items-center gap-2">
-          <span>{activeTab === "code" ? "Python 3.12" : "ANSI Log Stream"}</span>
+          <span>{activeTab === "code" ? "S.T.E.E.Z. Defense" : "NeuroNet Hive Stream"}</span>
           <span>UTF-8</span>
         </div>
       </div>
@@ -555,16 +555,16 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
         <div className="flex items-center gap-3">
           <span className="flex items-center gap-1 text-accent/80">
             <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-            <span>{activeTab === "code" ? "Integrity: 100%" : `Records: ${logs.length}`}</span>
+            <span>{activeTab === "code" ? "S.T.E.E.Z. Militech: BALTIMORE" : `Records: ${logs.length}`}</span>
           </span>
           <span className="hidden sm:inline text-accent/40">|</span>
           <span className="hidden sm:inline text-accent/70">
-            {activeTab === "code" ? "Directive: Necrogenesis Phase 3" : "Telemetry: 16,384 CH"}
+            {activeTab === "code" ? "NeuroNet Hive: 48 SYNCED" : "Drop Rate: 0.000%"}
           </span>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-cyan-400 font-semibold">
-            {activeTab === "code" ? "Zero Hour Sync: ACTIVE" : "Zero Hour Convergence: LOCKED"}
+            {activeTab === "code" ? "Lazarus Gen-3: TARGET LOCKED" : "Zero-Drop Threshold: VERIFIED"}
           </span>
         </div>
       </div>
