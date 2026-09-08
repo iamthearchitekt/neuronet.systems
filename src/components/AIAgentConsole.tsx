@@ -11,6 +11,7 @@ interface Message {
 export const AIAgentConsole: React.FC = () => {
   const [isThinkingOpen, setIsThinkingOpen] = useState(false);
   const chatScrollRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   const [thinkingSteps, setThinkingSteps] = useState<string[]>([
     "› Query semantics tokenized into clinical parameter vector.",
     "› Consulting Project Necrogenesis Phase 3 necrotic re-polarization archives.",
@@ -499,6 +500,26 @@ Let me know which sector you would like to inspect.`
     }, 450);
   };
 
+  const scrollToBottom = (behavior: ScrollBehavior = "smooth") => {
+    if (chatScrollRef.current) {
+      chatScrollRef.current.scrollTo({
+        top: chatScrollRef.current.scrollHeight,
+        behavior,
+      });
+    }
+    messagesEndRef.current?.scrollIntoView({ behavior, block: "end" });
+  };
+
+  useEffect(() => {
+    scrollToBottom("smooth");
+    const t1 = setTimeout(() => scrollToBottom("smooth"), 60);
+    const t2 = setTimeout(() => scrollToBottom("smooth"), 180);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, [messages]);
+
   // Parse and render message content with clickable interactive links
   const renderMessageContent = (text: string) => {
     const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
@@ -632,6 +653,7 @@ Let me know which sector you would like to inspect.`
               </div>
             </div>
           ))}
+          <div ref={messagesEndRef} />
         </div>
 
         {/* Suggestion Chips */}
