@@ -64,8 +64,8 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
   onCriticalityChange,
   onAccessGranted,
 }) => {
-  // Target: October 4th, 2026 at 00:00:00 local time
-  const targetDate = new Date(2026, 9, 4, 0, 0, 0, 0);
+  // Target: October 24th, 2026 at 00:00:00 local time
+  const targetDate = new Date(2026, 9, 24, 0, 0, 0, 0);
 
   const calculateTimeRemaining = (): TimeRemaining => {
     const diff = targetDate.getTime() - Date.now();
@@ -128,7 +128,7 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
             <span className="font-bold text-accent">ZERO HOUR COUNTDOWN</span>
           </div>
           <div className="text-accent/60 truncate ml-2">
-            S.T.E.E.Z. MILITECH // LAZURUS GEN-3 // 2026.10.04
+            S.T.E.E.Z. // LAZURUS GEN-3 // 2026.10.24
           </div>
         </div>
 

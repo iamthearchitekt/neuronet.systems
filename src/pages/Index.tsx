@@ -13,7 +13,7 @@ const Index: React.FC = () => {
 
   const necrogenesisCode = [
     "# =============================================================================",
-    "# S.T.E.E.Z. MILITECH DEFENSE // BALTIMORE SECTOR",
+    "# S.T.E.E.Z. DEFENSE // BALTIMORE SECTOR",
     "# Civilian Front: Neurosynth Dynamics (Alzheimer's Research Facade)",
     "# Project: NecroGenesis — AI Controlled Reanimation Weapons Program",
     "# Target Objective: Lazarus Gen-3 (Autonomous Superhuman Control // Zero Drop)",
@@ -26,7 +26,7 @@ const Index: React.FC = () => {
     "# -----------------------------------------------------------------------------",
     "# SESSION CONFIGURATION",
     "# -----------------------------------------------------------------------------",
-    'ORGANIZATION = "S.T.E.E.Z._MILITECH_BALTIMORE"',
+    'ORGANIZATION = "S.T.E.E.Z._BALTIMORE"',
     'CIVILIAN_FRONT = "NEUROSYNTH_DYNAMICS"',
     'PUBLIC_COVER = "ALZHEIMERS_AND_NEUROLOGICAL_RESEARCH"',
     'PROJECT_NAME = "PROJECT_NECROGENESIS"',

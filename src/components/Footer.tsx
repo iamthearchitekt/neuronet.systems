@@ -110,7 +110,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-white/60 text-xs sm:text-sm mb-4 md:mb-0 font-mono flex items-center gap-2">
             <img src="/branding-icon.png" alt="Branding" className="w-4 h-4 object-contain filter drop-shadow-[0_0_4px_rgba(34,211,238,0.8)]" />
-            <span>POWERED BY NEUROSYNTH DYNAMICS // S.T.E.E.Z. MILITECH</span>
+            <span>POWERED BY NEUROSYNTH DYNAMICS // S.T.E.E.Z.</span>
           </div>
           <div className="text-white/50 text-sm flex space-x-6">
             <a href="#" className="hover:text-white transition-colors">

@@ -37,7 +37,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
                   LAZURUS-3.5
                 </span>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold uppercase">
-                  S.T.E.E.Z. // MILITECH
+                  S.T.E.E.Z.
                 </span>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-semibold uppercase hidden sm:inline">
                   GEN-3 OBJECTIVE
@@ -68,7 +68,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
       <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 flex-1 flex flex-col lg:flex-row gap-5 lg:gap-7 items-start">
         
         {/* LEFT COLUMN: Left-Justified IDE Window + Telemetry Boxes Underneath */}
-        <div className="w-full lg:w-[42%] xl:w-[38%] 2xl:w-[36%] max-w-[680px] flex-shrink-0 order-1 flex flex-col gap-4">
+        <div className="w-full lg:w-[52%] xl:w-[50%] 2xl:w-[48%] max-w-[960px] flex-shrink-0 order-1 flex flex-col gap-4">
           {/* Python IDE Window (Streaming Code & Logs) */}
           <div className="w-full h-[480px] sm:h-[540px] lg:h-[620px]">
             <CodeIDEWindow lines={pythonLines} />

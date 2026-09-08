@@ -19,7 +19,7 @@ const INITIAL_LOGS: LogEntry[] = [
     timestamp: "00:01:04.112",
     level: "INFO",
     subsystem: "STEEZ:BALTIMORE",
-    message: "Mounting S.T.E.E.Z. subterranean militech telemetry node STZ-01... [ONLINE]"
+    message: "Mounting S.T.E.E.Z. subterranean telemetry node STZ-01... [ONLINE]"
   },
   {
     id: "log-2",
@@ -117,7 +117,7 @@ const INITIAL_LOGS: LogEntry[] = [
     timestamp: "00:01:11.890",
     level: "SUCCESS",
     subsystem: "ZERO_HOUR",
-    message: "Target convergence locked: 2026-10-04T00:00:00Z. Drop rate: 0.000%."
+    message: "Target convergence locked: 2026-10-24T00:00:00Z. Drop rate: 0.000%."
   },
 ];
 
@@ -160,7 +160,7 @@ const DYNAMIC_LOG_POOL = [
   {
     level: "SUCCESS" as const,
     subsystem: "ZERO_HOUR",
-    message: "Temporal drift: 0.0000 ms. Phase 3 trajectory aligned with 2026.10.04 coordinate."
+    message: "Temporal drift: 0.0000 ms. Phase 3 trajectory aligned with 2026.10.24 coordinate."
   },
   {
     level: "WARN" as const,
@@ -473,10 +473,10 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
       {activeTab === "code" && (
         <div
           ref={codeScrollRef}
-          className="flex-1 overflow-y-auto overflow-x-hidden p-3 font-mono text-[11px] sm:text-xs leading-relaxed bg-[#060a10]/90 select-text scrollbar-thin scrollbar-thumb-accent/20 text-left"
+          className="flex-1 overflow-y-auto overflow-x-auto p-3 font-mono text-[11px] sm:text-xs leading-relaxed bg-[#060a10]/90 select-text scrollbar-thin scrollbar-thumb-accent/20 text-left"
           style={{ minHeight: "360px", maxHeight: "680px" }}
         >
-          <div className="flex text-left items-start">
+          <div className="flex text-left items-start w-full min-w-0">
             {/* Line Numbers Gutter */}
             <div className="select-none pr-3 mr-3 text-right text-accent/25 border-r border-accent/15 flex flex-col font-mono text-[10px] sm:text-[11px] w-8 flex-shrink-0">
               {lines.map((_, index) => (
@@ -487,7 +487,7 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
             </div>
 
             {/* Code Text Content - STRICT LEFT JUSTIFIED */}
-            <div className="flex-1 flex flex-col overflow-x-auto whitespace-pre font-mono text-left items-start">
+            <div className="flex-1 min-w-0 flex flex-col overflow-x-auto whitespace-pre font-mono text-left items-start">
               {lines.map((line) => (
                 <div key={line.id} className="leading-relaxed hover:bg-accent/5 px-1 rounded text-left w-full">
                   {renderFormattedLine(line.text)}
@@ -509,7 +509,7 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
       {activeTab === "log" && (
         <div
           ref={logScrollRef}
-          className="flex-1 overflow-y-auto overflow-x-hidden p-3 font-mono text-[11px] sm:text-xs leading-relaxed bg-[#05080e]/95 select-text scrollbar-thin scrollbar-thumb-accent/20 text-left"
+          className="flex-1 overflow-y-auto overflow-x-auto p-3 font-mono text-[11px] sm:text-xs leading-relaxed bg-[#05080e]/95 select-text scrollbar-thin scrollbar-thumb-accent/20 text-left"
           style={{ minHeight: "360px", maxHeight: "680px" }}
         >
           <div className="flex flex-col gap-1.5 text-left">
@@ -560,7 +560,7 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
         <div className="flex items-center gap-3">
           <span className="flex items-center gap-1 text-accent/80">
             <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-            <span>{activeTab === "code" ? "S.T.E.E.Z. Militech: BALTIMORE" : `Records: ${logs.length}`}</span>
+            <span>{activeTab === "code" ? "S.T.E.E.Z.: BALTIMORE" : `Records: ${logs.length}`}</span>
           </span>
           <span className="hidden sm:inline text-accent/40">|</span>
           <span className="hidden sm:inline text-accent/70">
