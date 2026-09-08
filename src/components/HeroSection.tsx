@@ -56,11 +56,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
               <Activity className="w-3 h-3 text-cyan-400" />
               <span>LATENCY: 38ms</span>
             </div>
-
-            <div className="flex items-center gap-2 text-accent bg-accent/10 border border-accent/30 px-3 py-1 rounded-full shadow-[0_0_12px_rgba(143,217,232,0.15)]">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-              <span className="font-semibold text-emerald-400">ZERO HOUR LOCKED</span>
-            </div>
           </div>
         </div>
       </div>
