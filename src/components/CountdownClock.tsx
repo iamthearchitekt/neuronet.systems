@@ -18,7 +18,7 @@ const LCDDigit: React.FC<{ char: string }> = ({ char }) => {
 
   if (isSeparator) {
     return (
-      <span className="relative inline-flex items-center justify-center select-none px-0.5 sm:px-1 md:px-1.5 flex-shrink-0">
+      <span className="relative inline-flex items-center justify-center select-none w-[0.2em] self-start h-[1em] px-0 -mx-1 sm:-mx-1.5 md:-mx-2 flex-shrink-0">
         {/* Ghost unlit separator */}
         <span className="text-accent/15 select-none pointer-events-none font-led">
           :
@@ -32,13 +32,13 @@ const LCDDigit: React.FC<{ char: string }> = ({ char }) => {
   }
 
   return (
-    <span className="relative inline-flex items-center justify-center select-none w-[0.58em] text-center flex-shrink-0">
+    <span className="relative inline-flex items-center justify-center select-none w-[0.52em] text-center flex-shrink-0">
       {/* Ghost unlit 8 segment for physical LCD display effect */}
       <span className="text-accent/15 select-none pointer-events-none font-led">
         8
       </span>
       {/* Active illuminated cyan digit */}
-      <span className="absolute inset-0 flex items-center justify-center text-accent font-led glow-text drop-shadow-[0_0_20px_hsl(var(--accent)/0.85)]">
+      <span className="absolute inset-0 flex items-center justify-center text-accent font-led glow-text drop-shadow-[0_0_16px_hsl(var(--accent)/0.85)]">
         {char}
       </span>
     </span>
@@ -48,12 +48,12 @@ const LCDDigit: React.FC<{ char: string }> = ({ char }) => {
 const LCDBlock: React.FC<{ value: string; label: string }> = ({ value, label }) => {
   return (
     <div className="flex flex-col items-center flex-shrink-0">
-      <div className="flex items-center tracking-tight">
+      <div className="flex items-center tracking-tighter">
         {value.split("").map((digit, i) => (
           <LCDDigit key={i} char={digit} />
         ))}
       </div>
-      <span className="text-[8px] sm:text-[10px] md:text-xs font-mono tracking-[0.15em] sm:tracking-[0.2em] text-accent/70 uppercase mt-1 sm:mt-2 font-semibold text-center">
+      <span className="text-[8px] sm:text-[9px] md:text-[10px] font-mono tracking-[0.15em] sm:tracking-[0.2em] text-accent/70 uppercase mt-1 sm:mt-1.5 font-semibold text-center">
         {label}
       </span>
     </div>
@@ -132,8 +132,8 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
           </div>
         </div>
 
-        {/* Main LCD Digits Display - Fluidly sized to never cut off */}
-        <div className="relative z-10 flex items-center justify-center gap-1 sm:gap-2 md:gap-3 lg:gap-3.5 text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl py-1 sm:py-2.5 w-full select-none">
+        {/* Main LCD Digits Display - Tightened spacing & comfortable breathing room */}
+        <div className="relative z-10 flex items-start justify-center gap-1 sm:gap-2 md:gap-2.5 text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl py-2 sm:py-3.5 w-full select-none">
           <LCDBlock value={timeLeft.days} label="Days" />
           <LCDDigit char=":" />
           <LCDBlock value={timeLeft.hours} label="Hours" />
@@ -144,7 +144,7 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
         </div>
 
         {/* Bottom Status Subtext */}
-        <div className="relative z-10 mt-3 sm:mt-6 pt-2 border-t border-accent/20 flex flex-wrap items-center justify-between text-[9px] sm:text-xs font-mono text-accent/60 tracking-wider gap-2">
+        <div className="relative z-10 mt-2 sm:mt-4 pt-2 border-t border-accent/20 flex flex-wrap items-center justify-between text-[9px] sm:text-xs font-mono text-accent/60 tracking-wider gap-2">
           <div>DIRECTIVE:// S.T.E.E.Z. — PROJECT NECROGENESIS</div>
           <div className="animate-pulse text-accent font-medium">LAZURUS GEN-3 CONVERGENCE // ZERO DROP RATE</div>
         </div>

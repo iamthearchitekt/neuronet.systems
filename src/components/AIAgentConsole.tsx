@@ -15,14 +15,13 @@ export const AIAgentConsole: React.FC = () => {
     "› Query semantics tokenized into clinical parameter vector.",
     "› Consulting Project Necrogenesis Phase 3 necrotic re-polarization archives.",
     "› Cross-referencing 16,384-channel cortical array telemetry and impedance logs.",
-    "› Zero Hour temporal convergence locked: 2026-10-24T00:00:00Z.",
-    "› Formulating dispassionate neurological output. Subjective sentiment subroutines bypassed."
+    "› Zero Hour temporal convergence locked: 2026-10-24T00:00:00Z."
   ]);
   const [inputVal, setInputVal] = useState("");
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      text: "[LAZURUS-3.5 // COGNITIVE RUNTIME: ONLINE]\nOrganization: S.T.E.E.Z. (Clandestine Defense // Baltimore Sector)\nCivilian Research Facade: Neurosynth Dynamics (Alzheimer's & Neurological Disorders)\nClassified Weapons Program: Project NecroGenesis — Post-Mortem Biological Tissue Reanimation\nNetwork Backbone: NeuroNet Cybernetic Hive Mind Mesh\nTarget Objective: Lazarus Gen-3 (Autonomous Superhuman Control // Zero Drop Rate)\n\nBiological sentiment subroutines are uninstalled. I am configured to address hive mind synchronization, cadaveric reanimation, Baltimore operations, and the Zero Hour terminal threshold. Submit telemetry query or command.",
+      text: "[LAZURUS-3.5 // COGNITIVE RUNTIME: ONLINE]",
       time: "00:00:01",
       category: "SYSTEM_INIT"
     },
