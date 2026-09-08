@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 mt-1 text-white/70" />
                 <span className="text-white/70">
-                  Baltimore, Maryland
+                  Power Plant
                 </span>
               </li>
             </ul>

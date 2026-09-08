@@ -18,7 +18,7 @@ const INITIAL_LOGS: LogEntry[] = [
     id: "log-1",
     timestamp: "00:01:04.112",
     level: "INFO",
-    subsystem: "STEEZ:BALTIMORE",
+    subsystem: "STEEZ:POWER_PLANT",
     message: "Mounting S.T.E.E.Z. subterranean telemetry node STZ-01... [ONLINE]"
   },
   {
@@ -26,7 +26,7 @@ const INITIAL_LOGS: LogEntry[] = [
     timestamp: "00:01:04.348",
     level: "INFO",
     subsystem: "NEUROSYNTH:FRONT",
-    message: "Public Alzheimer's research facade synchronized: 0 civilian regulatory flags."
+    message: "Public neurological research facade synchronized: 0 civilian regulatory flags."
   },
   {
     id: "log-3",
@@ -130,12 +130,12 @@ const DYNAMIC_LOG_POOL = [
   {
     level: "INFO" as const,
     subsystem: "STEEZ:NODE",
-    message: "Baltimore subterranean server STZ-01 routing encrypted 1.8 Tbps optical bus."
+    message: "Power Plant subterranean server STZ-01 routing encrypted 1.8 Tbps optical bus."
   },
   {
     level: "INFO" as const,
     subsystem: "NEUROSYNTH:LOG",
-    message: "Civilian Alzheimer's clinical trial facade operational. Regulatory telemetry nominal."
+    message: "Civilian neurological clinical trial facade operational. Regulatory telemetry nominal."
   },
   {
     level: "REANIM" as const,
@@ -406,7 +406,7 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
             </>
           ) : (
             <>
-              <span>baltimore-sector</span>
+              <span>power-plant-sector</span>
               <span>&gt;</span>
               <span>var/log</span>
               <span>&gt;</span>
@@ -559,7 +559,7 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
         <div className="flex items-center gap-3">
           <span className="flex items-center gap-1 text-accent/80">
             <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-            <span>{activeTab === "code" ? "S.T.E.E.Z.: BALTIMORE" : `Records: ${logs.length}`}</span>
+            <span>{activeTab === "code" ? "S.T.E.E.Z.: POWER PLANT" : `Records: ${logs.length}`}</span>
           </span>
           <span className="hidden sm:inline text-accent/40">|</span>
           <span className="hidden sm:inline text-accent/70">

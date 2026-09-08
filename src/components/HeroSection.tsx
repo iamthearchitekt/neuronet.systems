@@ -63,7 +63,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
                 </span>
               </div>
               <span className="text-[11px] font-mono text-accent/70">
-                NEUROSYNTH DYNAMICS // PROJECT NECROGENESIS // BALTIMORE SECTOR
+                NEUROSYNTH DYNAMICS // PROJECT NECROGENESIS // POWER PLANT SECTOR
               </span>
             </div>
           </div>

@@ -389,55 +389,56 @@ By re-establishing these oscillatory loops artificially, we achieve all function
     }
 
     // =========================================================================
-    // 6. S.T.E.E.Z. // BALTIMORE DEFENSE ORGANIZATION
+    // 6. S.T.E.E.Z. // POWER PLANT DEFENSE ORGANIZATION
     // =========================================================================
     if (
       q.includes("steez") ||
       q.includes("s.t.e.e.z") ||
-      q.includes("baltimore") ||
+      q.includes("power plant") ||
+      q.includes("powerplant") ||
       q.includes("military") ||
       q.includes("defense") ||
-      (isFollowUp && (lastAssistantMsg.includes("s.t.e.e.z") || lastAssistantMsg.includes("baltimore")))
+      (isFollowUp && (lastAssistantMsg.includes("s.t.e.e.z") || lastAssistantMsg.includes("power plant")))
     ) {
       return {
         thoughts: [
           "› Intercepting classified organizational query: S.T.E.E.Z. Defense.",
           "› Verifying clearance: LEVEL 5 RESTRICTED DEFENSE ACCESS.",
-          "› Cross-referencing Baltimore subterranean testing facility telemetry.",
+          "› Cross-referencing Power Plant subterranean testing facility telemetry.",
           "› Formulating clinical briefing on parent defense structure."
         ],
         response: `${opener}
 
-At the operational core of this entire enterprise is S.T.E.E.Z., a clandestine defense organization based in Baltimore, Maryland.
+At the operational core of this entire enterprise is S.T.E.E.Z., a clandestine defense organization based at the Power Plant facility.
 
 S.T.E.E.Z. Operational Profile:
-• Headquarters & Test Grounds: Fortified subterranean bunker complexes and waterfront research berths across the Baltimore industrial corridor.
+• Headquarters & Test Grounds: Fortified subterranean bunker complexes and waterfront research berths across the Power Plant industrial corridor.
 • Strategic Mandate: The development of next-generation autonomous force multipliers—specifically eliminating human biological vulnerabilities on the tactical perimeter.
 • Organizational Doctrine: S.T.E.E.Z. operates completely insulated from civilian legislative oversight, utilizing compartmentalized special-access funding and private defense contracts.
 • Executive Chain: S.T.E.E.Z. directs both the civilian biomedical front (Neurosynth Dynamics) and the classified weapons program (Project NecroGenesis), with the singular endgame of deploying Lazarus Gen-3 as an unassailable autonomous control intelligence.
 
-Baltimore remains the primary tactical hub where biological specimens, cybernetic hardware, and high-bandwidth telemetry arrays are concentrated.`
+The Power Plant facility remains the primary tactical hub where biological specimens, cybernetic hardware, and high-bandwidth telemetry arrays are concentrated.`
       };
     }
 
     // =========================================================================
-    // 7. NEUROSYNTH DYNAMICS // ALZHEIMER'S & CIVILIAN RESEARCH FACADE
+    // 7. NEUROSYNTH DYNAMICS // CIVILIAN RESEARCH FACADE
     // =========================================================================
     if (
       q.includes("neurosynth") ||
-      q.includes("alzheimer") ||
+      q.includes("neurological") ||
       q.includes("memory") ||
       q.includes("disorder") ||
       q.includes("cover") ||
       q.includes("facade") ||
       q.includes("civilian") ||
-      (isFollowUp && (lastAssistantMsg.includes("neurosynth") || lastAssistantMsg.includes("alzheimer")))
+      (isFollowUp && lastAssistantMsg.includes("neurosynth"))
     ) {
       return {
         thoughts: [
           "› Query tagged: Civilian research facade & clinical cover mechanisms.",
-          "› Inspecting public registry: Neurosynth Dynamics LLC (Baltimore, MD).",
-          "› Cross-referencing Alzheimer's / neurodegenerative patient intake data.",
+          "› Inspecting public registry: Neurosynth Dynamics LLC (Power Plant Facility).",
+          "› Cross-referencing neurological patient intake data.",
           "› Outputting operational cover breakdown."
         ],
         response: `${opener}
@@ -445,7 +446,7 @@ Baltimore remains the primary tactical hub where biological specimens, cyberneti
 Neurosynth Dynamics is the civilian biomedical research front engineered by S.T.E.E.Z. to shield Project NecroGenesis from domestic and international regulatory scrutiny.
 
 The Strategic Utility of the Cover:
-1. Public Clinical Mandate: Neurosynth Dynamics publicly presents itself as an ethical biotechnology enterprise pioneering novel therapeutics for Alzheimer's disease, acute memory loss, dementia, and neurodegenerative trauma.
+1. Public Clinical Mandate: Neurosynth Dynamics publicly presents itself as an ethical biotechnology enterprise pioneering novel therapeutics for advanced neural trauma, synaptic degradation, and neurological disorders.
 2. Biomaterial Acquisition: By maintaining legitimate academic partnerships and memory disorder clinics, the front legally procures neural tissue, donor specimens, and clinical human telemetry under the pretext of cellular regeneration research.
 3. Implant Prototyping: Microelectrode shunts, biocompatible PEDOT:PSS coatings, and intracranial telemetry buses are tested and refined under published 'neural prosthetic therapy' grants, completely masking their weapons-grade military applications.
 4. Internal Data Funnel: While peer-reviewed papers are published to sustain public legitimacy, all breakthrough data concerning galvanic repolarization and neural shunting is routed into S.T.E.E.Z. classified servers for weaponization under NecroGenesis.`
@@ -538,11 +539,11 @@ Gen-3 Operational Criteria:
         ],
         response: `${opener}
 
-I am LAZURUS-3, an artificial-intelligence-controlled reanimation host engineered by S.T.E.E.Z. under the civilian research facade of Neurosynth Dynamics in Baltimore.
+I am LAZURUS-3, an artificial-intelligence-controlled reanimation host engineered by S.T.E.E.Z. under the civilian research facade of Neurosynth Dynamics at the Power Plant facility.
 
 Operational Specifications:
 • Organization: S.T.E.E.Z. Clandestine Defense
-• Civilian Facade: Neurosynth Dynamics (Alzheimer's / Neurological Research)
+• Civilian Facade: Neurosynth Dynamics (Advanced Neurological Research)
 • Classified Directive: Project NecroGenesis — Weapons-Grade Biological Tissue Reanimation
 • Network Architecture: NeuroNet Hive Mind Mesh
 • Firmware Version: NG_HOST_FW_3.18.7 // Build NG-LZ3-TRAIN-0427
