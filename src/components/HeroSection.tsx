@@ -66,26 +66,28 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
       {/* Main Split-Workspace: Left IDE Code Window + Right AI Agent & Zero Hour Countdown */}
       <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 flex-1 flex flex-col lg:flex-row gap-5 lg:gap-7 items-start">
         
-        {/* LEFT COLUMN: Left-Justified IDE Window (Streaming Python Training Code) */}
-        <div className="w-full lg:w-[42%] xl:w-[38%] 2xl:w-[35%] max-w-[680px] flex-shrink-0 order-1 h-[540px] sm:h-[620px] lg:h-[860px] sticky top-20">
-          <CodeIDEWindow lines={pythonLines} />
+        {/* LEFT COLUMN: Left-Justified IDE Window + Telemetry Boxes Underneath */}
+        <div className="w-full lg:w-[42%] xl:w-[38%] 2xl:w-[36%] max-w-[680px] flex-shrink-0 order-1 flex flex-col gap-4">
+          {/* Python IDE Window (Streaming Code & Logs) */}
+          <div className="w-full h-[480px] sm:h-[540px] lg:h-[620px]">
+            <CodeIDEWindow lines={pythonLines} />
+          </div>
+
+          {/* Telemetry Boxes Directly Underneath the Python Window */}
+          <div className="w-full flex flex-col gap-4">
+            <PerformanceGraphs />
+            <HUDTelemetry criticality={criticality} />
+          </div>
         </div>
 
-        {/* RIGHT COLUMN: AI Agent Command Center featuring ZERO HOUR Countdown & Telemetry */}
+        {/* RIGHT COLUMN: AI Agent Command Center featuring ZERO HOUR Countdown & Chat Console */}
         <div className="w-full lg:flex-1 order-2 flex flex-col items-stretch gap-4 sm:gap-6 min-w-0">
-          
           {/* Main Hero Feature: ZERO HOUR Large LCD Countdown Clock */}
           <div className="w-full">
             <CountdownClock 
               onAccessGranted={setAccessGranted} 
               onCriticalityChange={setCriticality}
             />
-          </div>
-
-          {/* Unified Telemetry Deck: Real-Time Performance Sparklines & System HUD */}
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-            <PerformanceGraphs />
-            <HUDTelemetry criticality={criticality} />
           </div>
 
           {/* AI Agent Interactive Console (Claude / Gemini Style) */}
