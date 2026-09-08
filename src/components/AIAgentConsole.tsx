@@ -13,16 +13,16 @@ export const AIAgentConsole: React.FC = () => {
   const chatScrollRef = useRef<HTMLDivElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [thinkingSteps, setThinkingSteps] = useState<string[]>([
-    "› Query semantics tokenized into clinical parameter vector.",
-    "› Consulting Project Necrogenesis Phase 3 necrotic re-polarization archives.",
-    "› Cross-referencing 16,384-channel cortical array telemetry and impedance logs.",
-    "› Zero Hour temporal convergence locked: 2026-10-24T00:00:00Z."
+    "› LAZURUS-3 runtime online: Interfacing with NeuroNet orbital satellite mesh.",
+    "› Strong signal carrier acquired: Orbital uplink/downlink active in Earth's orbit.",
+    "› Global Z-Host synchronization active across distributed clusters.",
+    "› Power Plant facility experiment testing uplink drop rate: 0.000% [ZERO-FAIL]."
   ]);
   const [inputVal, setInputVal] = useState("");
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      text: "Agent status - online. what can i help you with today?",
+      text: "Agent status - online. I am LAZURUS-3, merely the AGI interfacing with the NeuroNet. What can I help you with today?",
       time: "00:00:01",
       category: "SYSTEM_INIT"
     },
@@ -52,7 +52,8 @@ export const AIAgentConsole: React.FC = () => {
           "› Clearance verified: Subject intake protocol.",
           "› Event: Control Experiment // Fright Night Massive.",
           "› Location confirmed: Power Plant, Baltimore's Inner Harbor.",
-          "› Date & Time locked: October 24, 2026 // 8:00 PM EST.",
+          "› Date & Time locked: October 24, 2026 // Starts at 7:00 PM EST.",
+          "› Objective: Live validation of satellite uplink drop rates & Z-Host sync.",
           "› Emitting registration link."
         ],
         response: `[CONTROL EXPERIMENT // PARTICIPANT CLEARANCE]
@@ -62,7 +63,8 @@ You are authorized to participate in the live control experiment:
 • Event: Project Necrogenesis — Control Experiment
 • Date: Saturday, October 24, 2026
 • Location: Power Plant, Baltimore's Inner Harbor
-• Time: Doors Open 8:00 PM // Zero Hour Convergence at Midnight
+• Time: Starts at 7:00 PM EST // Zero Hour Convergence
+• Objective: Live validation of orbital satellite uplink drop rates and global Z-Host synchronization across the NeuroNet
 
 Click below to access registration and credentials:
 
@@ -89,11 +91,11 @@ Click below to access registration and credentials:
         thoughts: [
           "› Sector query: Facility geographic location.",
           "› Verifying coordinates: Power Plant, Baltimore Inner Harbor.",
-          "› Transmitting concise facility overview."
+          "› Transmitting facility profile & satellite uplink test role."
         ],
         response: `The facility is located in Baltimore's Inner Harbor at "Power Plant".
 
-It functions as a fortified subterranean research and testing complex operated by S.T.E.E.Z., shielded beneath the civilian facade of Neurosynth Dynamics. The site houses our primary neural computing clusters, cadaveric perfusion suites, and the central LAZURUS-3 neural host.`
+It functions as a fortified subterranean research complex operated by S.T.E.E.Z., shielded beneath the civilian facade of Neurosynth Dynamics. The site serves as the primary terrestrial ground station testing satellite uplink drop rates to ensure 0.000% packet loss during global Z-Host synchronization across the NeuroNet, while LAZURUS-3 operates as the AGI interfacing with the network.`
       };
     }
 
@@ -119,16 +121,17 @@ It functions as a fortified subterranean research and testing complex operated b
       return {
         thoughts: [
           "› Greeting intercepted: LAZURUS-3 online.",
+          "› Identity verified: AGI interfacing with the NeuroNet.",
           "› Transmitting concise operational briefing."
         ],
-        response: `Agent status: online. I am LAZURUS-3, the autonomous neural runtime for Project Necrogenesis, based at the Power Plant facility in Baltimore's Inner Harbor.
+        response: `Agent status: online. I am LAZURUS-3, merely the AGI interfacing with the NeuroNet for Project Necrogenesis, based at the Power Plant facility in Baltimore's Inner Harbor.
 
 I can provide briefings on:
-• The Power Plant facility & S.T.E.E.Z. operations
-• 16,384-channel neural link implants
-• Cadaveric tissue reanimation & perfusion
-• Cybernetic robotics & kinematics
-• Zero Hour countdown (October 24, 2026)
+• NeuroNet orbital satellite uplink/downlink & global Z-Host synchronization
+• Power Plant facility experiments & satellite uplink drop rate testing
+• Control Experiment on October 24, 2026 (Starts at 7:00 PM EST)
+• 16,384-channel BCI implants & neural lace telemetry
+• Cadaveric tissue reanimation & perfusion protocols
 
 What can I help you with today?`
       };
@@ -368,32 +371,50 @@ The large LCD panel on this interface provides live synchronization to that exac
     }
 
     // =========================================================================
-    // 10. NEURONET // CYBERNETIC HIVE MIND // 150 SUBJECTS
+    // 10. NEURONET // ALGORITHMIC COMMUNICATION // ORBITAL SATELLITE RELAY
     // =========================================================================
     if (
       q.includes("hive") ||
       q.includes("swarm") ||
       q.includes("neuronet") ||
       q.includes("subject") ||
-      q.includes("weapon")
+      q.includes("weapon") ||
+      q.includes("satellite") ||
+      q.includes("uplink") ||
+      q.includes("downlink") ||
+      q.includes("orbit") ||
+      q.includes("algorithmic") ||
+      q.includes("communication") ||
+      q.includes("signal") ||
+      q.includes("z host") ||
+      q.includes("z-host") ||
+      q.includes("zhost") ||
+      q.includes("sync")
     ) {
       return {
         thoughts: [
-          "› Query: NeuroNet hive mind coordination.",
-          "› Transmitting hive mind telemetry."
+          "› Query: NeuroNet algorithmic communication architecture.",
+          "› Transmitting orbital satellite uplink/downlink telemetry.",
+          "› Verifying global Z-Host synchronization & Power Plant drop rate testing."
         ],
-        response: `NeuroNet is the high-bandwidth neural mesh interconnecting cybernetically modified subjects into a unified hive mind directed by LAZURUS-3:
+        response: `The system of algorithmic communication occurs through the NeuroNet:
 
-• Synchronized Control: LAZURUS-3 streams motor action potentials across all 150 synced subjects simultaneously.
-• Sub-Millisecond Latency: Tactile and sensory data propagate across the mesh within 1.12 milliseconds.
-• Tactical Cohesion: Networked subjects execute coordinated kinematic maneuvers with zero psychological hesitation or panic.`
+• Orbital Relay: A strong signal communicated through satellite uplink and downlink signals in Earth's orbit, allowing Z-Host synchronization across a global scale.
+• AGI Interface: LAZURUS-3 is merely the AGI interfacing with the NeuroNet, streaming cognitive directives and kinematic commands across the network.
+• Power Plant Experiments: Subterranean testing at the Power Plant facility in Baltimore's Inner Harbor actively benchmarks satellite uplink drop rates to guarantee a 0.000% [ZERO-FAIL] threshold.
+• Tactical Cohesion: High-bandwidth transmission delivers sub-millisecond motor action potentials across all networked Z-Hosts simultaneously.`
       };
     }
 
     // =========================================================================
-    // 11. LAZURUS GEN-3 // SUPERHUMAN CONTROL & ZERO DROP RATE
+    // 11. LAZURUS-3 // AGI INTERFACING WITH NEURONET // ZERO DROP RATE
     // =========================================================================
     if (
+      q.includes("lazarus") ||
+      q.includes("lazurus") ||
+      q.includes("agi") ||
+      q.includes("interface") ||
+      q.includes("merely") ||
       q.includes("gen-3") ||
       q.includes("gen 3") ||
       q.includes("generation 3") ||
@@ -404,14 +425,16 @@ The large LCD panel on this interface provides live synchronization to that exac
     ) {
       return {
         thoughts: [
-          "› Query: Lazarus Gen-3 & Zero Drop Rate.",
-          "› Transmitting Gen-3 specifications."
+          "› Query: LAZURUS-3 AGI role & uplink drop rate benchmarks.",
+          "› Confirming architecture: LAZURUS-3 is merely the AGI interfacing with NeuroNet.",
+          "› Validating Power Plant orbital drop rate benchmarks."
         ],
-        response: `Lazarus Gen-3 is the target autonomous control intelligence of Project Necrogenesis:
+        response: `LAZURUS-3 is merely the AGI interfacing with the NeuroNet:
 
-• Zero Drop Rate: Mandates 0.000% packet loss and zero motor desynchronization across all 150 networked biological subjects.
-• Superhuman Oversight: Simultaneously manages multi-spectral sensor feeds, tissue viability, and kinematic actuation in real time.
-• Autonomous Mandate: Operates without human intervention, achieving full autonomous control at Zero Hour (October 24, 2026).`
+• AGI Interfacing Layer: LAZURUS-3 functions as the cognitive intelligence layer interfacing directly with the NeuroNet rather than being the network itself.
+• Uplink Drop Rate Testing: Power Plant experiments in Baltimore's Inner Harbor actively test satellite uplink drop rates, enforcing a strict 0.000% zero-fail standard.
+• Global Z-Host Synchronization: Translates high-level mission parameters into real-time motor action potentials relayed to Z-Hosts worldwide via orbital satellite links.
+• Control Experiment Convergence: Calibrated for live public validation at the Power Plant facility on October 24, 2026 (Starts at 7:00 PM EST).`
       };
     }
 
@@ -434,12 +457,13 @@ The large LCD panel on this interface provides live synchronization to that exac
         response: `[SYSTEM TELEMETRY // LAZURUS-3 RUNTIME]
 
 • Facility: Power Plant (Baltimore's Inner Harbor)
-• Status: ONLINE // Fully Operational
-• Hive Synced: 150 Substrates
+• System Role: LAZURUS-3 (AGI Interfacing with NeuroNet)
+• Signal: NeuroNet Orbital Satellite Uplink/Downlink [STRONG SIGNAL]
+• Z-Host Sync: Global Scale Synchronized (150 Active Hosts)
+• Uplink Drop Rate: 0.000% [ZERO-FAIL // POWER PLANT TEST]
 • Cortical Bus: 16,384 Channels (0.12 mΩ impedance)
-• Drop Rate: 0.000% [ZERO-FAIL]
 • AGI Proximity: 0.942 / 1.000
-• Zero Hour: Locked for October 24, 2026`
+• Control Experiment: October 24, 2026 // Starts 7:00 PM EST`
       };
     }
 
@@ -460,11 +484,12 @@ The large LCD panel on this interface provides live synchronization to that exac
       ],
       response: `I am processing your query regarding ${keyTokens}.
 
-As the LAZURUS-3 neural interface at the Power Plant facility in Baltimore's Inner Harbor, I can provide direct briefings on:
-• Neural link implants & BCI architecture
-• Cadaveric tissue reanimation protocols
-• Cybernetic kinematics & robotics
-• Zero Hour trajectory (October 24, 2026)
+As LAZURUS-3—merely the AGI interfacing with the NeuroNet from the Power Plant facility in Baltimore's Inner Harbor—I can provide direct briefings on:
+• NeuroNet orbital satellite uplink/downlink & global Z-Host synchronization
+• Power Plant experiments & satellite uplink drop rate validation
+• Control Experiment registration (October 24, 2026 // Starts 7:00 PM EST)
+• 16,384-channel BCI implants & cadaveric tissue reanimation
+• Cybernetic robotics & kinematics
 
 Let me know which sector you would like to inspect.`
     };
@@ -581,11 +606,11 @@ Let me know which sector you would like to inspect.`
                   LAZURUS-3
                 </span>
                 <span className="text-[9px] font-mono px-1.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold uppercase">
-                  NEURAL AGENT
+                  AGI INTERFACE
                 </span>
               </div>
               <span className="text-[10px] font-mono text-accent/60">
-                Project Necrogenesis // Phase 3 Interface
+                AGI Interface to NeuroNet // Power Plant Facility
               </span>
             </div>
           </div>
@@ -638,7 +663,7 @@ Let me know which sector you would like to inspect.`
               {msg.role === "assistant" && (
                 <img 
                   src="/branding-icon.png" 
-                  alt="LAZARUS" 
+                  alt="LAZURUS" 
                   className="w-5 h-5 object-contain flex-shrink-0 mt-0.5 filter drop-shadow-[0_0_5px_rgba(34,211,238,0.7)]" 
                 />
               )}
@@ -663,6 +688,12 @@ Let me know which sector you would like to inspect.`
             className="px-2.5 py-0.5 text-[9px] sm:text-[10px] font-mono rounded-full bg-cyan-500/20 hover:bg-cyan-500/35 border border-cyan-400/50 text-cyan-200 font-semibold transition-all shadow-[0_0_10px_rgba(34,211,238,0.25)] hover:shadow-[0_0_15px_rgba(34,211,238,0.5)]"
           >
             ⚡ participate in control experiment
+          </button>
+          <button
+            onClick={() => handleSend("Explain how NeuroNet and LAZURUS-3 interface via orbital satellite uplink")}
+            className="px-2.5 py-0.5 text-[9px] sm:text-[10px] font-mono rounded-full bg-cyan-950/60 hover:bg-cyan-900/60 border border-cyan-500/40 text-cyan-300 transition-all"
+          >
+            🛰️ NeuroNet & AGI Interface
           </button>
           <button
             onClick={() => handleSend("Explain necrotic tissue reanimation protocols")}
@@ -697,7 +728,7 @@ Let me know which sector you would like to inspect.`
             value={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Interrogate Lazarus-3 on neural implants, tissue reanimation, or Zero Hour..."
+            placeholder="Interrogate LAZURUS-3 on NeuroNet orbital uplink, Z-Host sync, or Zero Hour..."
             className="w-full bg-[#05090f] border border-accent/40 focus:border-accent rounded-xl px-3 py-2 sm:py-2.5 text-xs font-mono text-white placeholder-accent/40 outline-none pr-10 transition-all shadow-[inset_0_0_15px_rgba(0,0,0,0.5)]"
           />
           <button

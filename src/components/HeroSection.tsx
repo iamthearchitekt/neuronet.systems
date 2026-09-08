@@ -56,14 +56,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
                   LAZURUS-3
                 </span>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold uppercase">
-                  S.T.E.E.Z.
+                  AGI INTERFACE
                 </span>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-semibold uppercase hidden sm:inline">
-                  GEN-3 OBJECTIVE
+                  NEURONET RUNTIME
                 </span>
               </div>
               <span className="text-[11px] font-mono text-accent/70">
-                NEUROSYNTH DYNAMICS // PROJECT NECROGENESIS // POWER PLANT SECTOR
+                NEUROSYNTH DYNAMICS // PROJECT NECROGENESIS // POWER PLANT FACILITY
               </span>
             </div>
           </div>
@@ -72,13 +72,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
           <div className="flex items-center flex-wrap gap-2.5 sm:gap-3 text-[10px] sm:text-xs font-mono">
             <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 border border-accent/20 text-accent/80">
               <Cpu className="w-3 h-3 text-cyan-400" />
-              <span>NEURONET: 150 SUBJECTS SYNCED</span>
+              <span>NEURONET: GLOBAL Z-HOST SYNC</span>
             </div>
 
             <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 border border-accent/20 text-accent/80 transition-all">
               <Activity className={`w-3 h-3 transition-colors duration-300 ${isJittering ? "text-cyan-200 animate-pulse" : "text-cyan-400"}`} />
               <span>
-                DROP RATE:{" "}
+                UPLINK DROP:{" "}
                 <span className={`font-mono font-semibold transition-colors duration-200 ${isJittering ? "text-cyan-200" : "text-cyan-400"}`}>
                   {dropRate}%
                 </span>{" "}

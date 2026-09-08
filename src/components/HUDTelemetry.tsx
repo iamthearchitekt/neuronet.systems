@@ -149,11 +149,11 @@ const HUDTelemetry: React.FC<HUDTelemetryProps> = ({ criticality = 0, className 
           </div>
         </div>
 
-        {/* Signal Link / Wifi */}
+        {/* Orbital Satellite Uplink */}
         <div className="bg-black/40 border border-accent/15 rounded-lg p-2.5 flex items-center justify-between">
           <div>
-            <span className="text-accent/70 block text-[11px]">SIGNAL LINK</span>
-            <span className="text-emerald-400 font-bold text-[11px]">OPTIMAL // 100%</span>
+            <span className="text-accent/70 block text-[11px]">ORBITAL SATELLITE UPLINK</span>
+            <span className="text-emerald-400 font-bold text-[11px]">STRONG SIGNAL // 0.000% DROP</span>
           </div>
           <Wifi className="w-5 h-5 text-cyan-400 animate-pulse" />
         </div>

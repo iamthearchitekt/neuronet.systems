@@ -64,8 +64,8 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
   onCriticalityChange,
   onAccessGranted,
 }) => {
-  // Target: October 24th, 2026 at 00:00:00 local time
-  const targetDate = new Date(2026, 9, 24, 0, 0, 0, 0);
+  // Target: October 24th, 2026 at 7:00 PM (19:00:00) EST - Control Experiment Start
+  const targetDate = new Date(2026, 9, 24, 19, 0, 0, 0);
 
   const calculateTimeRemaining = (): TimeRemaining => {
     const diff = targetDate.getTime() - Date.now();
@@ -125,7 +125,7 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
         <div className="relative z-10 flex items-center justify-between mb-1 sm:mb-1.5 border-b border-accent/20 pb-1 text-[9px] sm:text-[10px] font-mono text-accent/80 tracking-widest uppercase">
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            <span className="font-bold text-accent">ZERO HOUR COUNTDOWN</span>
+            <span className="font-bold text-accent">CONTROL EXPERIMENT // ZERO HOUR COUNTDOWN</span>
           </div>
         </div>
 

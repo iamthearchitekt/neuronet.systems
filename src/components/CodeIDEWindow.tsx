@@ -88,22 +88,22 @@ const INITIAL_LOGS: LogEntry[] = [
     id: "log-11",
     timestamp: "00:01:09.120",
     level: "KINEMATIC",
-    subsystem: "HIVEMIND:SYNC",
-    message: "Synchronized efferent motor burst across all 150 subjects: 1.12 ms latency."
+    subsystem: "ORBIT:RELAY",
+    message: "NeuroNet orbital satellite link established. Strong Ku-band carrier active in Earth orbit."
   },
   {
     id: "log-12",
     timestamp: "00:01:09.845",
-    level: "INFO",
-    subsystem: "GEN-3:METRICS",
-    message: "Lazarus Gen-3 autonomous threshold convergence: zero failure rate verified."
+    level: "SUCCESS",
+    subsystem: "Z-HOST:SYNC",
+    message: "Global Z-Host synchronization verified. LAZURUS-3 AGI streaming motor action potentials."
   },
   {
     id: "log-13",
     timestamp: "00:01:10.420",
-    level: "CRIT",
-    subsystem: "Z-CLASS:SENS",
-    message: "Spontaneous 40.2 Hz gamma spike in non-living specimen #7. Resonance flicker."
+    level: "INFO",
+    subsystem: "POWER_PLANT",
+    message: "Power Plant facility experiment active: benchmarking satellite uplink drop rate: 0.000%."
   },
   {
     id: "log-14",
@@ -117,15 +117,30 @@ const INITIAL_LOGS: LogEntry[] = [
     timestamp: "00:01:11.890",
     level: "SUCCESS",
     subsystem: "ZERO_HOUR",
-    message: "Target convergence locked: 2026-10-24T00:00:00Z. Drop rate: 0.000%."
+    message: "Target convergence locked: 2026-10-24T19:00:00Z. Drop rate: 0.000%."
   },
 ];
 
 const DYNAMIC_LOG_POOL = [
   {
     level: "SYNAPSE" as const,
-    subsystem: "NEURONET:HIVE",
-    message: "150 human subjects executing synchronized kinematic sweep. Drop rate: 0.000%."
+    subsystem: "NEURONET:UPLINK",
+    message: "NeuroNet algorithmic communication streaming via orbital satellite downlink. Drop rate: 0.000%."
+  },
+  {
+    level: "INFO" as const,
+    subsystem: "Z-HOST:GLOBAL",
+    message: "Global Z-Host synchronization locked. LAZURUS-3 AGI coordinating distributed hosts."
+  },
+  {
+    level: "SUCCESS" as const,
+    subsystem: "POWER_PLANT:EXP",
+    message: "Power Plant live test: orbital satellite uplink drop rate: 0.000% [ZERO-FAIL]."
+  },
+  {
+    level: "INFO" as const,
+    subsystem: "AGI:INTERFACE",
+    message: "LAZURUS-3 AGI interface nominal: cognitive commands executing through NeuroNet mesh."
   },
   {
     level: "INFO" as const,
@@ -389,7 +404,7 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
         {/* Status Pill */}
         <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-2 py-0.5 rounded-full">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-          <span>{activeTab === "code" ? "EXEC // RUNNING" : "DAEMON // LIVE"}</span>
+          <span>{activeTab === "code" ? "EXEC // RUNNING" : "STREAM // ACTIVE"}</span>
         </div>
       </div>
 
@@ -544,11 +559,11 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
               </div>
             ))}
 
-            {/* Daemon Live Prompt at bottom */}
+            {/* Live Stream Prompt at bottom */}
             <div className="flex items-center gap-2 text-[10px] font-mono text-accent/50 mt-2 pt-2 border-t border-accent/10">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-              <span className="text-emerald-400 font-mono">› [DAEMON_ACTIVE]</span>
-              <span className="italic">/var/log/necrogenesis.log streaming from Lazarus-3 neural kernel...</span>
+              <span className="text-emerald-400 font-mono">› [STREAM_ACTIVE]</span>
+              <span className="italic">/var/log/necrogenesis.log streaming from LAZURUS-3 AGI interface...</span>
             </div>
           </div>
         </div>
@@ -563,7 +578,7 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
           </span>
           <span className="hidden sm:inline text-accent/40">|</span>
           <span className="hidden sm:inline text-accent/70">
-            {activeTab === "code" ? "NeuroNet Hive: 150 SYNCED" : "Drop Rate: 0.000%"}
+            {activeTab === "code" ? "Z-Host Sync: GLOBAL" : "Uplink Drop: 0.000%"}
           </span>
         </div>
         <div className="flex items-center gap-2">
