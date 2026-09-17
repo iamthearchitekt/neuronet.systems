@@ -118,10 +118,7 @@ const PerformanceGraphs: React.FC<PerformanceGraphsProps> = ({ className = "" })
   return (
     <div className={`w-full bg-[#080d14]/90 backdrop-blur-xl border border-accent/30 rounded-xl p-3 sm:p-4 shadow-[0_0_30px_rgba(143,217,232,0.1)] relative overflow-hidden ${className}`}>
       {/* Corner bracket accents */}
-      <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-accent"></div>
-      <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-accent"></div>
-      <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-accent"></div>
-      <div className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b border-r border-accent"></div>
+
 
       <div className="flex items-center justify-between mb-2.5 border-b border-accent/15 pb-1.5">
         <span className="text-[10px] sm:text-xs font-mono text-accent/80 uppercase tracking-widest flex items-center gap-1.5">
