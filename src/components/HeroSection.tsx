@@ -88,23 +88,27 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
       <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 flex-1 flex flex-col lg:flex-row gap-4 lg:gap-5 items-start">
         
         {/* LEFT COLUMN: Left-Justified IDE Window + Telemetry Boxes Underneath */}
-        <div className="w-full lg:w-[52%] xl:w-[50%] 2xl:w-[48%] max-w-[960px] flex-shrink-0 order-1 flex flex-col gap-3">
+        <div className="contents lg:flex w-full lg:w-[52%] xl:w-[50%] 2xl:w-[48%] max-w-[960px] flex-shrink-0 lg:order-1 lg:flex-col lg:gap-3">
           {/* Python IDE Window (Streaming Code & Logs) */}
-          <div className="w-full h-[440px] sm:h-[480px] lg:h-[520px]">
+          <div className="w-full h-[440px] sm:h-[480px] lg:h-[520px] order-5 lg:order-1">
             <CodeIDEWindow lines={pythonLines} />
           </div>
 
           {/* Telemetry Boxes Directly Underneath the Python Window */}
-          <div className="w-full flex flex-col gap-3">
-            <PerformanceGraphs />
-            <HUDTelemetry criticality={criticality} />
+          <div className="contents lg:flex w-full lg:flex-col lg:gap-3 order-none lg:order-2">
+            <div className="w-full order-4 lg:order-1">
+              <PerformanceGraphs />
+            </div>
+            <div className="w-full order-3 lg:order-2">
+              <HUDTelemetry criticality={criticality} />
+            </div>
           </div>
         </div>
 
         {/* RIGHT COLUMN: AI Agent Command Center featuring ZERO HOUR Countdown & Chat Console */}
-        <div className="w-full lg:flex-1 order-2 flex flex-col items-stretch gap-2.5 sm:gap-3 min-w-0">
+        <div className="contents lg:flex w-full lg:flex-1 lg:order-2 lg:flex-col lg:items-stretch lg:gap-2.5 sm:gap-3 min-w-0">
           {/* Main Hero Feature: ZERO HOUR Large LCD Countdown Clock */}
-          <div className="w-full">
+          <div className="w-full order-1 lg:order-1">
             <CountdownClock 
               onAccessGranted={setAccessGranted} 
               onCriticalityChange={setCriticality}
@@ -112,12 +116,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
           </div>
 
           {/* AI Agent Interactive Console (Claude / Gemini Style) */}
-          <div className="w-full">
+          <div className="w-full order-2 lg:order-2">
             <AIAgentConsole />
           </div>
 
           {/* Sub-Level 3 Lab Security Camera CCTV Live Feed */}
-          <div className="w-full">
+          <div className="w-full order-6 lg:order-3">
             <SecurityCamFeed />
           </div>
         </div>
