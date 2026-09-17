@@ -664,26 +664,46 @@ const Index: React.FC = () => {
   if (isLoading) {
     return (
       <div 
-        className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50 px-4"
+        className="fixed inset-0 bg-[#020508] overflow-hidden flex flex-col items-center justify-center z-50 px-4 select-none"
       >
-        <div className="text-center">
+        {/* Modern AI Glassmorphism Background: Cyan, Teal & Black Morphing Blur Mesh */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Deep Black Base */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#020508] via-[#010406] to-black" />
+
+          {/* Cyan Morphing Orb 1 (Top-Left) */}
+          <div className="absolute -top-[20%] -left-[15%] w-[520px] sm:w-[680px] lg:w-[850px] h-[520px] sm:h-[680px] lg:h-[850px] rounded-full bg-gradient-to-tr from-cyan-500/35 via-cyan-400/25 to-teal-500/20 blur-[120px] sm:blur-[140px] animate-morph-orb-1" />
+
+          {/* Electric Teal Morphing Orb 2 (Bottom-Right) */}
+          <div className="absolute -bottom-[20%] -right-[15%] w-[550px] sm:w-[720px] lg:w-[900px] h-[550px] sm:h-[720px] lg:h-[900px] rounded-full bg-gradient-to-bl from-teal-400/35 via-cyan-600/25 to-teal-700/20 blur-[120px] sm:blur-[140px] animate-morph-orb-2" />
+
+          {/* Ambient Cyan/Teal Pulse Orb 3 (Center) */}
+          <div className="absolute top-1/2 left-1/2 w-[380px] sm:w-[500px] h-[380px] sm:h-[500px] rounded-full bg-gradient-to-r from-cyan-400/20 via-teal-400/20 to-transparent blur-[100px] sm:blur-[130px] animate-morph-orb-3" />
+
+          {/* Glassmorphism Frosted Vignette & Grid */}
+          <div className="absolute inset-0 bg-black/35 backdrop-blur-[60px]" />
+          <div className="absolute inset-0 bg-grid-pattern opacity-15" />
+        </div>
+
+        {/* Foreground Content */}
+        <div className="relative z-10 text-center flex flex-col items-center">
           <img
             src="/insignia.gif"
             alt="Necrogenesis insignia"
-            className="w-40 sm:w-48 lg:w-56 aspect-square object-contain mx-auto mb-6"
+            className="w-40 sm:w-48 lg:w-56 aspect-square object-contain mx-auto mb-6 filter drop-shadow-[0_0_30px_rgba(34,211,238,0.35)]"
           />
           <div className="w-full max-w-sm sm:max-w-md lg:w-80 mx-auto mb-4">
             <div className={`relative rounded-full ${loadingProgress >= 100 ? "animate-[complete-pulse_0.9s_ease-out_2]" : ""}`}>
               <Progress 
                 value={loadingProgress} 
-                className="h-6 bg-[#1A1F2C] border border-accent/30"
+                className="h-6 bg-[#040d16]/80 backdrop-blur-md border border-cyan-500/30 shadow-[0_0_20px_rgba(6,182,212,0.15)]"
               />
               <div
                 className="pointer-events-none absolute inset-y-0 left-0 overflow-hidden rounded-full"
                 style={{ width: `${loadingProgress}%` }}
               >
                 {loadingProgress < 100 && (
-                  <div className="absolute inset-y-0 left-0 w-1/4 animate-[shimmer_2s_linear_infinite] bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+                  <div className="absolute inset-y-0 left-0 w-1/4 animate-[shimmer_2s_linear_infinite] bg-gradient-to-r from-transparent via-cyan-200/70 to-transparent"></div>
                 )}
               </div>
               {loadingProgress >= 100 && (
@@ -693,13 +713,13 @@ const Index: React.FC = () => {
               )}
             </div>
             
-            <div className="flex justify-between text-xs text-accent/80 font-matrix mt-1 px-1">
+            <div className="flex justify-between text-xs text-cyan-300/80 font-matrix mt-1 px-1">
               <div>FW:// UPDATE</div>
               <div>{Math.round(loadingProgress)}%</div>
             </div>
           </div>
           
-          <div className="text-sm text-accent/70 font-matrix text-center mt-3 px-2">
+          <div className="text-sm text-cyan-300/70 font-matrix text-center mt-3 px-2">
             <span>{statusText}</span>
           </div>
         </div>

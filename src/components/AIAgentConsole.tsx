@@ -589,25 +589,6 @@ Let me know which sector you would like to inspect.`
         <div className="absolute bottom-0 left-0 w-2.5 h-2.5 sm:w-3 sm:h-3 border-b-2 border-l-2 border-accent"></div>
         <div className="absolute bottom-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 border-b-2 border-r-2 border-accent"></div>
 
-        {/* Agent Header */}
-        <div className="flex items-center justify-between border-b border-accent/20 pb-2 mb-2 sm:mb-2.5">
-          <div className="flex items-center gap-2.5">
-            <img 
-              src="/branding-icon.png" 
-              alt="LAZARUS-3 Branding" 
-              className="w-8 h-8 sm:w-9 sm:h-9 object-contain filter drop-shadow-[0_0_8px_rgba(34,211,238,0.7)] flex-shrink-0" 
-            />
-            <div className="flex items-center gap-2">
-              <span className="font-mono font-bold text-xs sm:text-sm text-white tracking-wide">
-                LAZURUS-3
-              </span>
-              <span className="text-[9px] font-mono px-1.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold uppercase">
-                AGI INTERFACE
-              </span>
-            </div>
-          </div>
-        </div>
-
         {/* Conversation Stream - Fits fully within initial landing viewport */}
         <div 
           ref={chatScrollRef}
@@ -688,7 +669,7 @@ Let me know which sector you would like to inspect.`
             value={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Interrogate LAZURUS-3 on NeuroNet orbital uplink, Z-Host sync, or Zero Hour..."
+            placeholder=""
             className="w-full bg-[#05090f] border border-accent/40 focus:border-accent rounded-xl px-3 py-2 sm:py-2.5 text-xs font-mono text-white placeholder-accent/40 outline-none pr-10 transition-all shadow-[inset_0_0_15px_rgba(0,0,0,0.5)]"
           />
           <button
