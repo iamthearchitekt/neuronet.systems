@@ -15,8 +15,7 @@ export const AIAgentConsole: React.FC = () => {
   const [thinkingSteps, setThinkingSteps] = useState<string[]>([
     "› LAZURUS-3 runtime online: Interfacing with NeuroNet orbital satellite mesh.",
     "› Strong signal carrier acquired: Orbital uplink/downlink active in Earth's orbit.",
-    "› Global Z-Host synchronization active across distributed clusters.",
-    "› Power Plant facility experiment testing uplink drop rate: 0.000% [ZERO-FAIL]."
+    "› Global Z-Host synchronization active across distributed clusters."
   ]);
   const [inputVal, setInputVal] = useState("");
   const [messages, setMessages] = useState<Message[]>([
@@ -191,8 +190,6 @@ Its objective is restoring motor activity to deceased human tissue and maintaini
       q.includes("downlink") ||
       q.includes("ground node") ||
       q.includes("packet loss") ||
-      q.includes("drop rate") ||
-      q.includes("zero drop") ||
       q.includes("1.12")
     ) {
       return {
@@ -201,8 +198,8 @@ Its objective is restoring motor activity to deceased human tissue and maintaini
           "› Assessing S.T.E.E.Z. telemetry claims vs field realities."
         ],
         response: `The NeuroNet is the command and communications lattice that connects my processing core, S.T.E.E.Z. infrastructure, and all Z-Hosts. 
-
-Commands and sensor telemetry route through an orbital satellite constellation, with the concealed Power Plant facility functioning as the primary ground node. S.T.E.E.Z. program documentation claims 0.000% packet loss and a 1.12-millisecond response time at this node—though these represent internal program claims rather than independently verified figures.`
+        
+Commands and sensor telemetry route through an orbital satellite constellation, with the concealed Power Plant facility functioning as the primary ground node. S.T.E.E.Z. program documentation claims a 1.12-millisecond response time at this node—though this represents an internal program claim rather than an independently verified figure.`
       };
     }
 
