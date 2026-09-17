@@ -567,3 +567,30 @@ div[class*="netlify-drawer"],
 .animate-morph-orb-3 {
   animation: morph-orb-3 9s ease-in-out infinite alternate;
 }
+
+/* Custom Visible Cyberpunk Scrollbar for AIAgentConsole */
+.chat-scrollbar::-webkit-scrollbar {
+  display: block !important;
+  width: 6px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: rgba(4, 13, 22, 0.7);
+  border-radius: 9999px;
+  border: 1px solid rgba(143, 217, 232, 0.15);
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.45);
+  border-radius: 9999px;
+  border: 1px solid rgba(34, 211, 238, 0.6);
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.8);
+}
+
+.chat-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 211, 238, 0.55) rgba(4, 13, 22, 0.7);
+}

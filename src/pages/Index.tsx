@@ -690,7 +690,7 @@ const Index: React.FC = () => {
           <img
             src="/insignia.gif"
             alt="Necrogenesis insignia"
-            className="w-40 sm:w-48 lg:w-56 aspect-square object-contain mx-auto mb-6 filter drop-shadow-[0_0_30px_rgba(34,211,238,0.35)]"
+            className="w-40 sm:w-48 lg:w-56 aspect-square object-contain mx-auto mb-6 mix-blend-screen filter drop-shadow-[0_0_30px_rgba(34,211,238,0.35)]"
           />
           <div className="w-full max-w-sm sm:max-w-md lg:w-80 mx-auto mb-4">
             <div className={`relative rounded-full ${loadingProgress >= 100 ? "animate-[complete-pulse_0.9s_ease-out_2]" : ""}`}>

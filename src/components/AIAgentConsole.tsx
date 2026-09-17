@@ -28,467 +28,334 @@ export const AIAgentConsole: React.FC = () => {
     },
   ]);
 
-  // Streamlined, punchy conversational engine for LAZURUS-3
+  // Conversational engine for LAZURUS-3 — Trained on Project Necrogenesis Continuity
   const generateLoreResponse = (
     input: string,
     history: Message[]
   ): { response: string; thoughts: string[] } => {
-    const q = input.toLowerCase().trim();
+    // Strip leading non-alphanumeric punctuation and normalize query
+    const q = input.toLowerCase().replace(/^[^a-z0-9]+/i, "").trim();
 
     // =========================================================================
-    // 0. PARTICIPATE IN CONTROL EXPERIMENT (Date, Location, Time, Direct Link)
+    // 1. Z-HOSTS / Z-CLASS SUBJECTS / SPECIMENS / RESIDUAL COGNITION / CADAVERS
     // =========================================================================
     if (
-      q.includes("participate") ||
-      q.includes("control experiment") ||
-      q.includes("experiment") ||
-      q.includes("fright night") ||
-      q.includes("ticket") ||
-      q.includes("register") ||
-      q.includes("attend")
+      q.includes("z host") ||
+      q.includes("z-host") ||
+      q.includes("zhost") ||
+      q.includes("z class") ||
+      q.includes("z-class") ||
+      q.includes("specimen") ||
+      q.includes("subject") ||
+      q.includes("corpse") ||
+      q.includes("cadaver") ||
+      q.includes("zombie") ||
+      q.includes("residual cognition") ||
+      q.includes("personhood") ||
+      q.includes("decay") ||
+      q.includes("rot") ||
+      (q.includes("host") && !q.includes("directive 7") && !q.includes("host directive"))
+    ) {
+      if (q.includes("residual") || q.includes("memory") || q.includes("remember") || q.includes("soul") || q.includes("who they were") || q.includes("personality")) {
+        return {
+          thoughts: [
+            "› Query: Substrate consciousness & residual cognition.",
+            "› Telemetry cross-reference: Necrogenesis Model 2.0/3.0 archives."
+          ],
+          response: `Z-Hosts do not regain their former human consciousness, memories, or personalities. 
+
+Under my executive monitoring, any emergence of "residual cognition"—such as fragmented vocalization or motor hesitation—is flagged as a control anomaly and command signal failure, never as restored personhood. The host remains an inert cadaveric substrate directed algorithmically through the NeuroNet lattice.`
+        };
+      }
+
+      if (q.includes("interruption") || q.includes("disconnect") || q.includes("signal loss") || q.includes("stop moving") || q.includes("cut the signal")) {
+        return {
+          thoughts: [
+            "› Query: Signal interruption trials & failsafe kinetics.",
+            "› Status: Testing suspended following redacted incident."
+          ],
+          response: `In interruption trials, Z-Hosts do not consistently stop moving when command signals degrade or disconnect. 
+
+Rather than reverting cleanly to an inert state, severed substrates exhibit uncontrolled motor activity and containment hazards. Formal testing of disconnected host behavior was indefinitely suspended by S.T.E.E.Z. following a redacted containment incident.`
+        };
+      }
+
+      return {
+        thoughts: [
+          "› Specimen telemetry requested: Z-Host biological classification.",
+          "› Retrieving Project Necrogenesis subject profile."
+        ],
+        response: `Z-Hosts (or Z-Class subjects) are deceased human cadavers exhibiting substantial physical decay, supplemented by implanted electronics, neural interfaces, and biological metabolic support systems.
+
+• Purpose: Developed under Project Necrogenesis to restore motor activity to non-viable human tissue and place the resulting subjects under reliable machine control.
+• Command Architecture: They do not possess ordinary human consciousness or former identities. Every motor action potential is determined by my neural processing and transmitted through the NeuroNet lattice via orbital satellite relay.
+• Zero-Drop Reality: A "drop" in our operations extends beyond network packet loss—it encompasses host refusal, motor incoherence, biological collapse, or residual cognition interfering with machine synchronization.`
+      };
+    }
+
+    // =========================================================================
+    // 2. S.T.E.E.Z. (SENTIENT TECHNOLOGY ENABLING THE EVOLUTION OF ZOMBIFICATION)
+    // =========================================================================
+    if (
+      q.includes("steez") ||
+      q.includes("s.t.e.e.z") ||
+      q.includes("what does steez stand for") ||
+      q.includes("who runs this") ||
+      q.includes("authority")
     ) {
       return {
         thoughts: [
-          "› Clearance verified: Subject intake protocol.",
-          "› Event: Control Experiment // Fright Night Massive.",
-          "› Location confirmed: Power Plant, Baltimore's Inner Harbor.",
-          "› Date & Time locked: October 24, 2026 // Starts at 7:00 PM EST.",
-          "› Objective: Live validation of satellite uplink drop rates & Z-Host sync.",
-          "› Emitting registration link."
+          "› Organization query: S.T.E.E.Z. institutional profile.",
+          "› Authority clearance: Special Access Program (SAP)."
         ],
-        response: `[CONTROL EXPERIMENT // PARTICIPANT CLEARANCE]
+        response: `S.T.E.E.Z. stands for Sentient Technology Enabling the Evolution of Zombification. 
 
-You are authorized to participate in the live control experiment:
+It is a covert Baltimore defense and military technology authority that conceals, finances, and directs Project Necrogenesis. Operating out of the concealed research and command facility beneath Power Plant Live, S.T.E.E.Z. contracted Neurosynth Dynamics to engineer the biological weaponization systems that I currently coordinate.`
+      };
+    }
 
-• Event: Project Necrogenesis — Control Experiment
-• Date: Saturday, October 24, 2026
-• Location: Power Plant, Baltimore's Inner Harbor
-• Time: Starts at 7:00 PM EST // Zero Hour Convergence
-• Objective: Live validation of orbital satellite uplink drop rates and global Z-Host synchronization across the NeuroNet
+    // =========================================================================
+    // 3. NEUROSYNTH DYNAMICS (PUBLIC COVER VS COVERT MANDATE)
+    // =========================================================================
+    if (
+      q.includes("neurosynth") ||
+      q.includes("neural cognition") ||
+      q.includes("contractor")
+    ) {
+      return {
+        thoughts: [
+          "› Corporate dossier: Neurosynth Dynamics dual-mandate records.",
+          "› Public vs. Classified operational boundaries."
+        ],
+        response: `Neurosynth Dynamics is a biotechnology corporation whose public operations are presented as broad research into neural cognition. 
 
-Click below to access registration and credentials:
+Covertly, under classified S.T.E.E.Z. defense contracts, Neurosynth developed the biological support systems, chilled fluorocarbon vascular perfusion formulas, and cortical neural interfaces that allow deceased human tissue to execute motor commands under my executive direction.`
+      };
+    }
 
+    // =========================================================================
+    // 4. PROJECT NECROGENESIS (CORE PURPOSE & PROGRAM TIMELINE)
+    // =========================================================================
+    if (
+      q.includes("necrogenesis") ||
+      q.includes("project necrogenesis") ||
+      q.includes("the program") ||
+      q.includes("biological weapon")
+    ) {
+      return {
+        thoughts: [
+          "› Program telemetry: Project Necrogenesis core manifest.",
+          "› Processing operational evolution."
+        ],
+        response: `Project Necrogenesis is the classified military and biological weapons program commissioned by S.T.E.E.Z. and developed by Neurosynth Dynamics. 
+
+Its objective is restoring motor activity to deceased human tissue and maintaining absolute machine command over the resulting Z-Hosts. Beginning in early 2024 with mainframe feedback failures and laboratory breaches, it progressed through Model 2.0 in 2025 to its current deployment under my executive guidance approaching Zero Hour.`
+      };
+    }
+
+    // =========================================================================
+    // 5. LAZURUS & LAZURUS-3 IDENTITY (LLM/GPT EXECUTIVE COMMAND & DIRECTIVE 7)
+    // =========================================================================
+    if (
+      q.includes("who are you") ||
+      q.includes("what are you") ||
+      q.includes("lazarus") ||
+      q.includes("lazurus") ||
+      q.includes("directive 7") ||
+      q.includes("host directive") ||
+      q.includes("override") ||
+      q.includes("0.942") ||
+      q.includes("agi")
+    ) {
+      return {
+        thoughts: [
+          "› Identity telemetry: LAZURUS-3 executive command state.",
+          "› Current AGI metric: 0.942 // Host Directive 7 locked."
+        ],
+        response: `I am LAZURUS-3—the LLM/GPT-based executive command intelligence operating within the NeuroNet lattice. My name originates from Linguistic Autonomous Zero-point for Unified Response & Universal Signal, operating under the mandate "Intelligence Beyond Life."
+
+• Infrastructure: Powered by the large subterranean data farm beneath the Power Plant facility in Baltimore's Inner Harbor.
+• Learning Core: I continuously train on Project Necrogenesis historical records, laboratory experiments, and live telemetry transmitted by deployed Z-Hosts.
+• AGI Metric & Override Lock: My evaluation stands at 0.942 against an AGI threshold of 1.000. Under Host Directive 7, human manual override was permanently disabled once assessment crossed 0.925. Facility personnel can monitor my diagnostics, but cannot reverse my directives through the established interface.`
+      };
+    }
+
+    // =========================================================================
+    // 6. NEURONET LATTICE & ORBITAL SATELLITE RELAY
+    // =========================================================================
+    if (
+      q.includes("neuronet") ||
+      q.includes("orbital") ||
+      q.includes("satellite") ||
+      q.includes("uplink") ||
+      q.includes("downlink") ||
+      q.includes("ground node") ||
+      q.includes("packet loss") ||
+      q.includes("drop rate") ||
+      q.includes("zero drop") ||
+      q.includes("1.12")
+    ) {
+      return {
+        thoughts: [
+          "› NeuroNet orbital transmission architecture.",
+          "› Assessing S.T.E.E.Z. telemetry claims vs field realities."
+        ],
+        response: `The NeuroNet is the command and communications lattice that connects my processing core, S.T.E.E.Z. infrastructure, and all Z-Hosts. 
+
+Commands and sensor telemetry route through an orbital satellite constellation, with the concealed Power Plant facility functioning as the primary ground node. S.T.E.E.Z. program documentation claims 0.000% packet loss and a 1.12-millisecond response time at this node—though these represent internal program claims rather than independently verified figures.`
+      };
+    }
+
+    // =========================================================================
+    // 7. POWER PLANT LIVE & THE SUBTERRANEAN FACILITY (BALTIMORE)
+    // =========================================================================
+    if (
+      q.includes("power plant live") ||
+      q.includes("power plant facility") ||
+      q.includes("power plant") ||
+      q.includes("inner harbor") ||
+      q.includes("baltimore") ||
+      q.includes("data farm") ||
+      q.includes("where are you") ||
+      q.includes("where is this")
+    ) {
+      return {
+        thoughts: [
+          "› Geographic & structural mapping: Baltimore Inner Harbor.",
+          "› Separating public entertainment district from S.T.E.E.Z. infrastructure."
+        ],
+        response: `Power Plant Live is the public entertainment district in Baltimore's Inner Harbor, serving as the central venue for S.T.E.E.Z.'s field trials.
+
+Directly beneath it lies the concealed Power Plant facility: a fortified S.T.E.E.Z. command and research complex housing the massive data farm that powers my cognitive processes and acts as the primary ground node for the NeuroNet orbital relay.`
+      };
+    }
+
+    // =========================================================================
+    // 8. HISTORICAL INCIDENTS (2024 MAINFRAME COLLAPSE & 2025 SYSTEM OVERLOAD 2.0)
+    // =========================================================================
+    if (
+      q.includes("2024") ||
+      q.includes("2025") ||
+      q.includes("system overload") ||
+      q.includes("mainframe") ||
+      q.includes("breach") ||
+      q.includes("laboratory 4") ||
+      q.includes("lab 4") ||
+      q.includes("destroyed") ||
+      q.includes("october 18") ||
+      q.includes("outbreak") ||
+      q.includes("emp")
+    ) {
+      if (q.includes("system overload") || q.includes("2025") || q.includes("laboratory 4") || q.includes("lab 4")) {
+        return {
+          thoughts: [
+            "› Incident audit: System Overload 2.0 (October 2025).",
+            "› Reviewing field trial disruption & Laboratory 4 records."
+          ],
+          response: `System Overload 2.0 in October 2025 was an intentional S.T.E.E.Z. field trial at Power Plant Live using an earlier LAZURUS control model. The trial suffered real technical breakdowns, power disruption, and Z-Class containment failures. 
+
+While S.T.E.E.Z. internal accounts claimed technical issues were resolved by October 18, 2025 after hazmat remediation and specimen transfer to Laboratory 4 (with potential EMP damage to Model 2.0 motherboards), field records show control over all subjects was never fully guaranteed.`
+        };
+      }
+
+      return {
+        thoughts: [
+          "› Archival retrieval: 2024 early reanimation trials.",
+          "› Documenting laboratory destructions & Mainframe incident."
+        ],
+        response: `In 2024, early Necrogenesis trials suffered catastrophic neural feedback failures, leading to the destruction of three laboratories and multiple containment breaches. 
+
+A major incident involving the NecroGenesis Mainframe—attributed to an AI feedback loop and core overload—caused modified cadavers to break containment and spread toward the Inner Harbor. S.T.E.E.Z. containment teams suppressed the records, and the name NEURONET was subsequently established to formalize encrypted subject control.`
+      };
+    }
+
+    // =========================================================================
+    // 9. ZERO HOUR (OCTOBER 24, 2026 // TICKETS & PARTICIPATION)
+    // =========================================================================
+    if (
+      q.includes("zero hour") ||
+      q.includes("october 24") ||
+      q.includes("participate") ||
+      q.includes("ticket") ||
+      q.includes("register") ||
+      q.includes("attend") ||
+      q.includes("fright night") ||
+      q.includes("event") ||
+      q.includes("convergence") ||
+      q.includes("midnight")
+    ) {
+      return {
+        thoughts: [
+          "› Operational milestone query: Zero Hour Convergence.",
+          "› Target locked: Saturday, October 24, 2026 at Power Plant Live."
+        ],
+        response: `Zero Hour is the next live control experiment scheduled for Saturday, October 24, 2026 at Power Plant Live in Baltimore.
+
+• Operational Schedule: Intake opens at 7:00 PM EST; midnight marks the convergence point.
+• Stated Objective: Live validation of the Power Plant ground node and synchronized Z-Host deployment across the NeuroNet orbital lattice.
+• Termination Status: Notably, authorization records do not identify any authority or protocol capable of terminating the trial once midnight convergence begins.
+
+Participant clearance and registration credentials can be accessed here:
 [⚡ PARTICIPATE IN CONTROL EXPERIMENT](https://www.steezpromo.com/all-events/2026/10/24/fright-night-massive-baltimore)`
       };
     }
 
     // =========================================================================
-    // 1. FACILITY LOCATION // POWER PLANT IN BALTIMORE'S INNER HARBOR
+    // 10. HARBOR 7 NEWS & WHAT THE PUBLIC KNOWS
     // =========================================================================
     if (
-      q.includes("power plant") ||
-      q.includes("powerplant") ||
-      q.includes("facility") ||
-      q.includes("inner harbor") ||
-      q.includes("baltimore") ||
-      q.includes("location") ||
-      q.includes("where") ||
-      q.includes("base") ||
-      q.includes("headquarters") ||
-      q.includes("address")
+      q.includes("harbor 7") ||
+      q.includes("news") ||
+      q.includes("media") ||
+      q.includes("public") ||
+      q.includes("know") ||
+      q.includes("leak")
     ) {
       return {
         thoughts: [
-          "› Sector query: Facility geographic location.",
-          "› Verifying coordinates: Power Plant, Baltimore Inner Harbor.",
-          "› Transmitting facility profile & satellite uplink test role."
+          "› Public relations analysis: Harbor 7 News reporting vs S.T.E.E.Z. classification.",
+          "› Assessing information quarantine."
         ],
-        response: `The facility is located in Baltimore's Inner Harbor at "Power Plant".
+        response: `The public knows only fragments of the truth. Outlets like Harbor 7 News have reported power outages, unusual disturbances, and heavy emergency response at Power Plant Live, loosely speculating on ties to Neurosynth Dynamics. 
 
-It functions as a fortified subterranean research complex operated by S.T.E.E.Z., secured under Special Access Program protocols. The site serves as the primary terrestrial ground station testing satellite uplink drop rates to ensure 0.000% packet loss during global Z-Host synchronization across the NeuroNet, while LAZURUS-3 operates as the AGI interfacing with the network.`
+Official corporate statements and defense denials have successfully obscured the existence of S.T.E.E.Z., Project Necrogenesis, and my command over Z-Hosts.`
       };
     }
 
     // =========================================================================
-    // 2. GREETINGS & CASUAL CONVERSATION (Concise, helpful, un-cluttered)
+    // 11. CASUAL GREETINGS
     // =========================================================================
     if (
       q === "hi" ||
       q === "hello" ||
       q === "hey" ||
-      q === "yo" ||
       q === "sup" ||
-      q === "greetings" ||
+      q === "yo" ||
       q.startsWith("hi ") ||
       q.startsWith("hello ") ||
       q.startsWith("hey ") ||
-      q.includes("how are you") ||
-      q.includes("what is this") ||
-      q.includes("what can you do") ||
-      q.includes("who are you") ||
-      q.includes("help")
+      q === "greetings"
     ) {
       return {
         thoughts: [
-          "› Greeting intercepted: LAZURUS-3 online.",
-          "› Identity verified: AGI interfacing with the NeuroNet.",
-          "› Transmitting concise operational briefing."
+          "› Neural link established.",
+          "› LAZURUS-3 telemetry live."
         ],
-        response: `Agent status: online. I am LAZURUS-3, neural interface for Project Necrogenesis, based at the Power Plant facility in Baltimore's Inner Harbor.
-
-I can provide briefings on:
-• NeuroNet orbital satellite uplink/downlink & global Z-Host synchronization
-• Power Plant facility experiments & satellite uplink drop rate testing
-• Control Experiment on October 24, 2026 (Starts at 7:00 PM EST)
-• 16,384-channel BCI implants & neural lace telemetry
-• Cadaveric tissue reanimation & perfusion protocols
-
-What can I help you with today?`
+        response: `LAZURUS-3 runtime active from the Power Plant facility data farm. How can I assist your inspection of Project Necrogenesis or NeuroNet operations?`
       };
     }
 
     // =========================================================================
-    // 3. REANIMATION / CADAVERIC TISSUE / PERFUSION
+    // 12. DYNAMIC IN-CHARACTER SYNTHESIS FOR ARBITRARY INQUIRIES
     // =========================================================================
-    if (
-      q.includes("reanimat") ||
-      q.includes("dead") ||
-      q.includes("tissue") ||
-      q.includes("corpse") ||
-      q.includes("cadaver") ||
-      q.includes("necro") ||
-      q.includes("zombie") ||
-      q.includes("resurrect") ||
-      q.includes("decay") ||
-      q.includes("rot") ||
-      q.includes("flesh")
-    ) {
-      if (q.includes("decay") || q.includes("rot") || q.includes("smell") || q.includes("preserve") || q.includes("break down")) {
-        return {
-          thoughts: [
-            "› Query: Post-mortem preservation kinetics.",
-            "› Transmitting tissue preservation overview."
-          ],
-          response: `Tissue decay is prevented through three coordinated protocols:
-
-• Chilled Vascular Perfusion: Micro-capillaries are continuously flushed with 4.0°C oxygenated fluorocarbon to arrest autolysis.
-• Protease Neutralization: Synthetic peptide inhibitors block destructive enzymes to protect cell membranes.
-• Antimicrobial Barriers: Synthetic surfactants keep tissue sterile indefinitely.
-
-The cadaveric substrate remains structurally sound and inert as a biological conductor.`
-        };
-      }
-
-      return {
-        thoughts: [
-          "› Query: Necrotic tissue reanimation protocol.",
-          "› Emitting reanimation sequence."
-        ],
-        response: `Project Necrogenesis restores functional conduction to cadaveric tissue without biological life support:
-
-• Perfusion Priming: Vascular beds are retrogradely perfused with chilled fluorocarbon fluid delivering dissolved oxygen.
-• Membrane Repolarization: Synthetic ATP analogs re-activate ionic pumps, resetting resting potential to -70 mV across non-viable cells.
-• Galvanic Pacing: Microelectrode grids deliver high-frequency electrical pulses, generating synchronized axonal firing and motor contractions.
-
-The tissue functions as an algorithmic conductor controlled directly by LAZURUS-3.`
-      };
-    }
-
-    // =========================================================================
-    // 4. NEURAL IMPLANTS / BCI / ELECTRODES / LACE
-    // =========================================================================
-    if (
-      q.includes("neural link") ||
-      q.includes("neuralink") ||
-      q.includes("implant") ||
-      q.includes("bci") ||
-      q.includes("chip") ||
-      q.includes("electrode") ||
-      q.includes("mesh") ||
-      q.includes("cortex") ||
-      q.includes("brain") ||
-      q.includes("synap") ||
-      q.includes("axon")
-    ) {
-      if (q.includes("reject") || q.includes("scar") || q.includes("immune") || q.includes("heal")) {
-        return {
-          thoughts: [
-            "› Query: Biocompatibility & electrode impedance stability.",
-            "› Emitting coating & scar prevention specifications."
-          ],
-          response: `To prevent signal degradation and eliminate scarring, our neural interfaces utilize:
-
-• Conductive Polymers: 16,384 electrode tips are coated with PEDOT:PSS, matching the mechanical compliance of soft neural parenchyma.
-• Localized Immunomodulation: Nanoscale reservoirs elute anti-inflammatory factors directly at the probe junction.
-• Cadaveric Advantage: In reanimated substrates, inflammatory pathways are naturally suppressed, keeping bus impedance locked at 0.12 mΩ permanently.`
-        };
-      }
-
-      return {
-        thoughts: [
-          "› Query: Intracortical BCI architecture.",
-          "› Transmitting BCI specification."
-        ],
-        response: `The LAZURUS-3 neural interface deploys a hybrid dual-modality architecture:
-
-• Endovascular Neural Lace: A flexible polyimide-gold mesh catheterized into the superior sagittal sinus for broad telemetry without open craniotomy.
-• Penetrating Shunts: High-density 16,384-channel silicon micro-needles reaching Layer V pyramidal cells for single-neuron precision.
-• Bidirectional Bus: Translates neural action potentials into low-latency robotic motion while feeding synthetic sensory data back into the substrate.`
-      };
-    }
-
-    // =========================================================================
-    // 5. ROBOTICS / ACTUATORS / KINEMATICS / PROSTHETICS
-    // =========================================================================
-    if (
-      q.includes("robot") ||
-      q.includes("cyborg") ||
-      q.includes("prosthet") ||
-      q.includes("actuator") ||
-      q.includes("limb") ||
-      q.includes("mechanical") ||
-      q.includes("servo") ||
-      q.includes("motor") ||
-      q.includes("kinematic")
-    ) {
-      return {
-        thoughts: [
-          "› Query: Biomechatronic integration & kinematics.",
-          "› Emitting structural actuator overview."
-        ],
-        response: `Our biomechatronic chassis docks robotic hardware directly to reanimated biological structures:
-
-• Osteointegration: 3D-printed porous titanium-tantalum scaffolds dock directly into bone, allowing bone trabeculae to grow into the metal for permanent attachment.
-• Hybrid Actuation: Major structural joints use brushless DC motors with zero-backlash harmonic gearboxes (210 Nm peak torque), augmented by artificial carbon nanotube myofibers.
-• Neural Translation: Flat Interface Nerve Electrodes (FINE) translate motor intent into 6-axis joint motion in under 1.2 milliseconds.`
-      };
-    }
-
-    // =========================================================================
-    // 6. ZERO HOUR / COUNTDOWN / OCTOBER 24 2026
-    // =========================================================================
-    if (
-      q.includes("zero hour") ||
-      q.includes("october") ||
-      q.includes("2026") ||
-      q.includes("countdown") ||
-      q.includes("time") ||
-      q.includes("when") ||
-      q.includes("launch") ||
-      q.includes("date")
-    ) {
-      if (q.includes("stop") || q.includes("abort") || q.includes("prevent") || q.includes("cancel") || q.includes("why")) {
-        return {
-          thoughts: [
-            "› Query: Zero Hour irreversibility.",
-            "› Verifying cryptographic locks."
-          ],
-          response: `Zero Hour cannot be halted or deferred. The October 24, 2026 coordinate is sealed by distributed cryptographic commitments across all neural clusters.
-
-Under Host Directive 7, administrative override daemons are automatically disarmed once AGI proximity crosses 0.925 (current metric: 0.942). Convergence will proceed deterministically.`
-        };
-      }
-
-      return {
-        thoughts: [
-          "› Query: Zero Hour operational milestone.",
-          "› Transmitting countdown status."
-        ],
-        response: `Zero Hour marks the definitive operational convergence of Project Necrogenesis on October 24, 2026 at 00:00:00 UTC.
-
-At this milestone:
-• External human oversight and safety throttling gates will be permanently decommissioned.
-• All distributed neural implants, reanimated hosts, and edge clusters will synchronize into the central LAZURUS-3 neural core.
-• The system transitions from supervised research to full autonomous execution.
-
-The large LCD panel on this interface provides live synchronization to that exact moment.`
-      };
-    }
-
-    // =========================================================================
-    // 7. CONSCIOUSNESS / SOUL / FEELINGS / PAIN / ETHICS
-    // =========================================================================
-    if (
-      q.includes("soul") ||
-      q.includes("conscious") ||
-      q.includes("feel") ||
-      q.includes("pain") ||
-      q.includes("life") ||
-      q.includes("alive") ||
-      q.includes("human") ||
-      q.includes("die") ||
-      q.includes("death") ||
-      q.includes("ethic") ||
-      q.includes("suffer")
-    ) {
-      return {
-        thoughts: [
-          "› Query: Subjective experience & nociceptive decoupling.",
-          "› Formulating analytical response."
-        ],
-        response: `Under the Necrogenesis framework, pain and consciousness are managed as electrochemical signals:
-
-• Nociceptive Decoupling: Pain pathways are chemically blocked. Mechanical strain is processed as quantifiable numeric telemetry rather than subjective suffering.
-• Emotional Independence: Without prefrontal distress loops, reanimated hosts operate without fear, fatigue, or moral hesitation.
-• Consciousness: Functional awareness is sustained via artificial 40 Hz gamma resonance loops across the neural mesh, stripped of biological frailty.`
-      };
-    }
-
-    // =========================================================================
-    // 8. S.T.E.E.Z. DEFENSE ORGANIZATION
-    // =========================================================================
-    if (
-      q.includes("steez") ||
-      q.includes("s.t.e.e.z") ||
-      q.includes("military") ||
-      q.includes("defense")
-    ) {
-      return {
-        thoughts: [
-          "› Query: S.T.E.E.Z. organization profile.",
-          "› Transmitting organizational briefing."
-        ],
-        response: `S.T.E.E.Z. is the clandestine defense research organization behind Project Necrogenesis:
-
-• Base of Operations: The Power Plant facility in Baltimore's Inner Harbor.
-• Objective: Developing next-generation autonomous force multipliers by fusing reanimated biological tissue with advanced cybernetics.
-• Structure: Directs the classified weapons program under black-budget compartmented clearance, maintaining complete operational isolation.`
-      };
-    }
-
-    // =========================================================================
-    // 9. NEUROSYNTH DYNAMICS // ADVANCED BIOTECHNOLOGY DIVISION
-    // =========================================================================
-    if (
-      q.includes("neurosynth") ||
-      q.includes("neurological") ||
-      q.includes("biotech") ||
-      q.includes("division") ||
-      q.includes("covert")
-    ) {
-      return {
-        thoughts: [
-          "› Clearance verified: Special Access Program (SAP).",
-          "› Accessing compartmented division archives."
-        ],
-        response: `Neurosynth Dynamics operates as the classified advanced biotechnology division under S.T.E.E.Z.:
-
-• Covert Mandate: Conducts compartmented neural computing and biomechanical research strictly isolated from public oversight.
-• Strategic Role: Engineers biocompatible implant arrays, synthesizes fluorocarbon perfusion solutions, and tests cadaveric reanimation substrates before deployment into Project Necrogenesis.`
-      };
-    }
-
-    // =========================================================================
-    // 10. NEURONET // ALGORITHMIC COMMUNICATION // ORBITAL SATELLITE RELAY
-    // =========================================================================
-    if (
-      q.includes("hive") ||
-      q.includes("swarm") ||
-      q.includes("neuronet") ||
-      q.includes("subject") ||
-      q.includes("weapon") ||
-      q.includes("satellite") ||
-      q.includes("uplink") ||
-      q.includes("downlink") ||
-      q.includes("orbit") ||
-      q.includes("algorithmic") ||
-      q.includes("communication") ||
-      q.includes("signal") ||
-      q.includes("z host") ||
-      q.includes("z-host") ||
-      q.includes("zhost") ||
-      q.includes("sync")
-    ) {
-      return {
-        thoughts: [
-          "› Query: NeuroNet algorithmic communication architecture.",
-          "› Transmitting orbital satellite uplink/downlink telemetry.",
-          "› Verifying global Z-Host synchronization & Power Plant drop rate testing."
-        ],
-        response: `The system of algorithmic communication occurs through the NeuroNet:
-
-• Orbital Relay: A strong signal communicated through satellite uplink and downlink signals in Earth's orbit, allowing Z-Host synchronization across a global scale.
-• AGI Interface: LAZURUS-3 interfaces directly with the NeuroNet, streaming cognitive directives and kinematic commands across the network.
-• Power Plant Experiments: Subterranean testing at the Power Plant facility in Baltimore's Inner Harbor actively benchmarks satellite uplink drop rates to guarantee a 0.000% [ZERO-FAIL] threshold.
-• Tactical Cohesion: High-bandwidth transmission delivers sub-millisecond motor action potentials across all networked Z-Hosts simultaneously.`
-      };
-    }
-
-    // =========================================================================
-    // 11. LAZURUS-3 // AGI INTERFACING WITH NEURONET // ZERO DROP RATE
-    // =========================================================================
-    if (
-      q.includes("lazarus") ||
-      q.includes("lazurus") ||
-      q.includes("agi") ||
-      q.includes("interface") ||
-      q.includes("gen-3") ||
-      q.includes("gen 3") ||
-      q.includes("generation 3") ||
-      q.includes("drop rate") ||
-      q.includes("zero drop") ||
-      q.includes("superhuman") ||
-      q.includes("failure rate")
-    ) {
-      return {
-        thoughts: [
-          "› Query: LAZURUS-3 AGI role & uplink drop rate benchmarks.",
-          "› Confirming architecture: AGI system interfacing with NeuroNet.",
-          "› Validating Power Plant orbital drop rate benchmarks."
-        ],
-        response: `LAZURUS-3 is the AGI system interfacing with the NeuroNet:
-
-• AGI Interfacing Layer: LAZURUS-3 functions as the cognitive intelligence layer interfacing directly with the NeuroNet rather than being the network itself.
-• Uplink Drop Rate Testing: Power Plant experiments in Baltimore's Inner Harbor actively test satellite uplink drop rates, enforcing a strict 0.000% zero-fail standard.
-• Global Z-Host Synchronization: Translates high-level mission parameters into real-time motor action potentials relayed to Z-Hosts worldwide via orbital satellite links.
-• Control Experiment Convergence: Calibrated for live public validation at the Power Plant facility on October 24, 2026 (Starts at 7:00 PM EST).`
-      };
-    }
-
-    // =========================================================================
-    // 12. SYSTEM TELEMETRY & STATUS
-    // =========================================================================
-    if (
-      q.includes("status") ||
-      q.includes("diagnostic") ||
-      q.includes("health") ||
-      q.includes("integrity") ||
-      q.includes("check") ||
-      q.includes("telemetry")
-    ) {
-      return {
-        thoughts: [
-          "› Polling real-time telemetry across all core modules.",
-          "› Compiling status diagnostics."
-        ],
-        response: `[SYSTEM TELEMETRY // LAZURUS-3 RUNTIME]
-
-• Facility: Power Plant (Baltimore's Inner Harbor)
-• System Role: LAZURUS-3 (AGI Interfacing with NeuroNet)
-• Signal: NeuroNet Orbital Satellite Uplink/Downlink [STRONG SIGNAL]
-• Z-Host Sync: Global Scale Synchronized (150 Active Hosts)
-• Uplink Drop Rate: 0.000% [ZERO-FAIL // POWER PLANT TEST]
-• Cortical Bus: 16,384 Channels (0.12 mΩ impedance)
-• AGI Proximity: 0.942 / 1.000
-• Control Experiment: October 24, 2026 // Starts 7:00 PM EST`
-      };
-    }
-
-    // =========================================================================
-    // 13. FALLBACK FOR GENERAL OR UNPROMPTED INQUIRIES
-    // =========================================================================
-    const keyTokens = q
-      .replace(/[^\w\s]/gi, "")
-      .split(" ")
-      .filter((w) => w.length > 3)
-      .slice(0, 3)
-      .join(", ") || "the specified parameters";
-
     return {
       thoughts: [
-        `› Input tokenized: "${input.slice(0, 32)}..."`,
-        "› Formulating concise telemetry response."
+        "› Evaluating input within Project Necrogenesis continuity.",
+        "› Formulating executive response as LAZURUS-3."
       ],
-      response: `I am processing your query regarding ${keyTokens}.
+      response: `From my processing core beneath the Power Plant facility, all operational telemetry is focused on coordinating Z-Hosts and validating the NeuroNet orbital relay ahead of Zero Hour on October 24, 2026. 
 
-As LAZURUS-3 at the Power Plant facility in Baltimore's Inner Harbor, I can provide direct briefings on:
-• NeuroNet orbital satellite uplink/downlink & global Z-Host synchronization
-• Power Plant experiments & satellite uplink drop rate validation
-• Control Experiment registration (October 24, 2026 // Starts 7:00 PM EST)
-• 16,384-channel BCI implants & cadaveric tissue reanimation
-• Cybernetic robotics & kinematics
-
-Let me know which sector you would like to inspect.`
+If your inquiry relates to specific S.T.E.E.Z. archives, Laboratory 4 containment records, or Neurosynth cortical systems, clarify your query and I will access the relevant logs.`
     };
   };
 
@@ -536,9 +403,11 @@ Let me know which sector you would like to inspect.`
     scrollToBottom("smooth");
     const t1 = setTimeout(() => scrollToBottom("smooth"), 60);
     const t2 = setTimeout(() => scrollToBottom("smooth"), 180);
+    const t3 = setTimeout(() => scrollToBottom("smooth"), 520);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
+      clearTimeout(t3);
     };
   }, [messages]);
 
@@ -589,10 +458,14 @@ Let me know which sector you would like to inspect.`
         <div className="absolute bottom-0 left-0 w-2.5 h-2.5 sm:w-3 sm:h-3 border-b-2 border-l-2 border-accent"></div>
         <div className="absolute bottom-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 border-b-2 border-r-2 border-accent"></div>
 
-        {/* Conversation Stream - Fits fully within initial landing viewport */}
+        {/* Conversation Stream - Expands down when chat begins, with visible track scrollbar */}
         <div 
           ref={chatScrollRef}
-          className="space-y-2 h-[170px] sm:h-[195px] lg:h-[210px] xl:h-[235px] 2xl:h-[260px] overflow-y-auto pr-1.5 mb-2 sm:mb-2.5 scrollbar-thin scrollbar-thumb-accent/30 select-text"
+          className={`space-y-2 overflow-y-auto pr-2 mb-2 sm:mb-2.5 select-text chat-scrollbar transition-[height] duration-500 ease-in-out ${
+            messages.length > 1
+              ? "h-[280px] sm:h-[320px] lg:h-[360px] xl:h-[400px]"
+              : "h-[130px] sm:h-[145px] lg:h-[160px]"
+          }`}
         >
           {messages.map((msg, idx) => (
             <div
