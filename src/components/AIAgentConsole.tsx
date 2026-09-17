@@ -597,52 +597,15 @@ Let me know which sector you would like to inspect.`
               alt="LAZARUS-3 Branding" 
               className="w-8 h-8 sm:w-9 sm:h-9 object-contain filter drop-shadow-[0_0_8px_rgba(34,211,238,0.7)] flex-shrink-0" 
             />
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-mono font-bold text-xs sm:text-sm text-white tracking-wide">
-                  LAZURUS-3
-                </span>
-                <span className="text-[9px] font-mono px-1.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold uppercase">
-                  AGI INTERFACE
-                </span>
-              </div>
-              <span className="text-[10px] font-mono text-accent/60">
-                AGI Interface to NeuroNet // Power Plant Facility
-              </span>
-            </div>
-          </div>
-
-          {/* Status Badge */}
-          <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-2 py-0.5 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-            <span className="font-semibold">STATUS: ONLINE // AGI 0.942</span>
-          </div>
-        </div>
-
-        {/* Collapsible Chain-of-Thought (Gemini/Claude Style Thinking) */}
-        <div className="mb-2 bg-[#05090f]/80 border border-accent/20 rounded-lg overflow-hidden text-xs font-mono">
-          <button
-            onClick={() => setIsThinkingOpen(!isThinkingOpen)}
-            className="w-full flex items-center justify-between px-3 py-1.5 text-accent/80 hover:text-accent hover:bg-white/5 transition-all text-left"
-          >
             <div className="flex items-center gap-2">
-              <Sparkles className="w-3 h-3 text-accent animate-pulse" />
-              <span className="font-semibold text-[10px] sm:text-[11px] tracking-wide">
-                Cognitive Trace & Diagnostics ({thinkingSteps.length} vector nodes)
+              <span className="font-mono font-bold text-xs sm:text-sm text-white tracking-wide">
+                LAZURUS-3
+              </span>
+              <span className="text-[9px] font-mono px-1.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold uppercase">
+                AGI INTERFACE
               </span>
             </div>
-            {isThinkingOpen ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-          </button>
-
-          {isThinkingOpen && (
-            <div className="p-2.5 bg-black/60 border-t border-accent/15 text-accent/70 space-y-1 leading-relaxed text-[10px] sm:text-[11px]">
-              {thinkingSteps.map((step, sIdx) => (
-                <p key={sIdx} className={sIdx === thinkingSteps.length - 1 ? "text-cyan-300 font-medium" : ""}>
-                  {step}
-                </p>
-              ))}
-            </div>
-          )}
+          </div>
         </div>
 
         {/* Conversation Stream - Fits fully within initial landing viewport */}

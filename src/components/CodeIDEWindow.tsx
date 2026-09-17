@@ -400,12 +400,6 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
           </button>
         </div>
-
-        {/* Status Pill */}
-        <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-2 py-0.5 rounded-full">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-          <span>{activeTab === "code" ? "EXEC // RUNNING" : "STREAM // ACTIVE"}</span>
-        </div>
       </div>
 
       {/* Editor Breadcrumbs */}
@@ -428,10 +422,6 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
               <span className="text-emerald-400 font-medium">necrogenesis.log</span>
             </>
           )}
-        </div>
-        <div className="text-[10px] text-accent/60 flex items-center gap-2">
-          <span>{activeTab === "code" ? "S.T.E.E.Z. Defense" : "NeuroNet Hive Stream"}</span>
-          <span>UTF-8</span>
         </div>
       </div>
 
@@ -572,14 +562,21 @@ export const CodeIDEWindow: React.FC<CodeIDEWindowProps> = ({ lines }) => {
       {/* IDE Bottom Status Bar */}
       <div className="flex items-center justify-between px-3 py-1.5 bg-[#05090f] border-t border-accent/20 text-[10px] font-mono text-accent/60 text-left">
         <div className="flex items-center gap-3">
-          <span className="flex items-center gap-1 text-accent/80">
-            <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-            <span>{activeTab === "code" ? "S.T.E.E.Z.: POWER PLANT" : `Records: ${logs.length}`}</span>
-          </span>
-          <span className="hidden sm:inline text-accent/40">|</span>
-          <span className="hidden sm:inline text-accent/70">
-            {activeTab === "code" ? "Z-Host Sync: GLOBAL" : "Uplink Drop: 0.000%"}
-          </span>
+          {activeTab === "log" ? (
+            <>
+              <span className="flex items-center gap-1 text-accent/80">
+                <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                <span>Records: {logs.length}</span>
+              </span>
+              <span className="hidden sm:inline text-accent/40">|</span>
+              <span className="hidden sm:inline text-accent/70">Uplink Drop: 0.000%</span>
+            </>
+          ) : (
+            <span className="flex items-center gap-1.5 text-accent/80">
+              <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+              <span className="text-accent/70">Z-Host Sync: GLOBAL</span>
+            </span>
+          )}
         </div>
         <div className="flex items-center gap-2">
         </div>

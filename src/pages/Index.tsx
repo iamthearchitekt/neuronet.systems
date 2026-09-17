@@ -330,7 +330,7 @@ const Index: React.FC = () => {
         clearInterval(interval);
         setTimeout(() => {
           setIsLoading(false);
-        }, 500);
+        }, 350);
       }
 
       const textIndex = Math.min(
@@ -340,7 +340,7 @@ const Index: React.FC = () => {
 
       setStatusText(loadingTexts[textIndex]);
       setLoadingProgress(progress);
-    }, 180);
+    }, 135);
 
     return () => {
       clearInterval(interval);

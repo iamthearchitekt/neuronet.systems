@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CountdownClock from "./CountdownClock";
 import CodeIDEWindow from "./CodeIDEWindow";
 import AIAgentConsole from "./AIAgentConsole";
+import SecurityCamFeed from "./SecurityCamFeed";
 import HUDTelemetry from "./HUDTelemetry";
 import PerformanceGraphs from "./PerformanceGraphs";
 import { Sparkles, Terminal, Activity, ShieldCheck, Cpu } from "lucide-react";
@@ -59,9 +60,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
                   AGI INTERFACE
                 </span>
               </div>
-              <span className="text-[11px] font-mono text-accent/70">
-                NEUROSYNTH DYNAMICS // PROJECT NECROGENESIS // POWER PLANT FACILITY
-              </span>
             </div>
           </div>
 
@@ -116,6 +114,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ pythonLines = [] }) => {
           {/* AI Agent Interactive Console (Claude / Gemini Style) */}
           <div className="w-full">
             <AIAgentConsole />
+          </div>
+
+          {/* Sub-Level 3 Lab Security Camera CCTV Live Feed */}
+          <div className="w-full">
+            <SecurityCamFeed />
           </div>
         </div>
       </div>
