@@ -449,11 +449,6 @@ If your inquiry relates to specific S.T.E.E.Z. archives, Laboratory 4 containmen
       {/* Agent Card Container (Claude / Gemini Style) */}
       <div className="bg-[#080d14]/95 backdrop-blur-xl border border-accent/30 rounded-xl p-3 sm:p-3.5 md:p-4 shadow-[0_0_40px_rgba(143,217,232,0.12)] relative overflow-hidden flex flex-col">
         
-        {/* Corner bracket accents */}
-        <div className="absolute top-0 left-0 w-2.5 h-2.5 sm:w-3 sm:h-3 border-t-2 border-l-2 border-accent"></div>
-        <div className="absolute top-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 border-t-2 border-r-2 border-accent"></div>
-        <div className="absolute bottom-0 left-0 w-2.5 h-2.5 sm:w-3 sm:h-3 border-b-2 border-l-2 border-accent"></div>
-        <div className="absolute bottom-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 border-b-2 border-r-2 border-accent"></div>
 
         {/* Conversation Stream - Expands down when chat begins, with visible track scrollbar */}
         <div 
