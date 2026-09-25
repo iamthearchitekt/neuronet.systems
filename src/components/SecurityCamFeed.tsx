@@ -1,10 +1,25 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Volume2, VolumeX, ChevronDown, ChevronUp } from "lucide-react";
 
 export const SecurityCamFeed: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
   const [isCollapsed, setIsCollapsed] = useState(false);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (videoRef.current) {
+        if (document.hidden) {
+          videoRef.current.pause();
+        } else {
+          videoRef.current.play().catch(e => console.warn("Video playback failed:", e));
+        }
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, []);
 
   const toggleSound = (e: React.MouseEvent) => {
     e.stopPropagation();
