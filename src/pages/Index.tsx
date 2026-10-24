@@ -668,17 +668,18 @@ const Index: React.FC = () => {
       >
         {/* Modern AI Glassmorphism Background: Cyan, Teal & Black Morphing Blur Mesh */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Deep Black Base */}
+          {/* Deep Black Base with Ambient Cyan & Teal Diffuse Glow */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#020508] via-[#010406] to-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_15%_10%,rgba(6,182,212,0.22)_0%,transparent_70%),radial-gradient(ellipse_80%_60%_at_85%_90%,rgba(20,184,166,0.2)_0%,transparent_70%)]" />
 
-          {/* Cyan Morphing Orb 1 (Top-Left) */}
-          <div className="absolute -top-[20%] -left-[15%] w-[520px] sm:w-[680px] lg:w-[850px] h-[520px] sm:h-[680px] lg:h-[850px] rounded-full bg-gradient-to-tr from-cyan-500/35 via-cyan-400/25 to-teal-500/20 blur-[120px] sm:blur-[140px] animate-morph-orb-1" />
+          {/* Cyan Morphing Soft Glow 1 (Top-Left) - Pure radial falloff with 0 sharp edges */}
+          <div className="absolute -top-[15%] -left-[10%] w-[580px] sm:w-[750px] lg:w-[900px] h-[580px] sm:h-[750px] lg:h-[900px] rounded-full bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.32)_0%,rgba(34,211,238,0.18)_35%,rgba(20,184,166,0.06)_55%,transparent_70%)] blur-[50px] sm:blur-[90px] animate-morph-orb-1" />
 
-          {/* Electric Teal Morphing Orb 2 (Bottom-Right) */}
-          <div className="absolute -bottom-[20%] -right-[15%] w-[550px] sm:w-[720px] lg:w-[900px] h-[550px] sm:h-[720px] lg:h-[900px] rounded-full bg-gradient-to-bl from-teal-400/35 via-cyan-600/25 to-teal-700/20 blur-[120px] sm:blur-[140px] animate-morph-orb-2" />
+          {/* Electric Teal Morphing Soft Glow 2 (Bottom-Right) */}
+          <div className="absolute -bottom-[15%] -right-[10%] w-[600px] sm:w-[780px] lg:w-[950px] h-[600px] sm:h-[780px] lg:h-[950px] rounded-full bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.3)_0%,rgba(6,182,212,0.15)_35%,rgba(13,148,136,0.05)_55%,transparent_70%)] blur-[50px] sm:blur-[90px] animate-morph-orb-2" />
 
-          {/* Ambient Cyan/Teal Pulse Orb 3 (Center) */}
-          <div className="absolute top-1/2 left-1/2 w-[380px] sm:w-[500px] h-[380px] sm:h-[500px] rounded-full bg-gradient-to-r from-cyan-400/20 via-teal-400/20 to-transparent blur-[100px] sm:blur-[130px] animate-morph-orb-3" />
+          {/* Ambient Cyan/Teal Center Pulse */}
+          <div className="absolute top-1/2 left-1/2 w-[420px] sm:w-[550px] h-[420px] sm:h-[550px] rounded-full bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.2)_0%,rgba(20,184,166,0.08)_40%,transparent_70%)] blur-[40px] sm:blur-[70px] animate-morph-orb-3" />
 
           {/* Glassmorphism Frosted Vignette & Grid */}
           <div className="absolute inset-0 bg-black/35" />
