@@ -117,7 +117,7 @@ const INITIAL_LOGS: LogEntry[] = [
     timestamp: "00:01:11.890",
     level: "SUCCESS",
     subsystem: "ZERO_HOUR",
-    message: "Target convergence locked: 2026-10-24T19:00:00Z. Drop rate: 0.000%."
+    message: "Target convergence locked: 2026-10-24T18:00:00Z. Drop rate: 0.000%."
   },
 ];
 

@@ -681,17 +681,33 @@ const Index: React.FC = () => {
           <div className="absolute top-1/2 left-1/2 w-[380px] sm:w-[500px] h-[380px] sm:h-[500px] rounded-full bg-gradient-to-r from-cyan-400/20 via-teal-400/20 to-transparent blur-[100px] sm:blur-[130px] animate-morph-orb-3" />
 
           {/* Glassmorphism Frosted Vignette & Grid */}
-          <div className="absolute inset-0 bg-black/35 backdrop-blur-[60px]" />
+          <div className="absolute inset-0 bg-black/35" />
           <div className="absolute inset-0 bg-grid-pattern opacity-15" />
         </div>
 
         {/* Foreground Content */}
         <div className="relative text-center flex flex-col items-center">
-          <img
-            src="/insignia.gif"
-            alt="Necrogenesis insignia"
-            className="w-40 sm:w-48 lg:w-56 aspect-square object-contain mx-auto mb-6 mix-blend-screen"
-          />
+          <div 
+            className="w-40 sm:w-48 lg:w-56 aspect-square mx-auto mb-6 relative flex items-center justify-center [isolation:isolate] mix-blend-screen [mask-image:radial-gradient(circle_at_center,black_50%,transparent_72%)] [-webkit-mask-image:radial-gradient(circle_at_center,black_50%,transparent_72%)]" 
+            style={{ 
+              mixBlendMode: "screen", 
+              WebkitBackfaceVisibility: "hidden", 
+              transform: "translate3d(0, 0, 0)", 
+              WebkitTransform: "translate3d(0, 0, 0)" 
+            }}
+          >
+            <img
+              src="/insignia.gif"
+              alt="Necrogenesis insignia"
+              className="w-full h-full object-contain mix-blend-screen"
+              style={{ 
+                mixBlendMode: "screen", 
+                WebkitBackfaceVisibility: "hidden", 
+                transform: "translate3d(0, 0, 0)", 
+                WebkitTransform: "translate3d(0, 0, 0)" 
+              }}
+            />
+          </div>
           <div className="w-full max-w-sm sm:max-w-md lg:w-80 mx-auto mb-4">
             <div className={`relative rounded-full ${loadingProgress >= 100 ? "animate-[complete-pulse_0.9s_ease-out_2]" : ""}`}>
               <Progress 

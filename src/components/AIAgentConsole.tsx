@@ -288,7 +288,7 @@ A major incident involving the NecroGenesis Mainframe—attributed to an AI feed
         ],
         response: `Zero Hour is the next live control experiment scheduled for Saturday, October 24, 2026 at Power Plant Live in Baltimore.
 
-• Operational Schedule: Intake opens at 7:00 PM EST; midnight marks the convergence point.
+• Operational Schedule: Intake opens at 6:00 PM EST; midnight marks the convergence point.
 • Stated Objective: Live validation of the Power Plant ground node and synchronized Z-Host deployment across the NeuroNet orbital lattice.
 • Termination Status: Notably, authorization records do not identify any authority or protocol capable of terminating the trial once midnight convergence begins.
 

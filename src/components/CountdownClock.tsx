@@ -18,7 +18,7 @@ const LCDDigit: React.FC<{ char: string }> = ({ char }) => {
 
   if (isSeparator) {
     return (
-      <span className="relative inline-flex items-center justify-center select-none w-[0.2em] self-start h-[1em] px-0 -mx-1 sm:-mx-1.5 md:-mx-2 flex-shrink-0">
+      <span className="relative inline-flex items-center justify-center select-none w-[0.2em] self-start h-[1em] px-0 -mx-0.5 sm:-mx-1 md:-mx-2 flex-shrink-0">
         {/* Ghost unlit separator */}
         <span className="text-accent/15 select-none pointer-events-none font-led">
           :
@@ -53,7 +53,7 @@ const LCDBlock: React.FC<{ value: string; label: string }> = ({ value, label }) 
           <LCDDigit key={i} char={digit} />
         ))}
       </div>
-      <span className="text-[8px] sm:text-[9px] md:text-[10px] font-mono tracking-[0.15em] sm:tracking-[0.2em] text-accent/70 uppercase mt-1 sm:mt-1.5 font-semibold text-center">
+      <span className="text-[9px] sm:text-[9px] md:text-[10px] font-mono tracking-[0.15em] sm:tracking-[0.2em] text-accent/70 uppercase mt-1 sm:mt-1.5 font-semibold text-center">
         {label}
       </span>
     </div>
@@ -64,8 +64,8 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
   onCriticalityChange,
   onAccessGranted,
 }) => {
-  // Target: October 24th, 2026 at 7:00 PM (19:00:00) EST - Control Experiment Start
-  const targetDate = new Date(2026, 9, 24, 19, 0, 0, 0);
+  // Target: October 24th, 2026 at 6:00 PM (18:00:00) EST - Control Experiment Start
+  const targetDate = new Date(2026, 9, 24, 18, 0, 0, 0);
 
   const calculateTimeRemaining = (): TimeRemaining => {
     const diff = targetDate.getTime() - Date.now();
@@ -125,7 +125,7 @@ export const CountdownClock: React.FC<CountdownClockProps> = ({
         </div>
 
         {/* Main LCD Digits Display - Tightened spacing & comfortable breathing room */}
-        <div className="relative z-10 flex items-start justify-center gap-1 sm:gap-1.5 md:gap-2 text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl py-1 sm:py-1.5 w-full select-none">
+        <div className="relative z-10 flex items-start justify-center gap-1 sm:gap-1.5 md:gap-2 text-3xl min-[380px]:text-4xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl 2xl:text-5xl py-1.5 sm:py-2 w-full select-none">
           <LCDBlock value={timeLeft.days} label="Days" />
           <LCDDigit char=":" />
           <LCDBlock value={timeLeft.hours} label="Hours" />
